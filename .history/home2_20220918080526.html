@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        .row0 div {
+            width: auto;
+            display: flex;
+        }
+
+        .img {
+            height: 70px;
+            width: 100%;
+        }
+     
+
+        .btn1:hover {
+            background-color: rgb(38, 178, 196);
+        }
+
+        .action {
+            width: 170px;
+            height: 1000px;
+            border-right: 2px solid rgb(38, 178, 196);
+            overflow: hidden;
+        }
+
+        .action a {
+            color: rgb(38, 178, 196);
+            padding: 5px;
+            display: flex;
+            width: 140px;
+            margin-top: 10px;
+            margin-left: 5px;
+            text-decoration: none;
+            border: 1px solid rgb(38, 178, 196);
+            border-radius: 3px;
+        }
+
+        .action p {
+            float: left;
+            color: rgb(14, 204, 233);
+            font-size: x-large;
+        }
+
+        .moodal {
+            border: 2px solid rgb(14, 204, 233);
+            margin: 10px;
+            margin-left: 5%;
+            width: 80%;
+            right: 400px;
+        }
+        .row1 {
+
+            position: relative;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .form-outline {
+            float: left;
+        }
+        .modalfloat {
+            border: 2px solid rgb(14, 204, 233);
+            margin: auto;
+            width: 500px;
+            height: 720px;
+        }
+
+        .addbtn:hover {
+            background-color: rgba(20, 192, 219, 0.576);
+        }
+
+     
+
+        .footer {
+            background-color: rgb(77, 219, 219);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            height: 15%;
+            overflow: AUTO;
+            color: rgb(255, 255, 255);
+            margin-left: -12px;
+        }
+
+        .footer::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .fb {
+
+            width: 160px
+        }
+
+        .fa {
+            font-size: xx-large;
+            padding: 4px;
+            margin: 2px;
+            width: 40px;
+            text-decoration: none;
+        }
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+        .bd{
+            border: 1px solid rgb(14, 204, 233);
+        }
+
+        .color {
+            background-color: rgb(28, 206, 228);
+        }
+        .btn1 {
+            margin: 20px;
+            margin-top: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.715);
+            border-radius: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: rgb(10, 15, 57);
+        }
+        .action_border{
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    </style>
+    <title>Little Angle School</title>
+</head>
+
+<body>
+    <!-- heading start -->
+    <div class="container-fluid text-center">
+        <div class="row row0 color">
+            <div class="col-3">
+                <a href="pages.html">
+                    <img class="img" src="/school.png" alt="">
+                </a>
+            </div>
+            <div class="col">
+                <input class="form-control mt-2 h-75 " type="search" placeholder="Enter your name or number "
+                    aria-label="Search">
+                <button class="btn1 color  text-light px-3 p-2" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+                <form class="modalfloat mt-3">
+                    <div class="row mx-1 ">
+                        <div class="col p-2 mx-1 text-light color action_border"><a href="">Add Student detail</a></div>
+                        <div class="col p-2 mx-1 text-light color action_border"><a href="">Add Batch Detail</a></div>
+                        <div class="col p-2 mx-1 text-light color action_border"><a href="">View Request</a></div>
+                    </div>
+                    <div class="m-2"> 
+                        <div>
+                            <p class="h2 p-1 text-light color">Add Student name</p>
+                        </div>
+                        <div>
+                            <label for="name" class="form-label float-start">ID</label>
+                            <input type="number" class="form-control" name="Id" id="id">
+                        </div>
+                        <div class="col-12">
+                            <label for="name" class="form-label float-start">Full Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="class" class="form-label float-start">Class</label>
+                            <input type="number" class="form-control" id="class">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="email" class="form-label float-start">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="gname" class="form-label float-start">Guardian Name</label>
+                            <input type="text" class="form-control" id="guardianname">
+                        </div>
+                        <div class="col-12">
+                            <label for="address" class="form-label float-start">Address</label>
+                            <input type="text" class="form-control" id="inputAddress"
+                                placeholder="Lagankhel-5, Lalitpur">
+                        </div>
+                        <div class="col-1 mt-4">
+                            <input type="file" id="photo" name="photo" accept="image/*">
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <label for="dob" class="form-label float-start">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob">
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <button type="submit" class="btn btn-primary col-12 mt-3 color addbtn p-2">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+            <!-- modal2 start -->
+
+            <div id="modal2">
+                <form class="modalfloat mx-5" style="height: 450px;">
+                    <div class="m-2">
+
+                        <div>
+                            <p class="h2 p-1 text-light color">Add Batch Detail</p>
+
+                        </div>
+                        <div class="col-12 ">
+                            <label for="name" class="form-label float-start">ID</label>
+                            <input type="number" class="form-control" id="id">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="name" class="form-label float-start">Full Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="email" class="form-label float-start">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="col-12">
+                            <label for="gname" class="form-label float-start">Passed Year</label>
+                            <input type="text" class="form-control" id="guardianname">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <button type="submit" class="btn btn-primary col-12 mt-3 color addbtn p-2">Add</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+        </div>
+
+
+
+        <!-- footer start -->
+
+
+        <div class="footer">
+            <div class="row ">
+                <div class="col mx-2 mt-2" style="text-align:left"> <b>Little Angle-2022 © All Right Reserved</b> </div>
+                <div class="col mx-2 mt-2" style="text-align:right">
+                    <p> <b>Designed By :- SafaBajar InfoTech Pvt. Ltd.</b> </p>
+                </div>
+            </div>
+            <div class="row mx-2">
+                <div class="col-2  fb" style="text-align:left;margin-top:25px">Contact Us</div>
+                <div class="col-2  fb" style="text-align:left;margin-top:25px">Privacy Policies</div>
+                <div class="col-2  fb" style="text-align:left;margin-top:25px">Terms of Services</div>
+                <div class="col  fb" style="text-align:left"></div>
+                <div class="col-6 fb" style="text-align:center;width:300px">
+                    <p style="margin-top: -10px;"> <b>Connect With Us:</b> </p>
+                    <a href="https:/.facebook.com/search/top?q=safabazar%20private%20limited" class="fa fa-facebook"
+                        style="text-align:center;margin-top:-10px"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
