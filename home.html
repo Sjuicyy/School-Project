@@ -1,35 +1,27 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
     <style>
         .color {
-            background-color: rgb(28, 206, 228);
+            background-color: rgb(47, 137, 252);
         }
-
         .row0 div {
             width: auto;
             display: flex;
         }
-
         .img {
             height: 70px;
             width: 100%;
         }
-
         .btn1 {
-            background-color: rgb(38, 178, 196);
+            background-color: rgb(47, 137, 252);
             color: white;
             height: 40px;
             width: 100px;
@@ -38,115 +30,94 @@
             border: 2px solid rgba(255, 255, 255, 0.715);
             border-radius: 5px;
         }
-
         .btn1:hover {
             background-color: rgba(0, 225, 255, 0);
             border: 2px solid white;
             outline: none;
         }
-
         .btn1:active {
             color: rgba(255, 255, 255, 0.667);
             border: 2px solid rgba(255, 255, 255, 0.533);
         }
-
         .content1 {
             display: flex;
             margin-top: 10px;
         }
-
         .action {
             width: 170px;
             height: 1000px;
-            border-right: 2px solid rgb(38, 178, 196);
+            border-right: 2px solid rgb(47, 137, 252);
             overflow: hidden;
         }
-
         .action a {
-            color: rgb(38, 178, 196);
+            color: rgb(47, 137, 252);
             padding: 5px;
             display: flex;
             width: 140px;
             margin-top: 10px;
             margin-left: 5px;
             text-decoration: none;
-            border: 1px solid rgb(38, 178, 196);
+            border: 1px solid rgb(47, 137, 252);
             border-radius: 3px;
         }
-
         .action p {
             float: left;
-            color: rgb(14, 204, 233);
+            color: rgb(47, 137, 252);
             font-size: x-large;
         }
-
         .moodal {
-            border: 2px solid rgb(14, 204, 233);
+            border: 2px solid rgb(47, 137, 252);
             margin: 10px;
             margin-left: 5%;
             width: 80%;
             right: 400px;
         }
-
         .modalP {
-            background-color: rgb(14, 204, 233);
+            background-color: rgb(47, 137, 252);
             height: 50px;
             font-size: xx-large;
             color: aliceblue;
         }
-
         .row1 {
-
             position: relative;
             margin-left: 10px;
             margin-right: 10px;
         }
-
         .form-outline {
             float: left;
         }
-
         .www {
             height: auto;
         }
-
         .xxx {
             float: left;
         }
-
         .modalfloat {
-            border: 2px solid rgb(14, 204, 233);
+            border: 2px solid rgb(47, 137, 252);
             width: 500px;
             height: 720px;
         }
-
         .addbtn {
-            background-color: rgba(14, 204, 233);
-            border: 1pz soild rgb(14, 204, 233);
+            background-color: rgb(47, 137, 252);
+            border: 1pz soild rgb(47, 137, 252);
             border-radius: 0px;
             margin: -10px;
             float: left;
         }
-
         .addbtn:hover {
             background-color: rgba(20, 192, 219, 0.576);
         }
-
         [id^=modal] {
             display: none;
-
         }
-
         #modal1:target {
             display: block;
         }
-
         #modal2:target {
             display: block;
         }
-
         .footer {
-            background-color: rgb(77, 219, 219);
+            background-color: rgb(47, 137, 252);
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -155,17 +126,12 @@
             color: rgb(255, 255, 255);
             margin-left: -12px;
         }
-
         .footer::-webkit-scrollbar {
             display: none;
         }
-
-
         .fb {
-
             width: 160px
         }
-
         .fa {
             font-size: xx-large;
             padding: 4px;
@@ -173,27 +139,22 @@
             width: 40px;
             text-decoration: none;
         }
-
         .fa-facebook {
             background: #3B5998;
             color: white;
         }
-
         .fa-twitter {
-            background: #55ACEE;
+            background: #rgb(47, 137, 252);
             color: white;
         }
-
         .fa-google {
             background: #dd4b39;
             color: white;
         }
-
         .fa-youtube {
             background: #bb0000;
             color: white;
         }
-
         .fa-instagram {
             background: #125688;
             color: white;
@@ -201,7 +162,6 @@
     </style>
     <title>Little Angle School</title>
 </head>
-
 <body>
     <!-- heading start -->
     <div class="container-fluid text-center">
@@ -219,9 +179,7 @@
             </div>
         </div>
         <!-- heading end -->
-
         <!-- action start -->
-
         <div class="content1">
             <div class="action">
                 <p>Choose Action</p>
@@ -235,13 +193,7 @@
                     View Requests
                 </a>
             </div>
-
-
-
             <!-- action  end -->
-
-
-
             <div id="modal1">
                 <form class="modalfloat mx-5">
                     <div class="m-2">
@@ -290,26 +242,18 @@
                             <label for="dob" class="form-label xxx">Date of Birth</label>
                             <input type="date" class="form-control www " id="dob">
                         </div>
-
                         <div class="col-12">
                             <div class="form-check">
                                 <button type="submit" class="btn btn-primary col-12 mt-3 addbtn p-2">Add</button>
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
-
-
-
-
             <!-- modal2 start -->
-
             <div id="modal2">
                 <form class="modalfloat mx-5" style="height: 450px;">
                     <div class="m-2">
-
                         <div>
                             <p class="modalP">Add Batch Detail</p>
                         </div>
@@ -338,12 +282,7 @@
             </div>
             </form>
         </div>
-
-
-
         <!-- footer start -->
-
-
         <div class="footer">
             <div class="row ">
                 <div class="col mx-2 mt-2" style="text-align:left"> <b>Little Angle-2022 © All Right Reserved</b> </div>
@@ -366,36 +305,18 @@
                     <a href="#" class="fa fa-instagram"></a>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Optional JavaScript; choose one of the two! -->
-
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 </body>
-
 </html>
