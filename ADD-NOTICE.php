@@ -1,25 +1,16 @@
 <?php
 require_once "CONNECTION.php";
 session_start();
-$email_id = $_SESSION['email'];
-
-$id = '';
-$pid = '$email_id';
-
-
-
-
-
-
-
-
+$email_id = $_SESSION['User'];
+$sql = " SELECT * from students WHERE Email='$email_id' ";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
+$pid = $data['Contact'];
+echo 'aa';
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 $date = date("Y-m-d");
 $sql = "INSERT INTO `notices` (`Id`, `Pid`, `Subject`, `Date`, `Message`) VALUES (NULL, '$pid', '$subject', '$date', '$message')";
 mysqli_query($conn,$sql);
-// header('ocatio:index1.php');
-header('Location:index1.php');
-
-
+// header('Location:index1.php');
 ?>
