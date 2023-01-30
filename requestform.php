@@ -1,8 +1,9 @@
 <?php
 session_start();
-// if (!($_SESSION['status'] == 'logedin')) {
-//     header('Location:Login.php');
-// }
+$email_id = $_SESSION['User'];
+if (!($_SESSION['status'] == 'logedin')) {
+    header('Location:Login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,14 +28,12 @@ session_start();
                 </div>
             </div>
             <div class="row justify-content-center round">
-
-
-
-
-
-
-
-            
+                <?php
+                require_once 'connection.php';
+                $sql = "SELECT * FROM students where email='$email_id '";
+                $result = $conn->query($sql);
+                $data = mysqli_fetch_array($result);
+                ?>
                 <div class="col-lg-8 col-md-12 ">
                     <div class="card shadow-lg card-1">
                         <div class="card-body inner-card">
@@ -42,48 +41,35 @@ session_start();
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
                                         <div class="form-group"> <label for="Mobile-Number">Full Name</label> <input
-                                                type="text" name="name" class="form-control" id="Mobile-Number"
+                                                type="text" name="name" value="<?php echo $data['Name']; ?>" class="form-control" id="Mobile-Number"
                                                 placeholder=""> </div>
                                         <div class="form-group"> <label for="Mobile-Number">Mobile Number</label> <input
-                                                type="number" name="phone" class="form-control" id="Mobile-Number"
+                                                type="number" name="phone" value="<?php echo $data['Contact']; ?>" class="form-control" id="Mobile-Number"
                                                 placeholder=""> </div>
                                         <div class="form-group"> <label for="Fname">Father's Name</label> <input
-                                                type="text" name="fathername" class="form-control" id="Fname"
+                                                type="text" name="fathername" value="<?php echo $data['Fname']; ?>" class="form-control" id="Fname"
                                                 placeholder=""> </div>
                                         <div class="form-group"> <label for="Address">Address</label><input type="text"
-                                                name="address" class="form-control" id="Address" placeholder=""> </div>
+                                                name="address" value="<?php echo $data['Address']; ?>" class="form-control" id="Address" placeholder=""> </div>
                                     </div>
 
-                                        <!-- <div class="row justify-content-center"> -->
+                                    <!-- <div class="row justify-content-center"> -->
 
-                                        <div class="col-lg-5 col-md-6 col-sm-12">
-                                            <div class="form-group"> <label for="batch">Batch</label> <select
-                                                    name="batch" class="form-control">
-                                                    <option>2012</option>
-                                                    <option>2013</option>
-                                                    <option>2014</option>
-                                                </select> </div>
-                                        </div>
-                                        <div class="col-lg-5 col-md-6 col-sm-12">
-                                            <div class="form-group"> <label 
-                                                    for="profession">Profession</label> <input name="profession" class="form-control">
-                                                </input></div>
-                                        </div>
-                                        <!-- </div> -->
-
-
-
-
-
-
-
-
-                                        <div class="form-group"> <label for="Mobile-Number">Facebook(URL:)</label>
-                                            <input type="text" name="facebook" class="form-control" id="Mobile-Number"
-                                                placeholder="">
-                                        </div>
+                                    <div class="col-lg-5 col-md-6 col-sm-12">
+                                        <div class="form-group"> <label for="batch">Batch</label> <select name="batch"
+                                                class="form-control">
+                                                <option><?php echo $data['Batch']; ?></option>
+                                                <option>2012</option>
+                                                <option>2013</option>
+                                                <option>2014</option>
+                                            </select> </div>
                                     </div>
-                                </div>
+                                    <div class="col-lg-5 col-md-6 col-sm-12">
+                                        <div class="form-group"> <label for="profession">Profession</label> <input
+                                                name="profession" value="<?php echo $data['Profession']; ?>" class="form-control">
+                                            </input></div>
+                                    </div>
+                                    <!-- </div> -->
 
 
 
@@ -92,40 +78,54 @@ session_start();
 
 
 
-
-
-
-
-
-
-
-
-                                <div class="row justify-content-center">
-                                    <div class="col-4">
-                                        <div class="form-group files"><label class="Photo">Upload Your Photo </label>
-                                            <input name="Photo" id="file" type="file" accept="" class="form-control" />
-                                        </div>
+                                    <div class="form-group"> <label for="Mobile-Number">Facebook(URL:)</label>
+                                        <input type="text" name="facebook" value="<?php echo $data['Facebook']; ?>" class="form-control" id="Mobile-Number"
+                                            placeholder="">
                                     </div>
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-md-12 col-lg-10 col-12">
-                                        <div class="form-group"> <label for="About">About</label> <textarea name="about"
-                                                class="form-control rounded-0" id="About" rows="5"></textarea></div>
-                                        <div class="row justify-content-end mb-4">
-
-                                            <div class="col-lg-4 col-auto "><button type="sumbit"
-                                                    class="btn btn-primary btn-block"><small
-                                                        class="font-weight-bold">Request</small></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="row justify-content-center">
+                            <div class="col-4">
+                                <div class="form-group files"><label class="Photo">Upload Your Photo </label>
+                                    <input name="Photo" id="file" type="file" accept="" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 col-lg-10 col-12">
+                                <div class="form-group"> <label for="About">About</label> <textarea name="about" value="<?php echo $data['About']; ?>"
+                                        class="form-control rounded-0" id="About" rows="5"></textarea></div>
+                                <div class="row justify-content-end mb-4">
+
+                                    <div class="col-lg-4 col-auto "><button type="sumbit"
+                                            class="btn btn-primary btn-block"><small
+                                                class="font-weight-bold">Request</small></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 
@@ -139,17 +139,17 @@ session_start();
 
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-        <script>$(document).ready(function () {
-                $(".files").attr('data-before', "Drag file here or click the above button");
-                $('input[type="file"]').change(function (e) {
-                    var fileName = e.target.files[0].name;
-                    $(".files").attr('data-before', fileName);
+    <script>$(document).ready(function () {
+            $(".files").attr('data-before', "Drag file here or click the above button");
+            $('input[type="file"]').change(function (e) {
+                var fileName = e.target.files[0].name;
+                $(".files").attr('data-before', fileName);
 
-                });
-            });</script>
+            });
+        });</script>
 </body>
 
 </html>
