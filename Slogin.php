@@ -14,7 +14,7 @@ if ($result == 1) {
     $_SESSION['status'] = 'logedin';
     $_SESSION['id'] = $login_id;
     echo "login successful";
-    header('Location:index1.php');
+    header('Location:WAITHERE.php');
 } else {
     echo "login unsuccessful";
 }
