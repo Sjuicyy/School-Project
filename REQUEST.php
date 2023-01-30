@@ -9,10 +9,6 @@ $facebook=$_POST['facebook'];
 $about=$_POST['about'];
 
 // $sql="UPDATE "
-echo $profession;
-echo $batch;
-echo "profession";
-
 
 
 ?>
