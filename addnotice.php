@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!($_SESSION['status'] == 'logedin')) {
-  header('Location:Login.php');
+    header('Location:Login.php');
 }
 ?>
 
@@ -58,7 +58,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="loghome.php" class="dropdown-item" type="button">Log Out</a>
+                            <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 
@@ -85,13 +85,16 @@ if (!($_SESSION['status'] == 'logedin')) {
                                         <div class="row justify-content-center">
                                             <div class="col-lg-10">
                                                 <div class="form-group"><label for="Name">Subject</label>
-                                                <input type="text" name='subject' class="form-control" id="Name" placeholder="Type the subject"></div>
+                                                    <input type="text" name='subject' class="form-control" id="Name"
+                                                        placeholder="Type the subject">
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row justify-content-center">
                                             <div class="col-md-12 col-lg-10 col-12">
                                                 <div class="form-group"> <label for="Message">Message</label> <textarea
-                                                      name='message'  class="form-control rounded-0" id="Message" rows="5"></textarea>
+                                                        name='message' class="form-control rounded-0" id="Message"
+                                                        rows="5"></textarea>
                                                 </div>
                                                 <div class="row justify-content-end mb-5">
                                                     <div class="col-lg-4 col-auto "><input type="submit" value="Send"

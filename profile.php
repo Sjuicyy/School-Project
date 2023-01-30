@@ -5,7 +5,7 @@ if (!($_SESSION['status'] == 'logedin')) {
   header('Location:Login.php');
 }
 ?>
-<?php require_once 'connection.php' 
+<?php require_once 'CONNECTION.php' 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,7 +94,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="loghome.php" class="dropdown-item" type="button">Log Out</a>
+                            <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 

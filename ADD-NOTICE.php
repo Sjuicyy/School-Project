@@ -1,10 +1,18 @@
 <?php
-require_once "connection.php";
+require_once "CONNECTION.php";
 session_start();
 $email_id = $_SESSION['email'];
 
 $id = '';
 $pid = '$email_id';
+
+
+
+
+
+
+
+
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 $date = date("Y-m-d");

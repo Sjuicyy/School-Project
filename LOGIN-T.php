@@ -1,5 +1,5 @@
 <?php
-require_once "connection.php";
+require_once "CONNECTION.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 $sql = "SELECT * from teachers WHERE Email='$email' && Pwd='$password'";

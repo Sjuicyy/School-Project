@@ -110,7 +110,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="loghome.php" class="dropdown-item" type="button">Log Out</a>
+                            <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 
@@ -127,7 +127,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                         <h3 class="mb-4 heading-line">Notices<i class='bx bxs-bell' style='color:#2f89fc'></i></h3>
                         <div class="notification-ui_dd-content mb-4">
                             <?php
-                            require_once 'connection.php';
+                            require_once 'CONNECTION.php';
                             $sql = "SELECT * FROM notices";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
