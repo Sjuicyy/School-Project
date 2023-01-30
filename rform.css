@@ -1,0 +1,81 @@
+
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 0px !important;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+    resize: none;
+
+}
+
+select:focus,
+input:focus {
+    box-shadow: none !important;
+    border: 1px solid #2f89fc !important;
+    outline-width: 0 !important;
+    font-weight: 400
+}
+
+label {
+    margin-bottom: 2px;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #2f89fc;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+.form-control {
+    height: calc(2em + .75rem + 3px);
+}
+
+.card-1 {
+    color: black;
+    box-shadow: 2px 4px 15px 0px rgba(8, 149, 231, 0.5) !important;
+}
+
+#file {
+    outline: 2px dashed #92b0b3 !important;
+
+}
+
+.files:before {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    content: attr(data-before);
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+#file {
+    display: inline-block;
+    width: 100%;
+    padding: 95px 0 0 100%;
+    background: url('https://i.imgur.com/VXWKoBD.png') top center no-repeat #fff;
+    background-size: 55px 55px;
+}
