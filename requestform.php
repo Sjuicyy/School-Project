@@ -34,6 +34,19 @@ if (!($_SESSION['status'] == 'logedin')) {
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>
+
+
+
+
+
+
+             <?php if($data['Emsg']=='null')?>
+                <div class="alert  alert-primary mt-3 w-75" role="alert">
+                    <?php echo $data['Emsg']; ?> 
+                </div>
+                
+
+
                 <div class="col-lg-8 col-md-12 ">
                     <div class="card shadow-lg card-1">
                         <form action="REQUEST-FORM.php" method="POST">
@@ -91,9 +104,9 @@ if (!($_SESSION['status'] == 'logedin')) {
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-md-12 col-lg-10 col-12">
-                                    <div class="form-group"> <label for="About">About</label> <textarea name="about"
+                                    <div class="form-group"> <label for="About">About</label> <input style="min-height: 100px;" name="about"
                                             value="<?php echo $data['About']; ?>" class="form-control rounded-0"
-                                            id="About" rows="5"></textarea>
+                                            id="About" rows="5">
                                     </div>
                                     <div class="row justify-content-end mb-4">
                                         <div class="col-lg-4 col-auto "><button type="sumbit"
@@ -110,19 +123,6 @@ if (!($_SESSION['status'] == 'logedin')) {
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 

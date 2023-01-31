@@ -11,7 +11,7 @@ $batch=$_POST['batch'];
 $profession = $_POST['profession'];
 $facebook=$_POST['facebook'];
 $about=$_POST['about'];
-$sql="UPDATE `students` SET `Name` = '$name', `Address` = '$address', `Contact` = '$contact', `Profession` = '$profession', `Fname` = '$fname', `Batch` = '$batch', `Facebook` = '$facebook',`Status`='$status', `About` = '$about' WHERE `students`.`Email` = '$email_id' ";
+$sql="UPDATE `students` SET `Name` = '$name', `Address` = '$address', `Contact` = '$contact', `Profession` = '$profession', `Fname` = '$fname', `Batch` = '$batch', `Facebook` = '$facebook',`Status`='$status', `About` = '$about', `Emsg`=NULL WHERE `students`.`Email` = '$email_id' ";
 mysqli_query($conn, $sql);
 header('location:WAITHERE.php');
 ?>
