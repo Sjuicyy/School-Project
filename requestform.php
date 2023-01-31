@@ -93,12 +93,13 @@ if (!($_SESSION['status'] == 'logedin')) {
                                 <div class="col-md-12 col-lg-10 col-12">
                                     <div class="form-group"> <label for="About">About</label> <textarea name="about"
                                             value="<?php echo $data['About']; ?>" class="form-control rounded-0"
-                                            id="About" rows="5"></textarea></div>
+                                            id="About" rows="5"></textarea>
+                                    </div>
                                     <div class="row justify-content-end mb-4">
-
                                         <div class="col-lg-4 col-auto "><button type="sumbit"
                                                 class="btn btn-primary btn-block"><small
-                                                    class="font-weight-bold">Request</small></button>
+                                                    class="font-weight-bold">Request</small>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

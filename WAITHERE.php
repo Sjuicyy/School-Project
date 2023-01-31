@@ -23,7 +23,7 @@ if ($status == 0) {
     <div class="alert alert-primary mt-3 w-75" role="alert">
         Your request has been sumbitted. Please wait for response!!!
     </div>
-    <a href="">
+    <a href="myprofile.php">
         <button class="btn btn-primary mt-3 mx-2" style="height: 48px;">View Request</button>
     </a>
 </div>
