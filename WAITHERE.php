@@ -15,9 +15,16 @@ if ($status == 0) {
 }
 ?>
 <?php if ($status == 1): ?>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <div class="alert alert-primary mt-3 w-75 mx-auto" role="alert">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<div class="container d-flex">
+
+
+    <div class="alert alert-primary mt-3 w-75" role="alert">
         Your request has been sumbitted. Please wait for response!!!
     </div>
+    <a href="">
+        <button class="btn btn-primary mt-3 mx-2" style="height: 48px;">View Request</button>
+    </a>
+</div>
 <?php endif; ?>
