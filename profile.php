@@ -1,9 +1,13 @@
 <?php
 session_start();
+require_once "CONNECTION.php";
 $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
     header('Location:Login.php');
 }
+$sql = "SELECT * from students WHERE Email='$email_id' ";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
 ?>
 <?php require_once 'CONNECTION.php'
     ?>
@@ -61,6 +65,8 @@ if (!($_SESSION['status'] == 'logedin')) {
 </head>
 
 <body>
+
+
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
@@ -71,6 +77,9 @@ if (!($_SESSION['status'] == 'logedin')) {
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
+
+
+           
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
                     </li>
@@ -87,11 +96,13 @@ if (!($_SESSION['status'] == 'logedin')) {
                         <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
                     </li>
 
+
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
+                            aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                                class="rounded-circle" height="50px" width="50px" alt=""> </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View Profile</a>
+                            <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
                             <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
@@ -115,8 +126,8 @@ if (!($_SESSION['status'] == 'logedin')) {
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
+                                    class="rounded-circle1" width="100%">
                                 <div class="mt-3">
                                     <h4>
                                         <?php echo $data['Name'] ?>
@@ -185,7 +196,6 @@ if (!($_SESSION['status'] == 'logedin')) {
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">
@@ -252,7 +262,6 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <?php echo $data['About'] ?>
                                 </div>
                             </div>
-                            <hr>
 
                         </div>
                     </div>
@@ -260,25 +269,10 @@ if (!($_SESSION['status'] == 'logedin')) {
             </div>
         </div>
     </div>
-
-
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
-
-
-
-
-
 </body>
 
 </html>

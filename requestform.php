@@ -1,9 +1,13 @@
 <?php
 session_start();
+require_once "CONNECTION.php";
 $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
     header('Location:Login.php');
 }
+$sql = "SELECT * from students WHERE Email='$email_id' ";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,14 +55,6 @@ if (!($_SESSION['status'] == 'logedin')) {
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
 
-
-
-                    <?php
-                    require_once 'CONNECTION.php';
-                    $sql = "SELECT * FROM students WHERE Email= '$email_id' ";
-                    $result = $conn->query($sql);
-                    $data = mysqli_fetch_array($result);
-                    ?>
                     <?php if ($data['Status'] == 2): ?>
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
@@ -80,7 +76,8 @@ if (!($_SESSION['status'] == 'logedin')) {
 
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
+                            aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                                class="rounded-circle" height="50px" width="50px" alt=""> </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="#" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />

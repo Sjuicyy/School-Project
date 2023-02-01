@@ -1,10 +1,14 @@
 <?php
 session_start();
+require_once "CONNECTION.php";
+$email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
-  header('Location:Login.php');
+    header('Location:Login.php');
 }
+$sql = "SELECT * from students WHERE Email='$email_id' ";
+$result = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($result);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +109,8 @@ if (!($_SESSION['status'] == 'logedin')) {
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
+                            aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                                class="rounded-circle" height="50px" width="50px" alt=""> </a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
