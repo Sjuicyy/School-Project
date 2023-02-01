@@ -47,7 +47,7 @@ if ($status == 0) {
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="#"> <img src="img/Banner.png" width="200px" alt=""> </a>
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>

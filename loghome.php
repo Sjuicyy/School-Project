@@ -27,6 +27,9 @@
         .btn1 {
             color: #ffffff;
         }
+        .col1{
+            color: rgb(26,231,17);
+        }
     </style>
     <title>Little Angle School</title>
 </head>
@@ -36,25 +39,23 @@
 
     <!-- heading end -->
     <!-- login body  -->
-    <div class="container mt-5 border border-primary border-3 rounded-3 p-3 "
-        style="height:780px;background-color:white; max-width:650px">
+    <div class="container mt-5  rounded-3 p-3 "
+        style="height:780px;background-color:white; max-width:650px;border:2px solid rgb(26,231,17)">
         <img class="mt-5 border border-2 "
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1m04w68aRdNB7iYunL7Jm67YbbPhTUjtvw&usqp=CAU"
+            src="img/Banner.png"
             width="100%">
         <br><br>
         <div class="row  mt-5">
             <p class="color h1">WELCOME TO</p>
-            <p class="color h1"> HAVARD.</p>
+            <p class="color mt-3 h1 col1 ">S.S.V.S.S</p>
         </div>
-        <div class="row mt-5 h3">
-            <p class="color"> Login as a</p>
-        </div>
-        <div class=" container ">
+      
+        <div class=" container mt-5">
             <a href="login.php">
                 <button class="w-100 bcolor btn1 rounded-3 mt-4 h4 p-2 border-0" style="letter-spacing: 2px;" >Student </button>
             </a>
             <a href="login.php">
-            <button class="w-100 bcolor btn1 rounded-3 mt-4 h4 p-2 border-0" style="letter-spacing: 2px;" >Teacher</button>
+            <button class="w-100 bcolor btn1 rounded-3 mt-5 h4 p-2 border-0" style="letter-spacing: 2px;" >Teacher</button>
             </a>
         </div>
 
