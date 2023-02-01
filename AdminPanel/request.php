@@ -80,24 +80,24 @@
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="profile.html">Profile</a>
+                        <a class="nav-link px-3 px-lg-2" href="profile.php">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="teachers.html">Teachers</a>
+                        <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="student.html">Students</a>
+                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2 active" href="request.html">Requests</a>
+                        <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.html">Notice</a>
+                        <a class="nav-link px-3 px-lg-2" href="addnotice.php">Notice</a>
                     </li>
 
                     <li class="nav-item pt-1">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin|Students</title>
+    <title>Admin|Teachers</title>
     <link rel="icon" href="img/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
@@ -25,31 +25,7 @@
 
         }
 
-        /* .grid tr:nth-child(even) {
-            background: #fff
-        }
-
-        .grid tr:nth-child(odd) {
-            background: #f9fafa
-        }
-
-        .grid td {
-            border: 1px solid #e4e4e4;
-            color: #000;
-            font-size: 13px;
-            height: 10px;
-        }
-
-        .grid th {
-            background: #fff;
-            text-align: center;
-            color: #000;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid #e4e4e4;
-        } */
-
-
+        
         .gv {
             overflow-x: scroll;
         }
@@ -92,7 +68,7 @@
         }
 
         .table-wrapper {
-            min-width: 725px;
+            min-width: 700px;
             background: #fff;
             padding: 20px 25px;
             border-radius: 3px;
@@ -130,27 +106,27 @@
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="profile.html">Profile</a>
+                        <a class="nav-link px-3 px-lg-2" href="profile.php">Profile</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="teachers.html">Teachers</a>
+                        <a class="nav-link px-3 px-lg-2 active" href="teachers.php">Teachers</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2 active" href="student.html">Students</a>
+                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="request.html">Requests</a>
+                        <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.html">Notice</a>
+                        <a class="nav-link px-3 px-lg-2" href="addnotice.php">Notice</a>
                     </li>
 
                     <li class="nav-item pt-1">
@@ -178,8 +154,9 @@
                     <div class="table-title">
 
                         <div class="d-flex justify-content-between">
-                            <h3 class="heading-line">Students</h3>
-                            <a href="addteacher.html" class="btn btn-primary" style="outline: 1px solid white;"><i class='bx bxs-group bx-sm' style='color:#ffffff' ></i> Student Requests</a>
+                            <h3 class="heading-line">Teachers</h3>
+                            <a href="addteacher.php" class="btn btn-primary" style="outline: 1px solid white;"><i
+                                    class='bx bx-plus-circle bx-sm' style='color:#ffffff'></i> Add Teachers</a>
                         </div>
 
                     </div>
@@ -203,7 +180,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -213,7 +190,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -223,7 +200,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -233,7 +210,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -243,7 +220,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -253,7 +230,7 @@
                                 <td>Srijananagar-5, Bhaktapur</td>
                                 <td>9861437111</td>
                                 <td>Computer Science</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                             <tr>
@@ -263,7 +240,7 @@
                                 <td>Lagankhel-1, Lalitpur</td>
                                 <td>980000000000</td>
                                 <td>Math</td>
-                                <td><a href="profile.html" title="View" class="eye" data-toggle="tooltip"><i
+                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
                                             class="bi bi-eye"></i></a></td>
                             </tr>
                         </tbody>
