@@ -9,6 +9,15 @@ $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 ?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +32,17 @@ $data = mysqli_fetch_array($result);
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <style>
@@ -50,32 +70,16 @@ $data = mysqli_fetch_array($result);
         left: 0;
     }
 
-    .notification-list {
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        padding: 15px;
-        margin-bottom: 7px;
-        background: #fff;
-        -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-        box-shadow: 0 3px 10px rgba(16, 75, 204, 0.06);
+    .color {
+        color: rgb(47, 137, 252);
     }
 
-    .notification-list--unread {
-        border-left: 2px solid #2f89fc;
+    .bcolor {
+        background-color: rgb(47, 137, 252);
     }
 
-    .notification-list .notification-list_content .notification-list_img img {
-        height: 48px;
-        width: 48px;
-        border-radius: 50px;
-        margin-right: 20px;
-    }
-
-    .notification-list .notification-list_content .notification-list_detail p {
-        margin-bottom: 5px;
-        line-height: 1.2;
+    .m:hover {
+        background-color: rgb(111, 86, 237);
     }
 </style>
 
@@ -83,7 +87,7 @@ $data = mysqli_fetch_array($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-        <img src="img/Banner.png" width="200px" alt=""> 
+            <img src="img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,9 +105,7 @@ $data = mysqli_fetch_array($result);
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
-                    </li>
+
 
                     <li class="nav-item pt-1">
 
@@ -122,51 +124,123 @@ $data = mysqli_fetch_array($result);
         </div>
     </nav>
 
-    <main>
-        <section class="blog">
-            <div class="container">
-                <section class="mt-4">
-                    <div class="container">
-                        <h3 class="mb-4 heading-line">Notices<i class='bx bxs-bell' style='color:#2f89fc'></i></h3>
-                        <div class="notification-ui_dd-content mb-4">
-                            <?php
-                            require_once 'CONNECTION.php';
-                            $sql = "SELECT * FROM notices";
-                            $result = $conn->query($sql);
-                            if ($result->num_rows > 0) {
-                                while ($data = mysqli_fetch_array($result)) {
-                                    ?>
-
-                                  
-                                    <?php
-
-                                }
-                            }
-                            ?>
 
 
-<h1>Notices From Admin are supposed to appear here</h1>
+
+
+
+    <div class="container mt-2">
+        <div class="row border border-start-0 border-end-0 border-primary border-1">
+            <div class="col-10">
+                <div class="d-flex">
+                    <div class="">
+                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
                         </div>
                     </div>
-                </section>
-
-
+                    <div class="">
+                        <div class="">
+                            <h5 class="mx-2 mt-2">Sports Day</h5>
+                        </div>
+                        <p class="text-secondary mx-2 ">Dear students our school is helding sports day for all class in
+                            every
+                            gaming
+                            fields choosen by school.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
+            <div class="col-2">
+                <div class="d-grid d-md-flex justify-content-end mt-4">
+                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
+                        <span class="material-symbols-outlined mx-2">
+                            visibility
+                        </span>View</button>
+                </div>
+            </div>
+        </div>
+        <div class="row border border-start-0 border-end-0 border-primary border-1">
+            <div class="col-10">
+                <div class="d-flex">
+                    <div class="">
+                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="">
+                            <h5 class="mx-2 mt-2">Annual Day</h5>
+                        </div>
+                        <p class="text-secondary mx-2 ">Dear students our school is celebrating annual day on 2023-2-24
+                            inside the school premises.
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="d-grid d-md-flex justify-content-end mt-4">
+                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
+                        <span class="material-symbols-outlined mx-2">
+                            visibility
+                        </span>View</button>
+                </div>
+            </div>
+        </div>
+        <div class="row border border-start-0 border-end-0 border-primary border-1">
+            <div class="col-10">
+                <div class="d-flex">
+                    <div class="">
+                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="">
+                            <h5 class="mx-2 mt-2">Holiday</h5>
+                        </div>
+                        <p class="text-secondary mx-2 ">Dear students our school shall remain closed tommorow
+                            on the ocasion of....... . So, this notice is to inform every students regarding the holiday
+                            for tommorow. School will resume the following day after tommorow .</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="d-grid d-md-flex justify-content-end mt-4">
+                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
+                        <span class="material-symbols-outlined mx-2">
+                            visibility
+                        </span>View</button>
+                </div>
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
+    </div>
 
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript'
-        src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+
+
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
+
+        <script type='text/javascript'
+            src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+        <script type='text/javascript'
+            src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+            </script>
+
 </body>
 
 </html>

@@ -43,7 +43,7 @@ $data = mysqli_fetch_array($result);
     .heading-line:after {
         content: "";
         height: 4px;
-        width: 93px;
+        width: 160px;
         background-color: #2f89fc;
         position: absolute;
         bottom: 0;
@@ -83,7 +83,7 @@ $data = mysqli_fetch_array($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-        <img src="img/Banner.png" width="200px" alt=""> 
+            <img src="img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -101,9 +101,7 @@ $data = mysqli_fetch_array($result);
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
-                    </li>
+
 
                     <li class="nav-item pt-1">
 
@@ -127,7 +125,17 @@ $data = mysqli_fetch_array($result);
             <div class="container">
                 <section class="mt-4">
                     <div class="container">
-                        <h3 class="mb-4 heading-line">Notices<i class='bx bxs-bell' style='color:#2f89fc'></i></h3>
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h3 class="mb-4 heading-line">All Requests</h3>
+                            </div>
+                            <div class="">
+                                <a href="addrequest.php">
+                                    <div class="btn btn-primary"> + Add Request</div>
+                                </a>
+                            </div>
+                        </div>
+
                         <div class="notification-ui_dd-content mb-4">
                             <?php
                             require_once 'CONNECTION.php';
@@ -143,7 +151,7 @@ $data = mysqli_fetch_array($result);
                                                 <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
                                             </div>
                                             <div class="notification-list_detail">
-                                                <p><b>Shyam Joshi</b> added a notice.</p>
+                                                <p>By: <b>Shyam Joshi</b></p>
                                                 <p class="text-muted font-weight-bold">
                                                     <?php echo $data['Subject'] ?>
                                                 </p>
@@ -157,7 +165,7 @@ $data = mysqli_fetch_array($result);
                                         </div>
                                     </div>
 
-                                    <?php
+                                <?php
 
                                 }
                             }

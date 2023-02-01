@@ -93,9 +93,7 @@ $data = mysqli_fetch_array($result);
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
-                    </li>
+                  
 
                 <?php endif; ?>
 
