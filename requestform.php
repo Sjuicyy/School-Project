@@ -50,21 +50,33 @@ if (!($_SESSION['status'] == 'logedin')) {
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 active" href="profile.php">Profile</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="#">Batchmates</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
-                    </li>
+                    <?php
+                    require_once 'CONNECTION.php';
+                    $sql = "SELECT * FROM students WHERE Email= '$email_id' ";
+                    $result = $conn->query($sql);
+                    $data = mysqli_fetch_array($result);
+                    ?>
+                    <?php if ($data['Status'] == 2): ?>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link px-3 mx-3 px-lg-2 active" href="profile.php">Profile</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="#">Batchmates</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
+                        </li>
+
+                    <?php endif; ?>
 
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -90,12 +102,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                 </div>
             </div>
             <div class="row justify-content-center round">
-                <?php
-                require_once 'CONNECTION.php';
-                $sql = "SELECT * FROM students where email='$email_id '";
-                $result = $conn->query($sql);
-                $data = mysqli_fetch_array($result);
-                ?>
+               
                 <?php if ($data['Emsg'] == !NULL): ?>
                     <div class="alert  alert-danger mt-3 w-75" role="alert">
                         <?php echo $data['Emsg']; ?>
@@ -164,16 +171,16 @@ if (!($_SESSION['status'] == 'logedin')) {
                                                     value="<?php echo $data['About']; ?>" class="form-control rounded-0"
                                                     id="About" rows="5">
                                             </div>
-                                            <div class="row justify-content-end mb-4">                                                
-                                                <div class="col-lg-4 col-auto "><button type="sumbit" name="submit" value="Request"
-                                                            class="btn btn-primary btn-block"><small
-                                                                class="font-weight-bold">Request</small></button>
-                                                    </div>
+                                            <div class="row justify-content-end mb-4">
+                                                <div class="col-lg-4 col-auto "><button type="sumbit" name="submit"
+                                                        value="Request" class="btn btn-primary btn-block"><small
+                                                            class="font-weight-bold">Request</small></button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>
