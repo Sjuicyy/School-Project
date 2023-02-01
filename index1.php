@@ -95,7 +95,7 @@ $data = mysqli_fetch_array($result);
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="profile.php">Profile</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="#">Batchmates</a>
@@ -137,32 +137,15 @@ $data = mysqli_fetch_array($result);
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
 
-                                    <div class="notification-list notification-list--unread">
-                                        <div class="notification-list_content d-flex">
-                                            <div class="notification-list_img">
-                                                <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                            </div>
-                                            <div class="notification-list_detail">
-                                                <p><b>Shyam Joshi</b> added a notice.</p>
-                                                <p class="text-muted font-weight-bold">
-                                                    <?php echo $data['Subject'] ?>
-                                                </p>
-                                                <p class="text-muted">
-                                                    <?php echo $data['Message'] ?>
-                                                </p>
-                                                <p> <small> <b>Posted :</b> </small> <small class="text-muted">
-                                                        <?php echo $data['Date'] ?>
-                                                    </small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                  
                                     <?php
 
                                 }
                             }
                             ?>
 
+
+<h1>Notices From Admin are supposed to appear here</h1>
                         </div>
                     </div>
                 </section>

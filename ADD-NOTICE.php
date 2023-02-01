@@ -12,5 +12,5 @@ $message = $_POST['message'];
 $date = date("Y-m-d");
 $sql = "INSERT INTO `notices` (`Id`, `Pid`, `Subject`, `Date`, `Message`) VALUES (NULL, '$pid', '$subject', '$date', '$message')";
 mysqli_query($conn,$sql);
-// header('Location:index1.php');
+header('Location:requests.php');
 ?>

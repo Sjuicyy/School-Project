@@ -44,7 +44,7 @@ $data = mysqli_fetch_array($result);
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="profile.php">Profile</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                     </li>
 
                     <li class="nav-item">
