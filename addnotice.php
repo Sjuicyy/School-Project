@@ -48,7 +48,7 @@ $data = mysqli_fetch_array($result);
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="#">Batchmates</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
 
                     <li class="nav-item">
@@ -61,7 +61,7 @@ $data = mysqli_fetch_array($result);
                             aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
                                 class="rounded-circle" height="50px" width="50px" alt=""> </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="" class="dropdown-item" type="button">View Profile</a>
+                            <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
                             <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>

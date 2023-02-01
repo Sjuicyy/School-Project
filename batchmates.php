@@ -35,48 +35,7 @@ $data = mysqli_fetch_array($result);
         position: relative;
     }
 
-    .heading-line {
-        position: relative;
-        padding-bottom: 5px;
-    }
 
-    .heading-line:after {
-        content: "";
-        height: 4px;
-        width: 93px;
-        background-color: #2f89fc;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-
-    .notification-list {
-        display: flex;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        padding: 15px;
-        margin-bottom: 7px;
-        background: #fff;
-        -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-        box-shadow: 0 3px 10px rgba(16, 75, 204, 0.06);
-    }
-
-    .notification-list--unread {
-        border-left: 2px solid #2f89fc;
-    }
-
-    .notification-list .notification-list_content .notification-list_img img {
-        height: 48px;
-        width: 48px;
-        border-radius: 50px;
-        margin-right: 20px;
-    }
-
-    .notification-list .notification-list_content .notification-list_detail p {
-        margin-bottom: 5px;
-        line-height: 1.2;
-    }
 </style>
 
 <body>
@@ -137,32 +96,15 @@ $data = mysqli_fetch_array($result);
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
 
-                                    <div class="notification-list notification-list--unread">
-                                        <div class="notification-list_content d-flex">
-                                            <div class="notification-list_img">
-                                                <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                            </div>
-                                            <div class="notification-list_detail">
-                                                <p><b>Shyam Joshi</b> added a notice.</p>
-                                                <p class="text-muted font-weight-bold">
-                                                    <?php echo $data['Subject'] ?>
-                                                </p>
-                                                <p class="text-muted">
-                                                    <?php echo $data['Message'] ?>
-                                                </p>
-                                                <p> <small> <b>Posted :</b> </small> <small class="text-muted">
-                                                        <?php echo $data['Date'] ?>
-                                                    </small></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                  
                                     <?php
 
                                 }
                             }
                             ?>
 
+
+<h1>Bathmates of Students are supposed to appear here</h1>
                         </div>
                     </div>
                 </section>
