@@ -70,7 +70,7 @@ $data = mysqli_fetch_array($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LOGO</a>
+        <img src="img/Banner.png" width="200px" alt=""> 
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
