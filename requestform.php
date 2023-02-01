@@ -97,7 +97,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                 $data = mysqli_fetch_array($result);
                 ?>
                 <?php if ($data['Emsg'] == !NULL): ?>
-                    <div class="alert  alert-primary mt-3 w-75" role="alert">
+                    <div class="alert  alert-danger mt-3 w-75" role="alert">
                         <?php echo $data['Emsg']; ?>
                     </div>
                 <?php endif; ?>
@@ -164,10 +164,11 @@ if (!($_SESSION['status'] == 'logedin')) {
                                                     value="<?php echo $data['About']; ?>" class="form-control rounded-0"
                                                     id="About" rows="5">
                                             </div>
-                                            <div class="row justify-content-end mb-4">
-                                                <div class="col-lg-4 col-auto ">
-
-                                                    <input type="submit" value="hello" name="submit">
+                                            <div class="row justify-content-end mb-4">                                                
+                                                <div class="col-lg-4 col-auto "><button type="sumbit" name="submit" value="Request"
+                                                            class="btn btn-primary btn-block"><small
+                                                                class="font-weight-bold">Request</small></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

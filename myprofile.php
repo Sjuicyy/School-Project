@@ -61,6 +61,8 @@ if (!($_SESSION['status'] == 'logedin')) {
 </head>
 
 <body>
+
+
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
@@ -71,6 +73,14 @@ if (!($_SESSION['status'] == 'logedin')) {
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
+
+
+                <?php
+            $sql = "SELECT * FROM students WHERE Email= '$email_id' ";
+            $result = $conn->query($sql);
+            $data = mysqli_fetch_array($result);
+            ?>
+                <?php if($data['Status']==2): ?>
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
                     </li>
@@ -86,6 +96,8 @@ if (!($_SESSION['status'] == 'logedin')) {
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="addnotice.php">Contact</a>
                     </li>
+
+                <?php endif; ?>
 
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -115,8 +127,8 @@ if (!($_SESSION['status'] == 'logedin')) {
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
+                                    class="rounded-circle1" width="100%">
                                 <div class="mt-3">
                                     <h4>
                                         <?php echo $data['Name'] ?>
