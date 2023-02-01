@@ -91,8 +91,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View</a>
-                            <a href="myprofile.php" class="dropdown-item" type="button">Edit Profile</a>
+                            <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
                             <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>

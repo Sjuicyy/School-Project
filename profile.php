@@ -1,12 +1,12 @@
 <?php
 session_start();
-$email_id= $_SESSION['User'];
+$email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
-  header('Location:Login.php');
+    header('Location:Login.php');
 }
 ?>
-<?php require_once 'CONNECTION.php' 
-?>
+<?php require_once 'CONNECTION.php'
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,8 +91,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View</a>
-                            <a href="#" class="dropdown-item" type="button">Edit Profile</a>
+                            <a href="#" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
                             <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
@@ -119,9 +118,15 @@ if (!($_SESSION['status'] == 'logedin')) {
                                 <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
                                     class="rounded-circle" width="150">
                                 <div class="mt-3">
-                                    <h4><?php echo $data['Name']?></h4>
-                                    <p class="text-secondary mb-1"><?php echo $data['Profession']?></p>
-                                    <p class="text-muted font-size-sm"><?php echo $data['Address']?></p>
+                                    <h4>
+                                        <?php echo $data['Name'] ?>
+                                    </h4>
+                                    <p class="text-secondary mb-1">
+                                        <?php echo $data['Profession'] ?>
+                                    </p>
+                                    <p class="text-muted font-size-sm">
+                                        <?php echo $data['Address'] ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -139,9 +144,12 @@ if (!($_SESSION['status'] == 'logedin')) {
                                             d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
                                         </path>
                                     </svg>Website</h6>
-                                <a href="" class="text-secondary overflow-hidden " style="max-height: 20px;max-width:130px;" > www.sammy.com/;glufktdfhgclv;h'iyo;iyfludtykfxhcghvjghi'yotu;iyufltdgchvjhi'oyt;iyulftghvjhioytuyoftk </a>
+                                <a href="" class="text-secondary overflow-hidden "
+                                    style="max-height: 20px;max-width:130px;">
+                                    www.sammy.com/;glufktdfhgclv;h'iyo;iyfludtykfxhcghvjghi'yotu;iyufltdgchvjhi'oyt;iyulftghvjhioytuyoftk
+                                </a>
                             </li>
-                        
+
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -151,7 +159,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                             d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
                                         </path>
                                     </svg>Twitter</h6>
-                                <span class="text-secondary">          aaaaa      </span>
+                                <span class="text-secondary"> aaaaa </span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -162,7 +170,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                     </svg>Instagram</h6>
-                                <span class="text-secondary">          aaaaa      </span>
+                                <span class="text-secondary"> aaaaa </span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -172,7 +180,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
                                         </path>
                                     </svg>Facebook</h6>
-                                <span class="text-secondary">          aaaaa      </span>
+                                <span class="text-secondary"> aaaaa </span>
                             </li>
                         </ul>
                     </div>
@@ -186,7 +194,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Name']?>
+                                    <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -195,7 +203,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Email']?>
+                                    <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -204,7 +212,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Mobile</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Contact']?>
+                                    <?php echo $data['Contact'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -213,7 +221,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Address']?>
+                                    <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -222,7 +230,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Father's Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Fname']?>
+                                    <?php echo $data['Fname'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -231,7 +239,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">Batch</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Batch']?>
+                                    <?php echo $data['Batch'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -241,7 +249,7 @@ if (!($_SESSION['status'] == 'logedin')) {
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                <?php echo $data['About']?>
+                                    <?php echo $data['About'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -270,7 +278,7 @@ if (!($_SESSION['status'] == 'logedin')) {
 
 
 
-    
+
 </body>
 
 </html>
