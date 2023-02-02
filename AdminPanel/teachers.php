@@ -133,7 +133,7 @@
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="#" class="dropdown-item" type="button">Log Out</a>
+                            <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 

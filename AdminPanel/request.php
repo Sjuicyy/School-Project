@@ -95,9 +95,6 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
                     </li>
-
-
-
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -106,7 +103,7 @@
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="#" class="dropdown-item" type="button">Log Out</a>
+                            <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 

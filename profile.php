@@ -9,15 +9,16 @@ $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 ?>
-<?php require_once 'CONNECTION.php'
-    ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student|Profile</title>
+    <title>Admin|Profile</title>
     <link rel="icon" href="img/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
@@ -30,8 +31,12 @@ $data = mysqli_fetch_array($result);
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+
         body {
+            font-family: "Roboto", sans-serif;
             color: #1a202c;
             text-align: left;
         }
@@ -61,41 +66,75 @@ $data = mysqli_fetch_array($result);
             min-height: 1px;
             padding: 1rem;
         }
+
+        .btn.btn-twitter {
+            background: #69b6f0;
+            border-color: #69b6f0;
+            color: #fff;
+        }
+
+        .btn.btn-twitter:hover {
+            background: #519cd6;
+        }
+
+        .btn.btn-facebook {
+            background: #4f69a2;
+            border-color: #4f69a2;
+            color: #fff;
+        }
+
+        .btn.btn-facebook:hover {
+            background: #1a3f96;
+        }
+
+        .btn.btn-instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            border-color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: #fff;
+        }
+
+        .btn.btn-instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #cac04d 0%, #ccc143 5%, #c4382b 45%, #94176c 60%, #1a3ca1 90%);
+        }
+
+        .btn.btn-linkedin {
+            background: #2884ba;
+            border-color: #2884ba;
+            color: #fff;
+        }
+
+        .btn.btn-linkedin:hover {
+            background: #10557e;
+        }
     </style>
 </head>
 
 <body>
-
-
-    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-        <img src="img/Banner.png" width="200px" alt=""> 
+            <img src="img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
-
-
-           
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 active" href="requests.php">Requests</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
 
-                  
 
 
                     <li class="nav-item pt-1">
+
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
                                 class="rounded-circle" height="50px" width="50px" alt=""> </a>
@@ -112,30 +151,28 @@ $data = mysqli_fetch_array($result);
     </nav>
 
 
-    <div class="container mt-5">
+
+    <div class="container">
         <div class="main-body">
-            <?php
-            $sql = "SELECT * FROM students WHERE Email= '$email_id' ";
-            $result = $conn->query($sql);
-            $data = mysqli_fetch_array($result);
-            ?>
+
             <div class="row gutters-sm">
+                <?php
+                $id=$_GET['id'];
+                require_once "CONNECTION.php";
+                $sql = "SELECT * FROM students WHERE Contact= '$id' ";
+                $result = $conn->query($sql);
+                $data = mysqli_fetch_array($result);
+                ?>
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
                                 <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
-                                    class="rounded-circle1" width="100%">
+                                    class="" width="150">
                                 <div class="mt-3">
-                                    <h4>
-                                        <?php echo $data['Name'] ?>
-                                    </h4>
-                                    <p class="text-secondary mb-1">
-                                        <?php echo $data['Profession'] ?>
-                                    </p>
-                                    <p class="text-muted font-size-sm">
-                                        <?php echo $data['Address'] ?>
-                                    </p>
+                                    <h4><?php echo $data['Name'] ?></h4>
+                                    <p class="text-secondary mb-1"><?php echo $data['Profession'] ?></p>
+                                    <p class="text-muted font-size-sm"><?php echo $data['Address'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -143,57 +180,28 @@ $data = mysqli_fetch_array($result);
                     <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-globe mr-2 icon-inline">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                                        <path
-                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                        </path>
-                                    </svg>Website</h6>
-                                <a href="" class="text-secondary overflow-hidden "
-                                    style="max-height: 20px;max-width:130px;">
-                                    www.sammy.com/;glufktdfhgclv;h'iyo;iyfludtykfxhcghvjghi'yotu;iyufltdgchvjhi'oyt;iyulftghvjhioytuyoftk
-                                </a>
+                                <a href="<?php echo $data['Facebook'] ?>" type="button" class="btn btn-facebook text-left w-100 social"><i
+                                        class="bi bi-facebook"></i> Facebook</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-twitter mr-2 icon-inline text-info">
-                                        <path
-                                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                                        </path>
-                                    </svg>Twitter</h6>
-                                <span class="text-secondary"> aaaaa </span>
+                                <a href="" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
+                                        class="bi bi-twitter"></i> Twitter</a>
                             </li>
+
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-instagram mr-2 icon-inline text-danger">
-                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                    </svg>Instagram</h6>
-                                <span class="text-secondary"> aaaaa </span>
+                                <a href="" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
+                                        class="bi bi-instagram"></i> Instagram</a>
                             </li>
+
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round"
-                                        class="feather feather-facebook mr-2 icon-inline text-primary">
-                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
-                                        </path>
-                                    </svg>Facebook</h6>
-                                <span class="text-secondary"> aaaaa </span>
+                                <a href="" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
+                                        class="bi bi-linkedin"></i> Linkedin</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">
@@ -202,7 +210,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Name'] ?>
+                                <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -211,7 +219,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Email'] ?>
+                                <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -229,7 +237,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Address'] ?>
+                                <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -238,7 +246,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Father's Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Fname'] ?>
+                                <?php echo $data['Fname'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -247,19 +255,28 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Batch</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Batch'] ?>
+                                <?php echo $data['Batch'] ?>
                                 </div>
                             </div>
                             <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Gender</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    Male
+                                </div>
+                            </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                    <?php echo $data['About'] ?>
+                                <?php echo $data['About'] ?>
                                 </div>
                             </div>
+                            <hr>
 
                         </div>
                     </div>
@@ -267,10 +284,19 @@ $data = mysqli_fetch_array($result);
             </div>
         </div>
     </div>
+
+
+
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
