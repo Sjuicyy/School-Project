@@ -278,16 +278,16 @@
 
                         </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                        <form action="" method="post">
+                    <form action="" method="post">
+                    <div class="d-flex justify-content-around">
                             <div class="btn btn-primary">Accept</div>
                             <div class="d-flex">
                                 <input class="form-control mx-2" type="text">
                                 <div class="btn btn-danger">
                                     Reject</div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
