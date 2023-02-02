@@ -179,7 +179,7 @@
 
                         <div class="d-flex justify-content-between">
                             <h3 class="heading-line">Students</h3>
-                            <a href="addteacher.php" class="btn btn-primary" style="outline: 1px solid white;"><i class='bx bxs-group bx-sm' style='color:#ffffff' ></i> Student Requests</a>
+                            <a href="" class="btn btn-primary" style="outline: 1px solid white;"><i class='bx bxs-group bx-sm' style='color:#ffffff' ></i> Student Requests</a>
                         </div>
 
                     </div>

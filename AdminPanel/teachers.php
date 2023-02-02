@@ -25,7 +25,7 @@
 
         }
 
-        
+
         .gv {
             overflow-x: scroll;
         }
@@ -173,87 +173,42 @@
                         </thead>
                         <tbody>
 
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Bijen Shrestha</a></td>
-                                <td>bizen106@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Shyam Joshi</a></td>
-                                <td>bizen106@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Sajan Maharjan</a></td>
-                                <td>bizen106@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Aarju Silwal</a></td>
-                                <td>bizen106@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Pritam Bajgain</a></td>
-                                <td>bizen106@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Ram Thapa</a></td>
-                                <td>ram@gmail.com</td>
-                                <td>Srijananagar-5, Bhaktapur</td>
-                                <td>9861437111</td>
-                                <td>Computer Science</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;"><a href="#"><img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-                                            class="avatar me-2" alt="Avatar"> Sita Rai</a></td>
-                                <td>sita@gmail.com</td>
-                                <td>Lagankhel-1, Lalitpur</td>
-                                <td>980000000000</td>
-                                <td>Math</td>
-                                <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
-                                            class="bi bi-eye"></i></a></td>
-                            </tr>
+
+
+                            <?php
+                            require_once 'CONNECTION.php';
+                            $sql = "SELECT * FROM teachers";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($data = mysqli_fetch_array($result)) {
+                                    ?>
+                                    <tr>
+                                        <td style="text-align: left;"><a href="#"><img
+                                                    src="Teachers/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                                    alt="Avatar"> <?php echo $data['Name'] ?></a></td>
+                                        <td>
+                                            <?php echo $data['Email'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['Address'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['Contact'] ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $data['Subject'] ?>
+                                        </td>
+                                        <td><a href="profile.php" title="View" class="eye" data-toggle="tooltip"><i
+                                                    class="bi bi-eye"></i></a></td>
+                                    </tr>
+                                    <?php
+
+                                }
+                            }
+                            ?>
+
                         </tbody>
-                        <tfoot style="background-color: #2f89fc; color: white;" class="sticky-bottom">
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Mobile Number</th>
-                                <th>Subject</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
+
                     </table>
                 </div>
             </div>
