@@ -47,7 +47,7 @@ $data = mysqli_fetch_array($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-        <img src="img/Banner.png" width="200px" alt=""> 
+            <img src="img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,19 +68,35 @@ $data = mysqli_fetch_array($result);
                             <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                         </li>
 
-                     
+
                     <?php endif; ?>
 
-                    <li class="nav-item pt-1">
-                        <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
-                                class="rounded-circle" height="50px" width="50px" alt=""> </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View Profile</a>
-                            <hr class="dropdown-divider" />
-                            <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
-                        </div>
-                    </li>
+
+
+
+                    <?php if ($data['Photo'] == Null): ?>
+                      
+                        <a href="LOGOUT.php">
+                            <p class="text-light text-decoration-none">Log Out</p>
+                        </a>
+
+                    <?php else: ?>
+
+
+                        <li class="nav-item pt-1">
+                            <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                                    class="rounded-circle" height="50px" width="50px" alt=""> </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a href="#" class="dropdown-item" type="button">View Profile</a>
+                                <hr class="dropdown-divider" />
+                                <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
+                            </div>
+                        </li>
+
+                    <?php endif; ?>
+
+
 
                 </ul>
             </div>
@@ -96,7 +112,7 @@ $data = mysqli_fetch_array($result);
                 </div>
             </div>
             <div class="row justify-content-center round">
-               
+
                 <?php if ($data['Emsg'] == !NULL): ?>
                     <div class="alert  alert-danger mt-3 w-75" role="alert">
                         <?php echo $data['Emsg']; ?>

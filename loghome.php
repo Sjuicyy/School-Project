@@ -46,8 +46,7 @@
             width="100%">
         <br><br>
         <div class="row  mt-5">
-            <p class="color h1">WELCOME TO</p>
-            <p class="color mt-3 h1 col1 ">S.S.V.S.S</p>
+            <p class="color h1">LOG IN AS</p>
         </div>
       
         <div class=" container mt-5">

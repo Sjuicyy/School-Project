@@ -12,7 +12,7 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
@@ -41,7 +41,7 @@
                         <a class="nav-link px-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    
+
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
@@ -56,7 +56,7 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
+
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
@@ -66,58 +66,67 @@
         </div>
     </nav>
 
-    <a href="addnotice.php">
-        <div class="btn btn-primary m-3 float-end"> + Add Notice</div>
-
-    </a>
 
 
+    <div>
+        <div class="float-end1" style="margin-lef2t: 80%;">
+            <a href="addnotice.php">
+                <div class="btn btn-primary m-3 float-en"> + Add Notice</div>
+            </a>
+        </div>
 
-    <?php
-    require_once 'CONNECTION.php';
-    $sql = "SELECT * FROM ANotice";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while ($data = mysqli_fetch_array($result)) {
-            ?>
-            <div class="container mt-2">
-                <div class="row border border-start-0 border-end-0 border-primary border-1">
-                    <div class="col-10">
-                        <div class="d-flex">
-                            <div class="">
-                                <div class="mt-2 mb-2"><img src="Notices/<?php echo $data['Photo'] ?>" width="100px" class="" alt="...">
-                                </div>
-                            </div>
-                            <div class="">
+
+        <div></div>
+        <?php
+        require_once 'CONNECTION.php';
+        $sql = "SELECT * FROM ANotice";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($data = mysqli_fetch_array($result)) {
+                ?>
+                <div class="container">
+                    <div class="row border border-start-0 border-end-0 border-primary border-1">
+                        <div class="col-10">
+                            <div class="d-flex">
                                 <div class="">
-                                    <h5 class="mx-2 mt-2"><?php echo $data['Subject'] ?></h5>
+                                    <div class="mt-2 mb-2"><img src="Notices/<?php echo $data['Photo'] ?>" width="100px"
+                                            class="" alt="...">
+                                    </div>
                                 </div>
-                                <p class="text-secondary mx-2 "><?php echo $data['Message'] ?>
-                                </p>
+                                <div class="">
+                                    <div class="">
+                                        <h5 class="mx-2 mt-2">
+                                            <?php echo $data['Subject'] ?>
+                                        </h5>
+                                    </div>
+                                    <p class="text-secondary mx-2 ">
+                                        <?php echo $data['Message'] ?>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="d-grid d-md-flex justify-content-end mt-4">
-                            <button type="button" class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3 m">
-                                <span class="material-symbols-outlined mx-2">
-                                    visibility
-                                </span>View</button>
+                        <div class="col-2">
+                            <div class="d-grid d-md-flex justify-content-end mt-4">
+                                <button type="button"
+                                    class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3 m">
+                                    <span class="material-symbols-outlined mx-2">
+                                        visibility
+                                    </span>View</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php
+                <?php
 
+            }
         }
-    }
-    ?>
+        ?>
 
 
+    </div>
 
 
-
-
+    </div>
 
 
 

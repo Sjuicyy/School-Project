@@ -36,31 +36,37 @@
 <body style="background-color:#99e6e335 ;">
     <!-- heading start -->
     <div class=" container-fluid text-center">
-        <div class="container mt-5 w-50 bg-white border border-3 border-primary rounded-3"
-            style="height:880px;max-width:650px">
+        <div class="container mt-5 w-50 bg-white rounded-3"
+            style="height:730px;max-width:650px;border:2px solid rgb(26,231,17)">
             <form method="POST" action="SIGN-UP.php" class="card border-0 w-100">
-                <img class="mt-5 border border-2 "
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz1m04w68aRdNB7iYunL7Jm67YbbPhTUjtvw&usqp=CAU"
-                    width="100%">
-                <div class="card-body">
-                    <h1 class="card-title color text-center" style="letter-spacing: 10px;">HAVARD</h1>
-                    <h4 class="card-text color text-center" style="letter-spacing: 3px;">Medical School</h4>
+                <img class="mt-5 border border-2 " src="img/Banner.png" width="100%">
+
+
+
+
+                <div class="card-body mt-5">
+
                 </div>
+                <input class="form-control-lg  w-75 mx-auto p-2 mt-3" type="email" name="email"
+                    placeholder="Email Address" style="border:2px solid rgb(26,231,17)">
+                <input class="form-control-lg  w-75 mx-auto p-2 mt-5" type="password" name="password"
+                    placeholder="Password" style="border:2px solid rgb(26,231,17)">
+                
+
+
+
+<!-- 
+
+
                 <input class="form-control-lg border border-3 border-primary w-75 mx-auto p-2 mt-5" type="email"
                     name="email" placeholder="Email Address">
                 <input class="form-control-lg border border-3 border-primary w-75 mx-auto p-2 mt-4" type="text"
-                    name="password" placeholder="Enter Password">
+                    name="password" placeholder="Enter Password"> -->
                 <input type="submit" value="Sign Up"
                     class="btn1 bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-5"
                     style="letter-spacing: 2px;">
-                <p class=" text-center mt-3 h5 border-2 color">OR</p>
-                <div class="text-center mt-3 ">
-                    <a href="#"
-                        class="fa fs-1 mx-2 w-25 p-2 px-3 text-decoration-none text-light bcolor border rounded-3 btn1 fa-facebook"></a>
-                    <a href="#"
-                        class="fa fs-1 mx-2 w-25 p-2 px-3 text-decoration-none text-light bg-danger border rounded-3 btn1 fa-google"></a>
-                </div>
-                <div class="row mt-3">
+                
+                <div class="row mt-5">
                     <div class="col  text-center">
                         Already have account? <a class="color text-decoration-none mx-auto" href="login.php"> LOG IN</a>
                     </div>

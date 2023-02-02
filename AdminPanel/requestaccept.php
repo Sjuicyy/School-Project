@@ -110,7 +110,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
@@ -131,7 +131,7 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
+
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
@@ -276,15 +276,18 @@
 
                         </div>
                     </div>
-                    <form action="" method="post">
                     <div class="d-flex justify-content-around">
-                            <div class="btn btn-primary">Accept</div>
+
+                        <form action="ACCEPT.php" method="post">
+                            <button type="submit" class="btn btn-primary">Accept</button>
+                        </form>
+                        <form action="REJECT.php" method="post">
                             <div class="d-flex">
-                                <input class="form-control mx-2" type="text">
-                                <div class="btn btn-danger">
-                                    Reject</div>
+                                <input class="form-control mx-2" type="text" name='msg' required>
+                                <button type="sumbmit" class="btn btn-danger">
+                                    Reject</button>
                             </div>
-                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
