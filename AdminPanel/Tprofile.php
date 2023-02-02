@@ -149,8 +149,9 @@
 
             <div class="row gutters-sm">
                 <?php
+                $id=$_GET['id'];
                 require_once "CONNECTION.php";
-                $sql = "SELECT * FROM students WHERE Email= 'sjuicyy@gmail.com' ";
+                $sql = "SELECT * FROM teachers WHERE Contact= '$id' ";
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>
@@ -158,18 +159,12 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="../img/Students/<?php echo $data['Photo'] ?>" alt="Admin" class=""
-                                    width="150">
+                                <img src="../img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
+                                    class="" width="150">
                                 <div class="mt-3">
-                                    <h4>
-                                        <?php echo $data['Name'] ?>
-                                    </h4>
-                                    <p class="text-secondary mb-1">
-                                        <?php echo $data['Profession'] ?>
-                                    </p>
-                                    <p class="text-muted font-size-sm">
-                                        <?php echo $data['Address'] ?>
-                                    </p>
+                                    <h4><?php echo $data['Name'] ?></h4>
+                                    <p class="text-secondary mb-1"><?php echo $data['Profession'] ?></p>
+                                    <p class="text-muted font-size-sm"><?php echo $data['Address'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -177,23 +172,22 @@
                     <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Facebook'] ?>" type="button"
-                                    class="btn btn-facebook text-left w-100 social"><i class="bi bi-facebook"></i>
-                                    Facebook</a>
+                                <a href="<?php echo $data['Facebook'] ?>" type="button" class="btn btn-facebook text-left w-100 social"><i
+                                        class="bi bi-facebook"></i> Facebook</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
+                                <a href="<?php echo $data['Twitter'] ?>" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
                                         class="bi bi-twitter"></i> Twitter</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
+                                <a href="<?php echo $data['Instagram'] ?>" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
                                         class="bi bi-instagram"></i> Instagram</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
+                                <a href="<?php echo $data['Linkedin'] ?>" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
                                         class="bi bi-linkedin"></i> Linkedin</a>
                             </li>
                         </ul>
@@ -208,7 +202,7 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Name'] ?>
+                                <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -217,7 +211,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Email'] ?>
+                                <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -235,58 +229,58 @@
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Address'] ?>
+                                <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Father's Name</h6>
+                                    <h6 class="mb-0">Subject</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Fname'] ?>
+                                <?php echo $data['Subject'] ?>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Batch</h6>
+                                    <h6 class="mb-0">Education</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $data['Batch'] ?>
+                                <?php echo $data['Education'] ?>
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Gender</h6>
+                                    <h6 class="mb-0">Start Date</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Male
+                                <?php echo $data['Fdate'] ?>
                                 </div>
                             </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">End Date</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $data['Tdate'] ?>
+                                </div>
+                            </div>
+                         
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                    <?php echo $data['About'] ?>
+                                <?php echo $data['About'] ?>
                                 </div>
                             </div>
                             <hr>
 
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <form action="" method="post">
-                            <div class="btn btn-primary">Accept</div>
-                            <div class="d-flex">
-                                <input class="form-control mx-2" type="text">
-                                <div class="btn btn-danger">
-                                    Reject</div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>

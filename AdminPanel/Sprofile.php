@@ -110,9 +110,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2 active" href="profile.php">Profile</a>
-                    </li>
+                    
 
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
@@ -151,8 +149,9 @@
 
             <div class="row gutters-sm">
                 <?php
+                $id=$_GET['id'];
                 require_once "CONNECTION.php";
-                $sql = "SELECT * FROM students WHERE Email= 'sjuicyy@gmail.com' ";
+                $sql = "SELECT * FROM students WHERE Contact= '$id' ";
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>

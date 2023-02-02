@@ -85,9 +85,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="profile.php">Profile</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>

@@ -18,9 +18,8 @@ echo $target2;
 
 
     if (move_uploaded_file($_FILES['photo']['tmp_name'], $target2)) {
-        echo "<script>alert('Successfully Submitted !');</script>";
+    header('location:index1.php');
     } else {
-        // header('location:WAITHERE.php');
         echo "<script>alert('Something went wrong! Please Retry');</script>";
 
     }

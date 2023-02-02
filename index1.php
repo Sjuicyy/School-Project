@@ -130,90 +130,47 @@ $data = mysqli_fetch_array($result);
 
 
     <div class="container mt-2">
-        <div class="row border border-start-0 border-end-0 border-primary border-1">
-            <div class="col-10">
-                <div class="d-flex">
-                    <div class="">
-                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="">
-                            <h5 class="mx-2 mt-2">Sports Day</h5>
-                        </div>
-                        <p class="text-secondary mx-2 ">Dear students our school is helding sports day for all class in
-                            every
-                            gaming
-                            fields choosen by school.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="d-grid d-md-flex justify-content-end mt-4">
-                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
-                        <span class="material-symbols-outlined mx-2">
-                            visibility
-                        </span>View</button>
-                </div>
-            </div>
-        </div>
-        <div class="row border border-start-0 border-end-0 border-primary border-1">
-            <div class="col-10">
-                <div class="d-flex">
-                    <div class="">
-                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="">
-                            <h5 class="mx-2 mt-2">Annual Day</h5>
-                        </div>
-                        <p class="text-secondary mx-2 ">Dear students our school is celebrating annual day on 2023-2-24
-                            inside the school premises.
-                        </p>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="d-grid d-md-flex justify-content-end mt-4">
-                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
-                        <span class="material-symbols-outlined mx-2">
-                            visibility
-                        </span>View</button>
-                </div>
-            </div>
-        </div>
-        <div class="row border border-start-0 border-end-0 border-primary border-1">
-            <div class="col-10">
-                <div class="d-flex">
-                    <div class="">
-                        <div class="mt-2 mb-2"><img src="img/Students/pic_sammy1.jpg" width="100px" class="" alt="...">
-                        </div>
-                    </div>
-                    <div class="">
-                        <div class="">
-                            <h5 class="mx-2 mt-2">Holiday</h5>
-                        </div>
-                        <p class="text-secondary mx-2 ">Dear students our school shall remain closed tommorow
-                            on the ocasion of....... . So, this notice is to inform every students regarding the holiday
-                            for tommorow. School will resume the following day after tommorow .</p>
+       
 
-                        </p>
+    <?php
+    require_once 'CONNECTION.php';
+    $sql = "SELECT * FROM ANotice";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($data = mysqli_fetch_array($result)) {
+            ?>
+            <div class="container mt-2">
+                <div class="row border border-start-0 border-end-0 border-primary border-1">
+                    <div class="col-10">
+                        <div class="d-flex">
+                            <div class="">
+                                <div class="mt-2 mb-2"><img src="AdminPanel/Notices/<?php echo $data['Photo'] ?>" width="100px" class="" alt="...">
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="">
+                                    <h5 class="mx-2 mt-2"><?php echo $data['Subject'] ?></h5>
+                                </div>
+                                <p class="text-secondary mx-2 "><?php echo $data['Message'] ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="d-grid d-md-flex justify-content-end mt-4">
+                            <button type="button" class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3 m">
+                                <span class="material-symbols-outlined mx-2">
+                                    visibility
+                                </span>View</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <div class="d-grid d-md-flex justify-content-end mt-4">
-                    <button type="button" class="d-flex btn btn-sm border bcolor text-light rounded-3 m">
-                        <span class="material-symbols-outlined mx-2">
-                            visibility
-                        </span>View</button>
-                </div>
-            </div>
-        </div>
+            <?php
 
+        }
+    }
+    ?>
     </div>
 
 
