@@ -19,7 +19,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
-         @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+
         body {
             font-family: "Roboto", sans-serif;
             color: #1a202c;
@@ -33,6 +34,7 @@
         .card {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
         }
+
         .card {
             position: relative;
             display: flex;
@@ -44,24 +46,29 @@
             border: 0 solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
         }
+
         .card-body {
             flex: 1 1 auto;
             min-height: 1px;
             padding: 1rem;
         }
+
         .btn.btn-twitter {
             background: #69b6f0;
             border-color: #69b6f0;
             color: #fff;
         }
-        .btn.btn-twitter:hover{
+
+        .btn.btn-twitter:hover {
             background: #519cd6;
         }
+
         .btn.btn-facebook {
             background: #4f69a2;
             border-color: #4f69a2;
             color: #fff;
         }
+
         .btn.btn-facebook:hover {
             background: #1a3f96;
         }
@@ -71,6 +78,7 @@
             border-color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             color: #fff;
         }
+
         .btn.btn-instagram:hover {
             background: radial-gradient(circle at 30% 107%, #cac04d 0%, #ccc143 5%, #c4382b 45%, #94176c 60%, #1a3ca1 90%);
         }
@@ -80,11 +88,10 @@
             border-color: #2884ba;
             color: #fff;
         }
+
         .btn.btn-linkedin:hover {
             background: #10557e;
         }
-
-       
     </style>
 </head>
 
@@ -119,7 +126,7 @@
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
 
-                    
+
 
                     <li class="nav-item pt-1">
 
@@ -143,16 +150,22 @@
         <div class="main-body">
 
             <div class="row gutters-sm">
+                <?php
+                require_once "CONNECTION.php";
+                $sql = "SELECT * FROM students WHERE Email= 'sjuicyy@gmail.com' ";
+                $result = $conn->query($sql);
+                $data = mysqli_fetch_array($result);
+                ?>
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <img src="../img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
+                                    class="" width="150">
                                 <div class="mt-3">
-                                    <h4>Bijen Shrestha</h4>
-                                    <p class="text-secondary mb-1">Admin</p>
-                                    <p class="text-muted font-size-sm">Lagankhel, Lalitpur</p>
+                                    <h4><?php echo $data['Name'] ?></h4>
+                                    <p class="text-secondary mb-1"><?php echo $data['Profession'] ?></p>
+                                    <p class="text-muted font-size-sm"><?php echo $data['Address'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +173,7 @@
                     <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="" type="button" class="btn btn-facebook text-left w-100 social"><i
+                                <a href="<?php echo $data['Facebook'] ?>" type="button" class="btn btn-facebook text-left w-100 social"><i
                                         class="bi bi-facebook"></i> Facebook</a>
                             </li>
 
@@ -190,7 +203,7 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Bijen Shrestha
+                                <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -199,7 +212,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    bizen106@gmail.com
+                                <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -208,7 +221,7 @@
                                     <h6 class="mb-0">Mobile</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    98********
+                                    <?php echo $data['Contact'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -217,7 +230,7 @@
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Srijananagar-5, Bhaktapur
+                                <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -226,7 +239,7 @@
                                     <h6 class="mb-0">Father's Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Bishnu Prasad Shrestha
+                                <?php echo $data['Fname'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -235,7 +248,7 @@
                                     <h6 class="mb-0">Batch</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    2012
+                                <?php echo $data['Batch'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -253,10 +266,7 @@
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sit ea molestiae maxime
-                                    nostrum laborum impedit inventore deserunt repellat, aliquam nemo libero, omnis ipsa
-                                    est nihil. Nobis velit sed ratione! sdasdsa asdadasd asdasdsad adasdasdsa adasdasd
-                                    asd.asd
+                                <?php echo $data['About'] ?>
                                 </div>
                             </div>
                             <hr>

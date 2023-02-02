@@ -12,6 +12,8 @@
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <style>
@@ -96,12 +98,12 @@
                         <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
                     </li>
 
-                    
+
 
                     <li class="nav-item pt-1">
 
-                        <a href="" type="button" class="btn"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
+                        <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="#" class="dropdown-item" type="button">View</a>
                             <a href="#" class="dropdown-item" type="button">Edit Profile</a>
@@ -118,84 +120,60 @@
     <main>
         <section class="blog">
             <div class="container">
-
                 <section class="mt-4">
                     <div class="container">
                         <div class="d-flex justify-content-between">
-                            <h3 class="mb-4 heading-line">Requests</h3>
+                            <div>
+                                <h3 class="mb-4 heading-line">All Requests</h3>
+                            </div>
                         </div>
-            
-                        <div class="notification-ui_dd-content mb-4" style="overflow: auto;">
 
-                            <div class="notification-list notification-list--unread">
-                                <div class="notification-list_content d-flex">
-                                    <div class="notification-list_img">
-                                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                    </div>
-                                    <div class="notification-list_detail">
-                                        <p><b>Shyam Joshi</b> added a request.</p>
-                                        <p class="text-muted font-weight-bold">Lorem ipsum dolor</p>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde asdas asdasdas asdasdsa dasd asdasdasdsa asdasdasd dolorem.</p>
-                                        <p class="text-muted"><small>10 min ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="notification-ui_dd-content mb-4">
+                            <?php
+                            require_once 'CONNECTION.php';
+                            $sql = "SELECT * FROM notices";
+                            $result = $conn->query($sql);
+                            if ($result->num_rows > 0) {
+                                while ($data = mysqli_fetch_array($result)) {
+                                    ?>
+                                    <div class="notification-list notification-list--unread">
+                                        <div class="notification-list_content d-flex">
+                                            <div class="notification-list_img">
+                                                <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
+                                            </div>
+                                            <div class="notification-list_detail">
+                                                <p>By: <b>
+                                                        <?php echo $data['Pid'] ?>
+                                                    </b></p>
+                                                <p class="text-muted font-weight-bold">
+                                                    <?php echo $data['Subject'] ?>
+                                                </p>
+                                                <p class="text-muted">
+                                                    <?php echo $data['Message'] ?>
+                                                </p>
+                                                <p> <small> <b>Posted :</b> </small> <small class="text-muted">
+                                                        <?php echo $data['Date'] ?>
+                                                    </small></p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <form action="DELETE-REQUEST.php" method="post">
 
-                            <div class="notification-list notification-list--unread">
-                                <div class="notification-list_content d-flex">
-                                    <div class="notification-list_img">
-                                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                    </div>
-                                    <div class="notification-list_detail">
-                                        <p><b>Bijen Shrestha</b> added a request.</p>
-                                        <p class="text-muted font-weight-bold">Lorem ipsum dolor</p>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde asdas asdasdas asdasdsa dasd asdasdasdsa asdasdasd dolorem.</p>
-                                        <p class="text-muted"><small>10 hours ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="notification-list notification-list--unread">
-                                <div class="notification-list_content d-flex">
-                                    <div class="notification-list_img">
-                                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                    </div>
-                                    <div class="notification-list_detail">
-                                        <p><b>Aarju Silwal</b> added a request.</p>
-                                        <p class="text-muted font-weight-bold">Lorem ipsum dolor</p>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde asdas asdasdas asdasdsa dasd asdasdasdsa asdasdasd dolorem.</p>
-                                        <p class="text-muted"><small>5 hour ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="notification-list notification-list--unread">
-                                <div class="notification-list_content d-flex">
-                                    <div class="notification-list_img">
-                                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
+                                                <button class="bg-none btn btn-danger" type="submit">
+                                                <input type="hidden" name="pid" value="<?php echo $data['Id'] ?>">
+                                                    <span class="material-symbols-outlined mt-1">
+                                                        delete
+                                                    </span>
+                                                </button>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class="notification-list_detail">
-                                        <p><b>Sajan Maharjan</b> added a request.</p>
-                                        <p class="text-muted font-weight-bold">Lorem ipsum dolor</p>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde asdas asdasdas asdasdsa dasd asdasdasdsa asdasdasd dolorem.</p>
-                                        <p class="text-muted"><small>2 hour ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="notification-list notification-list--unread">
-                                <div class="notification-list_content d-flex">
-                                    <div class="notification-list_img">
-                                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                                    </div>
-                                    <div class="notification-list_detail">
-                                        <p><b>Pritam Bajgain</b> added a request.</p>
-                                        <p class="text-muted font-weight-bold">Lorem ipsum dolor</p>
-                                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde asdas asdasdas asdasdsa dasd asdasdasdsa asdasdasd dolorem.</p>
-                                        <p class="text-muted"><small>1 hour ago</small></p>
-                                    </div>
-                                </div>
-                            </div>
+                                    <?php
+                                }
+                            }
+                            ?>
 
                         </div>
                     </div>
@@ -210,13 +188,14 @@
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+    <script type='text/javascript'
+        src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
 </body>
 
 </html>
