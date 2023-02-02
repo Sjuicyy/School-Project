@@ -61,9 +61,7 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View</a>
-                            <a href="#" class="dropdown-item" type="button">Edit Profile</a>
-                            <hr class="dropdown-divider" />
+                            
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
