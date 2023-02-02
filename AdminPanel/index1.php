@@ -52,11 +52,6 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.php">Notice</a>
-                    </li>
-
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn"
@@ -74,7 +69,11 @@
         </div>
     </nav>
 
-    
+    <a href="addnotice.php">
+        <div class="btn btn-primary m-3 float-end"> + Add Notice</div>
+    </a>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

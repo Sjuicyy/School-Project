@@ -127,9 +127,7 @@
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.php">Notice</a>
-                    </li>
+                    
 
                     <li class="nav-item pt-1">
 

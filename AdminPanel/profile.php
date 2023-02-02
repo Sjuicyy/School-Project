@@ -33,7 +33,6 @@
         .card {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
         }
-
         .card {
             position: relative;
             display: flex;
@@ -45,13 +44,11 @@
             border: 0 solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
         }
-
         .card-body {
             flex: 1 1 auto;
             min-height: 1px;
             padding: 1rem;
         }
-
         .btn.btn-twitter {
             background: #69b6f0;
             border-color: #69b6f0;
@@ -60,7 +57,6 @@
         .btn.btn-twitter:hover{
             background: #519cd6;
         }
-
         .btn.btn-facebook {
             background: #4f69a2;
             border-color: #4f69a2;
@@ -123,9 +119,7 @@
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.php">Notice</a>
-                    </li>
+                    
 
                     <li class="nav-item pt-1">
 
