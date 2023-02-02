@@ -172,9 +172,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
-
-
                             <?php
                             require_once 'CONNECTION.php';
                             $sql = "SELECT * FROM teachers";
