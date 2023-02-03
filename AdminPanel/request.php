@@ -74,7 +74,8 @@
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Panel</a>
+                        <img src="../img/Banner.png" width="200px" alt="">
+
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -90,7 +91,7 @@
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
+                        <a class="nav-link px-3 px-lg-2" href="allstudent.php">Students</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>

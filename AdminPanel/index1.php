@@ -69,7 +69,7 @@
         opacity: .5;
     }
 
-    .stats-primary {
+    .stats-primary  {
         color: #fff;
         background: #2f89fc;
     }
@@ -91,10 +91,10 @@
 </style>
 
 <body>
-<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Panel</a>
+            <img src="../img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -104,32 +104,25 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
-
-                    
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
+                        <a class="nav-link px-3 px-lg-2" href="allstudent.php">Students</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 " href="request.php">Requests</a>
-                    </li>            
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
-
-
                     <li class="nav-item pt-1">
-
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -137,89 +130,91 @@
 
     <main class="dash-content">
         <div class="container-fluid mt-0">
-            
             <div class="row dash-row mx-auto mt-5">
                 <h3 class="mb-4 heading-line">Dashboard</h3>
-
                 <div class="col-xl-4 col-md-6">
-                    <a href="teachers.html">
-                        <div class="stats stats-primary">
-                            <h3 class="stats-title"> Teachers </h3>
-                            <div class="stats-content">
-                                <div class="stats-icon">
-                                    <i class='bx bxs-chalkboard' style='color:#ffffff'></i>
-                                </div>
-                                <div class="stats-data">
-                                    <div class="stats-number">30</div>
+                    <div class="w-75 mx-5">
+                        <a class="text-decoration-none" href="teachers.html">
+                            <div class="stats stats-primary" style="height: 350px;">
+                                <h3 class="stats-title"> Teachers </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class='bx bxs-chalkboard' style='color:#ffffff'></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">30</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                </div></a>
-
-                <div class="col-xl-4 col-md-6">
-                    <a href="student.html">
-                        <div class="stats stats-primary">
-                            <h3 class="stats-title"> Students </h3>
-                            <div class="stats-content">
-                                <div class="stats-icon">
-                                    <i class='bx bxs-book-reader' style='color:#ffffff'></i>
-                                </div>
-                                <div class="stats-data">
-                                    <div class="stats-number">100</div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-xl-4 col-md-6">
-                    <a href="request.html">
-                        <div class="stats stats-primary">
-                            <h3 class="stats-title"> Requests </h3>
-                            <div class="stats-content">
-                                <div class="stats-icon">
-                                    <i class='bx bxs-user-pin'></i>
-                                </div>
-                                <div class="stats-data">
-                                    <div class="stats-number">15</div>
-                                </div>
-                            </div>
-                        </div>
-                </div></a>
-
-                <div class="col-xl-4 col-md-6">
-                    <a href="notice.html">
-                        <div class="stats stats-primary">
-                            <h3 class="stats-title"> Notices </h3>
-                            <div class="stats-content">
-                                <div class="stats-icon">
-                                    <i class='bx bxs-notification'></i>
-                                </div>
-                                <div class="stats-data">
-                                    <div class="stats-number">5</div>
+                    <div class="w-75  mx-5 " >
+                        <a class="text-decoration-none" href="student.html">
+                            <div class="stats stats-primary"  style="height: 350px;">
+                                <h3 class="stats-title"> Students </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class='bx bxs-book-reader' style='color:#ffffff'></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">100</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-
-
-
-
                 <div class="col-xl-4 col-md-6">
-                    <div class="stats stats-primary">
-                        <h3 class="stats-title"> Total Users </h3>
-                        <div class="stats-content">
-                            <div class="stats-icon">
-                                <i class='bx bxs-group'></i>
+                    <div class="w-75 mx-5">
+                        <a class="text-decoration-none" href="request.html">
+                            <div class="stats stats-primary"  style="height: 350px;">
+                                <h3 class="stats-title"> Requests </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class='bx bxs-user-pin'></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">15</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="stats-data">
-                                <div class="stats-number">114</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 ">
+                    <div class="w-75 mx-5">
+                        <a class="text-decoration-none" class=" text-decoration-none" href="notice.html">
+                            <div class="stats stats-primary"  style="height: 350px;">
+                                <h3 class="stats-title"> Notices </h3>
+                                <div class="stats-content">
+                                    <div class="stats-icon">
+                                        <i class='bx bxs-notification'></i>
+                                    </div>
+                                    <div class="stats-data">
+                                        <div class="stats-number">5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="w-75 mx-5">
+                        <div class="stats stats-primary"  style="height: 350px;">
+                            <h3 class="stats-title"> Total Users </h3>
+                            <div class="stats-content">
+                                <div class="stats-icon">
+                                    <i class='bx bxs-group'></i>
+                                </div>
+                                <div class="stats-data">
+                                    <div class="stats-number">114</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </main>

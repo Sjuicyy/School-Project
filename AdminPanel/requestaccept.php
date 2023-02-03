@@ -99,7 +99,8 @@
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Admin Panel</a>
+                        <img src="../img/Banner.png" width="200px" alt="">
+
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -117,14 +118,14 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
+                        <a class="nav-link px-3 px-lg-2" href="allstudent.php">Students</a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
 
-            
+
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
@@ -153,7 +154,7 @@
             <div class="row gutters-sm">
                 <?php
                 require_once "CONNECTION.php";
-                $id=$_GET['id'];
+                $id = $_GET['id'];
                 $sql = "SELECT * FROM students WHERE Email= '$id' ";
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
@@ -285,10 +286,12 @@
                     <div class="d-flex justify-content-around">
 
                         <form action="ACCEPT.php" method="post">
+                            <input type="hidden" name="Rid" value="<?php echo $data['Email'] ?>">
                             <button type="submit" class="btn btn-primary">Accept</button>
                         </form>
                         <form action="REJECT.php" method="post">
                             <div class="d-flex">
+                                <input type="hidden" name="Rid" value="<?php echo $data['Email'] ?>">
                                 <input class="form-control mx-2" type="text" name='msg' required>
                                 <button type="sumbmit" class="btn btn-danger">
                                     Reject</button>
