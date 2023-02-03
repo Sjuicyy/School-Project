@@ -148,7 +148,8 @@
             <div class="row gutters-sm">
                 <?php
                 require_once "CONNECTION.php";
-                $sql = "SELECT * FROM students WHERE Email= 'sjuicyy@gmail.com' ";
+                $id=$_GET['id'];
+                $sql = "SELECT * FROM students WHERE Email= '$id' ";
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>

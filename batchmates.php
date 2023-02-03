@@ -114,11 +114,13 @@ $data = mysqli_fetch_array($result);
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
                                     <tr>
-                                        
+
                                         <td style="text-align: left;">
                                             <img src="img/Students/<?php echo $data['Photo'] ?>" width="50px"
                                                 class="avatar me-2 bold" alt="Avatar">
-                                            <span class="fw-bold"><?php echo $data['Name'] ?></span> 
+                                            <span class="fw-bold">
+                                                <?php echo $data['Name'] ?>
+                                            </span>
                                         </td>
                                         <td>
                                             <?php echo $data['Email'] ?>
@@ -141,16 +143,7 @@ $data = mysqli_fetch_array($result);
                             }
                             ?>
                         </tbody>
-                        <tfoot style="background-color: #2f89fc; color: white;" class="sticky-bottom">
-                            <tr>
-                                <th>Full Name</th>
-                                <th>Email</th>
-                                <th>Address</th>
-                                <th>Mobile Number</th>
-                                <th>Subject</th>
-                                <th>Action</th>
-                            </tr>
-                        </tfoot>
+
                     </table>
                 </div>
             </div>

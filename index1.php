@@ -153,6 +153,8 @@ $data = mysqli_fetch_array($result);
                                 </div>
                                 <p class="text-secondary mx-2 "><?php echo $data['Message'] ?>
                                 </p>
+                                <p class="text-secondary mx-2 ">Posted : <?php echo $data['Date'] ?>
+                                </p>
                             </div>
                         </div>
                     </div>
