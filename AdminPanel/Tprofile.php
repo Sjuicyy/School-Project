@@ -110,7 +110,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
@@ -125,13 +125,19 @@
                     </li>
 
 
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
+                    </li>
+
+
+
 
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
+
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
@@ -147,7 +153,7 @@
 
             <div class="row gutters-sm">
                 <?php
-                $id=$_GET['id'];
+                $id = $_GET['id'];
                 require_once "CONNECTION.php";
                 $sql = "SELECT * FROM teachers WHERE Contact= '$id' ";
                 $result = $conn->query($sql);
@@ -157,12 +163,17 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="Teachers/<?php echo $data['Photo'] ?>" alt="Admin"
-                                    class="" width="150">
+                                <img src="Teachers/<?php echo $data['Photo'] ?>" alt="Admin" class="" width="150">
                                 <div class="mt-3">
-                                    <h4><?php echo $data['Name'] ?></h4>
-                                    <p class="text-secondary mb-1"><?php echo $data['Profession'] ?></p>
-                                    <p class="text-muted font-size-sm"><?php echo $data['Address'] ?></p>
+                                    <h4>
+                                        <?php echo $data['Name'] ?>
+                                    </h4>
+                                    <p class="text-secondary mb-1">
+                                        <?php echo $data['Profession'] ?>
+                                    </p>
+                                    <p class="text-muted font-size-sm">
+                                        <?php echo $data['Address'] ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -170,23 +181,27 @@
                     <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Facebook'] ?>" type="button" class="btn btn-facebook text-left w-100 social"><i
-                                        class="bi bi-facebook"></i> Facebook</a>
+                                <a href="<?php echo $data['Facebook'] ?>" type="button"
+                                    class="btn btn-facebook text-left w-100 social"><i class="bi bi-facebook"></i>
+                                    Facebook</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Twitter'] ?>" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
-                                        class="bi bi-twitter"></i> Twitter</a>
+                                <a href="<?php echo $data['Twitter'] ?>" type="button"
+                                    class="btn mb-m-0 btn-twitter text-left w-100 "><i class="bi bi-twitter"></i>
+                                    Twitter</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Instagram'] ?>" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
-                                        class="bi bi-instagram"></i> Instagram</a>
+                                <a href="<?php echo $data['Instagram'] ?>" type="button"
+                                    class="btn mb-m-0 btn-instagram text-left w-100 "><i class="bi bi-instagram"></i>
+                                    Instagram</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Linkedin'] ?>" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
-                                        class="bi bi-linkedin"></i> Linkedin</a>
+                                <a href="<?php echo $data['Linkedin'] ?>" type="button"
+                                    class="btn mb-m-0 btn-linkedin text-left w-100 "><i class="bi bi-linkedin"></i>
+                                    Linkedin</a>
                             </li>
                         </ul>
                     </div>
@@ -200,7 +215,7 @@
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Name'] ?>
+                                    <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -209,7 +224,7 @@
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Email'] ?>
+                                    <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -227,7 +242,7 @@
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Address'] ?>
+                                    <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -236,7 +251,7 @@
                                     <h6 class="mb-0">Subject</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Subject'] ?>
+                                    <?php echo $data['Subject'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -245,7 +260,7 @@
                                     <h6 class="mb-0">Education</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Education'] ?>
+                                    <?php echo $data['Education'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -254,7 +269,7 @@
                                     <h6 class="mb-0">Start Date</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Fdate'] ?>
+                                    <?php echo $data['Fdate'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -263,17 +278,17 @@
                                     <h6 class="mb-0">End Date</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Tdate'] ?>
+                                    <?php echo $data['Tdate'] ?>
                                 </div>
                             </div>
-                         
+
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                <?php echo $data['About'] ?>
+                                    <?php echo $data['About'] ?>
                                 </div>
                             </div>
                             <hr>

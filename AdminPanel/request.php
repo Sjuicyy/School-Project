@@ -94,7 +94,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
+                    </li>            
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
+
+
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"

@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin Panel</a>
@@ -46,7 +46,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    
+
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
@@ -56,12 +56,17 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
+                    </li>
+
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
+
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
@@ -85,43 +90,61 @@
                             <form action="ADD-TEACHER.php" method="POST" enctype="multipart/form-data">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
-                                        <div class="form-group"> <label for="Mobile-Number">Full Name</label> <input type="text" name="name" class="form-control" id="Mobile-Number" placeholder="">
+                                        <div class="form-group"> <label for="Mobile-Number">Full Name</label> <input
+                                                type="text" name="name" class="form-control" id="Mobile-Number"
+                                                placeholder="">
                                         </div>
-                                        <div class="form-group"> <label for="Email">Email</label> <input type="email" name="email" class="form-control" id="Email" placeholder="">
+                                        <div class="form-group"> <label for="Email">Email</label> <input type="email"
+                                                name="email" class="form-control" id="Email" placeholder="">
                                         </div>
-                                        <div class="form-group"> <label for="Address">Address</label><input type="text" name="address" class="form-control" id="Address" placeholder=""> </div>
-                                        <div class="form-group"> <label for="Mobile-Number">Mobile Number</label> <input type="number" name="phone" class="form-control" id="Mobile-Number" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Address">Address</label><input type="text"
+                                                name="address" class="form-control" id="Address" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Mobile-Number">Mobile Number</label> <input
+                                                type="number" name="phone" class="form-control" id="Mobile-Number"
+                                                placeholder=""> </div>
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Sub">Subject</label><input type="text" name="subject" class="form-control" id="Sub" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Sub">Subject</label><input type="text"
+                                                name="subject" class="form-control" id="Sub" placeholder=""> </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Edu">Education</label> <input type="text" name="education" class="form-control" id="Edu" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Edu">Education</label> <input type="text"
+                                                name="education" class="form-control" id="Edu" placeholder=""> </div>
                                     </div>
 
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Sdate">Start Date</label> <input type="date" name="sdate" class="form-control" id="Sdate" placeholder="">
+                                        <div class="form-group"> <label for="Sdate">Start Date</label> <input
+                                                type="date" name="sdate" class="form-control" id="Sdate" placeholder="">
                                         </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Edate">End Date</label> <input type="date" name="edate" class="form-control" id="Edate" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Edate">End Date</label> <input type="date"
+                                                name="edate" class="form-control" id="Edate" placeholder=""> </div>
                                     </div>
 
                                     <div class="row col-lg-10 col-md-6 col-sm-12">
                                         <h5><b>Social</h5></b>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Sdate">Facebook(URL)</label> <input name="facebook" type="text" class="form-control" id="Sdate" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Sdate">Facebook(URL)</label> <input
+                                                name="facebook" type="text" class="form-control" id="Sdate"
+                                                placeholder=""> </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Edate">Twitter(URL)</label> <input name="twitter" type="text" class="form-control" id="Edate" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Edate">Twitter(URL)</label> <input
+                                                name="twitter" type="text" class="form-control" id="Edate"
+                                                placeholder=""> </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Sdate">Instagram(URL)</label> <input name="instagram" type="text" class="form-control" id="Sdate" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Sdate">Instagram(URL)</label> <input
+                                                name="instagram" type="text" class="form-control" id="Sdate"
+                                                placeholder=""> </div>
                                     </div>
                                     <div class="col-lg-5 col-md-6 col-sm-12">
-                                        <div class="form-group"> <label for="Edate">Linkedin(URL)</label> <input name="linkedin" type="text" class="form-control" id="Edate" placeholder=""> </div>
+                                        <div class="form-group"> <label for="Edate">Linkedin(URL)</label> <input
+                                                name="linkedin" type="text" class="form-control" id="Edate"
+                                                placeholder=""> </div>
                                     </div>
                                 </div>
 
@@ -129,15 +152,18 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-5">
                                         <div class="form-group files"><label class="Photo">Upload Your Photo </label>
-                                            <input id="file" name="photo" type="file"  class="form-control" />
+                                            <input id="file" name="photo" type="file" class="form-control" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12 col-lg-10 col-12">
-                                        <div class="form-group"> <label for="About">About</label> <textarea class="form-control rounded-0" name="about" id="About" rows="5"></textarea></div>
+                                        <div class="form-group"> <label for="About">About</label> <textarea
+                                                class="form-control rounded-0" name="about" id="About"
+                                                rows="5"></textarea></div>
                                         <div class="row justify-content-end mb-4">
-                                            <div class="col-lg-4 col-auto "><input type="submit" value="SAVE" class="btn btn-primary btn-block">
+                                            <div class="col-lg-4 col-auto "><input type="submit" value="SAVE"
+                                                    class="btn btn-primary btn-block">
                                             </div>
                                         </div>
                                     </div>
@@ -166,9 +192,9 @@
     <script type='text/javascript'
         src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $(".files").attr('data-before', "Drag file here or click the above button");
-            $('input[type="file"]').change(function(e) {
+            $('input[type="file"]').change(function (e) {
                 var fileName = e.target.files[0].name;
                 $(".files").attr('data-before', fileName);
 

@@ -18,7 +18,7 @@ echo $target2;
 
 
     if (move_uploaded_file($_FILES['photo']['tmp_name'], $target2)) {
-    header('location:index1.php');
+    header('location:notice.php');
     } else {
         echo "<script>alert('Something went wrong! Please Retry');</script>";
 

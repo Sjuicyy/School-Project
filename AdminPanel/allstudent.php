@@ -122,7 +122,7 @@
 </head>
 
 <body>
-    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Admin Panel</a>
@@ -133,27 +133,22 @@
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2" href="student.php">Students</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3 px-lg-2 active" href="request.php">Requests</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="profile.html">Profile</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="teachers.html">Teachers</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2 active" href="student.html">Students</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="request.html">Requests</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="addnotice.html">Notice</a>
+                        <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
 
                     <li class="nav-item pt-1">
@@ -161,13 +156,9 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="#" class="dropdown-item" type="button">View</a>
-                            <hr class="dropdown-divider" />
-                            <a href="#" class="dropdown-item" type="button">Edit Profile</a>
-                            <hr class="dropdown-divider" />
-                            <a href="#" class="dropdown-item" type="button">Log Out</a>
-                        </div>
 
+                            <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
+                        </div>
                     </li>
 
                 </ul>
@@ -216,6 +207,24 @@
                             }
                         }
                         ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
