@@ -53,7 +53,7 @@
             <a href="login.php">
                 <button class="w-100 bcolor btn1 rounded-3 mt-4 h4 p-2 border-0" style="letter-spacing: 2px;" >Student </button>
             </a>
-            <a href="login.php">
+            <a href="login2.php">
             <button class="w-100 bcolor btn1 rounded-3 mt-5 h4 p-2 border-0" style="letter-spacing: 2px;" >Teacher</button>
             </a>
         </div>

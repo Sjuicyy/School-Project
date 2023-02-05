@@ -136,47 +136,42 @@ $data = mysqli_fetch_array($result);
                         <div class="notification-ui_dd-content mb-4">
                             <?php
                             require_once 'CONNECTION.php';
-                            $sql = "SELECT * FROM notices";
+                            $sql = "SELECT * FROM (SELECT Name,Contact,Photo FROM teachers UNION SELECT Name,Contact,Photo FROM students) AS P INNER JOIN notices ON P.Contact = notices.Pid ORDER BY Date DESC";
                             $result = $conn->query($sql);
                             if ($result->num_rows > 0) {
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
-
                                     <div class="notification-list notification-list--unread">
                                         <div class="notification-list_content d-flex">
                                             <div class="notification-list_img">
-                                                <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
+                                                <img src="img/students/<?php echo $data['Photo'] ?>" alt="<?php echo $data['Photo'] ?>"> 
                                             </div>
                                             <div class="notification-list_detail">
-                                                <p>By: <b>Shyam Joshi</b></p>
+                                                <p>By: <?php echo $data['Name'] ?></b></p>
                                                 <p class="text-muted font-weight-bold">
-                                                    <?php echo $data['Subject'] ?>
+                                                    <?php echo $data['Subject1'] ?>
                                                 </p>
                                                 <p class="text-muted">
                                                     <?php echo $data['Message'] ?>
                                                 </p>
                                                 <p> <small> <b>Posted :</b> </small> <small class="text-muted">
-                                                        <?php echo $data['Date'] ?>
+                                                        <?php
+                                                         echo $data['Date']
+                                                         ?>
                                                     </small></p>
                                             </div>
                                         </div>
                                     </div>
-
                                 <?php
-
                                 }
                             }
                             ?>
-
                         </div>
                     </div>
                 </section>
-
-
             </div>
         </section>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>

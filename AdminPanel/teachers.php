@@ -98,7 +98,7 @@
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-                        <img src="../img/Banner.png" width="200px" alt="">
+            <img src="../img/Banner.png" width="200px" alt="">
 
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
@@ -110,7 +110,7 @@
                         <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
                     </li>
 
-                    
+
 
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2 active" href="teachers.php">Teachers</a>
@@ -123,7 +123,7 @@
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
                     </li>
-                                
+
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
@@ -137,7 +137,7 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            
+
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
@@ -181,9 +181,12 @@
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
                                     <tr>
-                                        <td style="text-align: left;"><a href="#"><img
-                                                    src="Teachers/<?php echo $data['Photo'] ?>" class="avatar me-2"
-                                                    alt="Avatar"> <?php echo $data['Name'] ?></a></td>
+                                        <td style="text-align: left;">
+                                            <a href="#">
+                                                <img src="Teachers/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                                    alt="Avatar"> <?php echo $data['Name'] ?>
+                                            </a>
+                                        </td>
                                         <td>
                                             <?php echo $data['Email'] ?>
                                         </td>
@@ -197,8 +200,8 @@
                                             <?php echo $data['Subject'] ?>
                                         </td>
                                         <td>
-                                            <a href="Tprofile.php?id=<?php echo $data['Contact'] ?>" title="View" class="eye" data-toggle="tooltip"><i
-                                                    class="bi bi-eye"></i></a>
+                                            <a href="Tprofile.php?id=<?php echo $data['Contact'] ?>" title="View" class="eye"
+                                                data-toggle="tooltip"><i class="bi bi-eye"></i></a>
                                         </td>
                                     </tr>
                                     <?php

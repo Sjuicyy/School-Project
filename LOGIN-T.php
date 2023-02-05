@@ -7,10 +7,10 @@ $data = mysqli_query($conn, $sql);
 $result = mysqli_num_rows($data);
 if ($result == 1) {
     session_start();
-    // $_SESSION['User'] = $_POST['email'];
-    // $_SESSION['status'] = 'logedin';
-    // $_SESSION['id'] = $login_id1;
-    echo "login successful";
+    $_SESSION['User'] = $_POST['email'];
+    $_SESSION['status'] = 'logedin';
+    header('location:requests2.php');
+    // echo "login successful";
 } else {
     echo "login unsuccessful";
 }
