@@ -110,7 +110,7 @@ $data = mysqli_fetch_array($result);
 </head>
 
 <body>
-<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
             <img src="img/Banner.png" width="200px" alt="">
@@ -157,9 +157,15 @@ $data = mysqli_fetch_array($result);
 
             <div class="row gutters-sm">
                 <?php
-                $id=$_GET['id'];
+                $id = $_GET['id'];
                 require_once "CONNECTION.php";
-                $sql = "SELECT * FROM students WHERE Contact= '$id' ";
+                // $sql = "SELECT * FROM students WHERE Contact= '$id' ";
+                
+                // $sql = "SELECT * FROM (SELECT Name,Contact,Photo FROM teachers UNION SELECT Name,Contact,Photo FROM students)";
+                
+                $sql = "SELECT * FROM (SELECT  Name, Address, Contact, Email,'null' as Fdate, 'null' as Tdate,  Profession,Batch, Fname, Photo, Facebook, About FROM students UNION SELECT  Name, Address, Contact, Email,Fdate,Tdate, 'null' as Profession,'null' as Batch,'null' as Fname, Photo, Facebook, About FROM teachers) as p where p.Contact=$id";
+
+
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>
@@ -167,12 +173,17 @@ $data = mysqli_fetch_array($result);
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
-                                    class="" width="150">
+                                <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin" class="" width="150">
                                 <div class="mt-3">
-                                    <h4><?php echo $data['Name'] ?></h4>
-                                    <p class="text-secondary mb-1"><?php echo $data['Profession'] ?></p>
-                                    <p class="text-muted font-size-sm"><?php echo $data['Address'] ?></p>
+                                    <h4>
+                                        <?php echo $data['Name'] ?>
+                                    </h4>
+                                    <p class="text-secondary mb-1">
+                                        <?php echo $data['Profession'] ?>
+                                    </p>
+                                    <p class="text-muted font-size-sm">
+                                        <?php echo $data['Address'] ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -180,8 +191,9 @@ $data = mysqli_fetch_array($result);
                     <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <a href="<?php echo $data['Facebook'] ?>" type="button" class="btn btn-facebook text-left w-100 social"><i
-                                        class="bi bi-facebook"></i> Facebook</a>
+                                <a href="<?php echo $data['Facebook'] ?>" type="button"
+                                    class="btn btn-facebook text-left w-100 social"><i class="bi bi-facebook"></i>
+                                    Facebook</a>
                             </li>
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -210,7 +222,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Full Name</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Name'] ?>
+                                    <?php echo $data['Name'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -219,7 +231,7 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Email</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Email'] ?>
+                                    <?php echo $data['Email'] ?>
                                 </div>
                             </div>
                             <hr>
@@ -237,43 +249,66 @@ $data = mysqli_fetch_array($result);
                                     <h6 class="mb-0">Address</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Address'] ?>
+                                    <?php echo $data['Address'] ?>
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Father's Name</h6>
+
+                            <?php if ($data['Fname'] == 'null'): ?>
+
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">From:</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <?php echo $data['Fdate'] ?>
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Fname'] ?>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Batch</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <?php echo $data['Tdate'] ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Batch</h6>
+
+                            <?php else: ?>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Father's Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <?php echo $data['Fname'] ?>
+                                    </div>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                <?php echo $data['Batch'] ?>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Batch</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <?php echo $data['Batch'] ?>
+                                    </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Gender</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    Male
-                                </div>
-                            </div>
+
+
+                            <?php endif; ?>
+
+
+
+
+
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">About</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary mb-0 text-justify">
-                                <?php echo $data['About'] ?>
+                                    <?php echo $data['About'] ?>
                                 </div>
                             </div>
                             <hr>

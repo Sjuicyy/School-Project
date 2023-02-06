@@ -144,10 +144,23 @@ $data = mysqli_fetch_array($result);
                                     <div class="notification-list notification-list--unread">
                                         <div class="notification-list_content d-flex">
                                             <div class="notification-list_img">
-                                                <img src="img/students/<?php echo $data['Photo'] ?>" alt="<?php echo $data['Photo'] ?>"> 
+                                                <?php $image = file_exists('img/Students/' . $data["Photo"]) ?>
+                                                <img src="
+                                                <?php if ($image == 1): ?>
+                                                        img/Students/<?php echo $data['Photo'] ?>
+                                                <?php else: ?>
+                                                        ../School_Project/AdminPanel/Teachers/<?php echo $data['Photo'] ?>
+                                                <?php endif; ?>
+
+                                                " alt="<?php echo $data['Photo'] ?>">
                                             </div>
+
                                             <div class="notification-list_detail">
-                                                <p>By: <?php echo $data['Name'] ?></b></p>
+                                                <p>By:
+                                                    <a class="text-decoration-none" href="profile.php?id=<?php echo $data['Contact'] ?>">
+                                                        <?php echo $data['Name'] ?></b>
+                                                    </a>
+                                                </p>
                                                 <p class="text-muted font-weight-bold">
                                                     <?php echo $data['Subject1'] ?>
                                                 </p>
@@ -156,8 +169,8 @@ $data = mysqli_fetch_array($result);
                                                 </p>
                                                 <p> <small> <b>Posted :</b> </small> <small class="text-muted">
                                                         <?php
-                                                         echo $data['Date']
-                                                         ?>
+                                                        echo $data['Date']
+                                                            ?>
                                                     </small></p>
                                             </div>
                                         </div>
