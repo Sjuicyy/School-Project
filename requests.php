@@ -8,6 +8,11 @@ if (!($_SESSION['status'] == 'logedin')) {
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
+
+
+
+
+$rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,13 +98,18 @@ $data = mysqli_fetch_array($result);
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                        <?php if ($rows == 0): ?>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
+                        <?php else: ?>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
+                  
+
                     <li class="nav-item pt-1">
 
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -124,7 +134,7 @@ $data = mysqli_fetch_array($result);
                     <div class="container">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h3 class="mb-4 heading-line">All Requests</h3>
+                                <h3 class="mb-4 heading-line">All Requests </h3>
                             </div>
                             <div class="">
                                 <a href="addrequest.php">
@@ -162,7 +172,7 @@ $data = mysqli_fetch_array($result);
                                                     </a>
                                                 </p>
                                                 <p class="text-muted font-weight-bold">
-                                                    <?php echo $data['Subject1'] ?>
+                                                    <?php echo $data['Subject'] ?>
                                                 </p>
                                                 <p class="text-muted">
                                                     <?php echo $data['Message'] ?>

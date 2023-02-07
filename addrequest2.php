@@ -5,7 +5,7 @@ $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
     header('Location:Login.php');
 }
-$sql = "SELECT * from students WHERE Email='$email_id' ";
+$sql = "SELECT * from teachers WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 ?>
@@ -81,7 +81,7 @@ $data = mysqli_fetch_array($result);
                     <div class="card-body px-sm-4 px-0">
                         <div class="row justify-content-center">
                             <div class="col-md-10 mb-3">
-                                <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left">Add Notice</h3>
+                                <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left">Add Notice </h3>
                             </div>
                         </div>
                         <form action="ADD-NOTICE2.php" method="POST" class="row justify-content-center round">

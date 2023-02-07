@@ -5,7 +5,7 @@ $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
     header('Location:Login.php');
 }
-$sql = "SELECT * from students WHERE Email='$email_id' ";
+$sql = "SELECT * from teachers WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 ?>

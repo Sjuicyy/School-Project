@@ -8,6 +8,7 @@ if (!($_SESSION['status'] == 'logedin')) {
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
+$rows = mysqli_num_rows($result);
 ?>
 
 
@@ -124,8 +125,13 @@ $data = mysqli_fetch_array($result);
                         <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
 
+
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                        <?php if ($rows == 0): ?>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
+                        <?php else: ?>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
@@ -178,9 +184,11 @@ $data = mysqli_fetch_array($result);
                                     <h4>
                                         <?php echo $data['Name'] ?>
                                     </h4>
-                                    <p class="text-secondary mb-1">
-                                        <?php echo $data['Profession'] ?>
-                                    </p>
+                                    <?php if (!($data['Profession'] == 'null')): ?>
+                                        <p class="text-secondary mb-1">
+                                            <?php echo $data['Profession'] ?>
+                                        </p>
+                                    <?php endif; ?>
                                     <p class="text-muted font-size-sm">
                                         <?php echo $data['Address'] ?>
                                     </p>
@@ -208,12 +216,11 @@ $data = mysqli_fetch_array($result);
 
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
-                                        class="bi bi-linkedin"></i> Linkedin</a>
+                                class="bi bi-linkedin"></i> Linkedin</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">

@@ -7,6 +7,7 @@ $data = mysqli_query($conn, $sql);
 $result = mysqli_num_rows($data);
 if ($result == 1) {
     session_start();
+    $_SESSION['batch'] = null;
     $_SESSION['User'] = $_POST['email'];
     $_SESSION['status'] = 'logedin';
     header('location:requests2.php');

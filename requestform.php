@@ -8,6 +8,9 @@ if (!($_SESSION['status'] == 'logedin')) {
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
+
+$rows = mysqli_num_rows($result);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,9 +63,15 @@ $data = mysqli_fetch_array($result);
                             <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
                         </li>
 
+
                         <li class="nav-item">
-                            <a class="nav-link px-3 mx-3 px-lg-2 active" href="requests.php">Requests</a>
+                            <?php if ($rows == 0): ?>
+                                <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
+                            <?php else: ?>
+                                <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                            <?php endif; ?>
                         </li>
+
 
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
@@ -75,7 +84,7 @@ $data = mysqli_fetch_array($result);
 
 
                     <?php if ($data['Photo'] == Null): ?>
-                      
+
                         <a href="LOGOUT.php">
                             <p class="text-light text-decoration-none">Log Out</p>
                         </a>

@@ -7,6 +7,7 @@ $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 $pid = $data['Contact'];
 $subject = $_POST['subject'];
+
 $message = $_POST['message'];
 $date = date("Y-m-d");
 $sql = "INSERT INTO `notices` (`Id`, `Pid`, `Subject`, `Date`, `Message`) VALUES (NULL, '$pid', '$subject', '$date', '$message')";
