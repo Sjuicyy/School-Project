@@ -9,8 +9,6 @@ $date = date("Y-m-d");
 $target2 = "Notices/" . basename($image);
 
 
-echo $target2;
-
 
 
     $sql = "INSERT INTO `ANotice` (`Id`, `Subject`, `Message`, `Photo`, `Date`) VALUES (NULL, '$subject', '$message', '$image', '$date'); ";

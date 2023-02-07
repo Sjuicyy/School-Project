@@ -88,12 +88,10 @@
                                                     <div class="form-group files"><label class="Photo">Upload Photo
                                                         </label>
                                                         <input id="file" type="file" name="photo"
-                                                            class="form-control" />
+                                                            class="form-control" multiple />
                                                     </div>
                                                 </div>
                                             </div>
-
-
                                             <div class="row justify-content-end mb-1">
                                                 <div class="col-lg-4 col-auto "><input type="submit" value="Add"
                                                         class="btn btn-primary btn-block"></div>
@@ -103,7 +101,7 @@
                             </div>
                             </form>
                             <div class="col-lg-2 "></div>
-                            <div class="col-lg-5 col-md-12 ">
+                            <div class="col-lg-3 col-md-12 ">
                                 <div class="card shadow-lg card-1">
                                     <?php
                                     require_once 'CONNECTION.php';
@@ -114,10 +112,10 @@
                                             ?>
                                             <div class="notification-ui_dd-content mb-4 px-2">
                                                 <div class="notification-list_content d-flex mt-3">
-                                                    <div class="notification-list_img mx-auto">
-                                                        <img src="https://i.imgur.com/zYxDCQT.jpg" width="100" alt="user">
+                                                    <div class="notification-list_img mx-1">
+                                                        <img src="https://i.imgur.com/zYxDCQT.jpg" width="100" alt="user" >
                                                     </div>
-                                                    <div class="mx-auto">
+                                                    <div class="mx-3">
                                                         <form action="DELETE-PHOTO.php" method="post">
                                                             <button class="bg-none btn btn-danger" type="submit">
                                                                 <input type="hidden" name="pid"
@@ -134,15 +132,7 @@
                                         }
                                     }
                                     ?>
-
                                 </div>
-
-
-
-
-
-
-
                             </div>
                         </div>
                     </div>
