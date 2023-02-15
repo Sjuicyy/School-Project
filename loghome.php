@@ -42,7 +42,7 @@
     <div class="container mt-5  rounded-3 p-3 "
         style="height:780px;background-color:white; max-width:650px;border:2px solid rgb(26,231,17)">
         <img class="mt-5 border border-2 "
-            src="img/Banner.png"
+            src="./img/Banner.png"
             width="100%">
         <br><br>
         <div class="row  mt-5">
@@ -50,10 +50,10 @@
         </div>
       
         <div class=" container mt-5">
-            <a href="login.php">
+            <a href="Student/login.php">
                 <button class="w-100 bcolor btn1 rounded-3 mt-4 h4 p-2 border-0" style="letter-spacing: 2px;" >Student </button>
             </a>
-            <a href="login2.php">
+            <a href="./Teacher/login2.php">
             <button class="w-100 bcolor btn1 rounded-3 mt-5 h4 p-2 border-0" style="letter-spacing: 2px;" >Teacher</button>
             </a>
         </div>

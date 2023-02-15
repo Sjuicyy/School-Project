@@ -87,8 +87,8 @@
                                                 <div class="col-lg-10">
                                                     <div class="form-group files"><label class="Photo">Upload Photo
                                                         </label>
-                                                        <input id="file" type="file" name="photo"
-                                                            class="form-control" multiple />
+                                                        <input id="file" type="file" name="photo" class="form-control"
+                                                            multiple required />
                                                     </div>
                                                 </div>
                                             </div>
@@ -100,38 +100,44 @@
                                     </div>
                             </div>
                             </form>
-                            <div class="col-lg-2 "></div>
-                            <div class="col-lg-3 col-md-12 ">
+                            <div class="col-lg-7 col-md-12 ">
                                 <div class="card shadow-lg card-1">
-                                    <?php
-                                    require_once 'CONNECTION.php';
-                                    $sql = "SELECT * FROM Photos";
-                                    $result = $conn->query($sql);
-                                    if ($result->num_rows > 0) {
-                                        while ($data = mysqli_fetch_array($result)) {
-                                            ?>
-                                            <div class="notification-ui_dd-content mb-4 px-2">
-                                                <div class="notification-list_content d-flex mt-3">
-                                                    <div class="notification-list_img mx-1">
-                                                        <img src="https://i.imgur.com/zYxDCQT.jpg" width="100" alt="user" >
-                                                    </div>
-                                                    <div class="mx-3">
-                                                        <form action="DELETE-PHOTO.php" method="post">
-                                                            <button class="bg-none btn btn-danger" type="submit">
-                                                                <input type="hidden" name="pid"
-                                                                    value="<?php echo $data['Id'] ?>">
-                                                                <span class="material-symbols-outlined fs-6 mt-1">
-                                                                    delete
-                                                                </span>
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+                                    <div class="row">
                                         <?php
+                                        require_once 'CONNECTION.php';
+                                        $sql = "SELECT * FROM Photos";
+                                        $result = $conn->query($sql);
+                                        if ($result->num_rows > 0) {
+                                            while ($data = mysqli_fetch_array($result)) {
+                                                ?>
+                                                <div class="col">
+                                                    <div class="notification-ui_dd-content mb-4 px-2">
+                                                        <div class="notification-list_content d-flex mt-3">
+                                                            <div class="notification-list_img mx-1">
+                                                                <img src="./Photos/<?php echo $data['Photos'] ?>" width="100"
+                                                                    alt="user1">
+                                                            </div>
+                                                            <div class="mx-3">
+                                                                <form action="DELETE-PHOTO.php" method="post">
+                                                                    <button class="bg-none btn btn-danger" type="submit">
+                                                                        <input type="hidden" name="pid"
+                                                                            value="<?php echo $data['Id'] ?>">
+                                                                        <span class="material-symbols-outlined fs-6 mt-1">
+                                                                            delete
+                                                                        </span>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            <?php
+                                            }
                                         }
-                                    }
-                                    ?>
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>

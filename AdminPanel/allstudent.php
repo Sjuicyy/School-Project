@@ -194,7 +194,7 @@
                                 <tr>
                                     <a href="requestaccept.php?id=<?php echo $data['Email'] ?>" class="dropdown-item" type="button">
                                         <div class="d-flex">
-                                            <img src="../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                            <img src="../../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
                                                 alt="Avatar">
                                             <p class="pb-0 mb-0 pt-2"><b><?php echo $data['Name'] ?></b> requested to join.</p>
                                         </div>
@@ -262,7 +262,7 @@
                                     ?>
                                     <tr>
                                         <td style="text-align: left;"><a href="#"><img
-                                                    src="../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                                    src="../../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
                                                     alt="Avatar"> <?php echo $data['Name'] ?></a></td>
                                         <td>
                                             <?php echo $data['Email'] ?>

@@ -79,7 +79,7 @@ $rows = mysqli_num_rows($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <img src="img/Banner.png" width="200px" alt="">
+            <img src="./img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -92,17 +92,24 @@ $rows = mysqli_num_rows($result);
 
                     <li class="nav-item">
                         <?php if ($rows == 0): ?>
-                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="./Teacher/requests2.php">Requests</a>
                         <?php else: ?>
-                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/requests.php">Requests</a>
                         <?php endif; ?>
                     </li>
 
 
-                    <li class="nav-item">
+
+
+
+                    <?php if (!($rows == 0)): ?>
+                        <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
+                        <?php endif; ?>
 
+
+                 
 
 
 
@@ -122,12 +129,12 @@ $rows = mysqli_num_rows($result);
                         ?>
                         <li class="nav-item pt-1">
                             <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="./AdminPanel/Teachers/<?php echo $data['Photo'] ?>"
+                                aria-expanded="false"><img src="../img/Student/<?php echo $data['Photo'] ?>"
                                     class="rounded-circle" height="50px" width="50px" alt=""> </a>
 
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
+                                <a href="./Student/myprofile.php" class="dropdown-item" type="button">View Profile</a>
                                 <hr class="dropdown-divider" />
                                 <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                             </div>
@@ -141,35 +148,21 @@ $rows = mysqli_num_rows($result);
                         <li class="nav-item pt-1">
 
                             <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                                aria-expanded="false"><img src="../img/Students/<?php echo $data['Photo'] ?>"
                                     class="rounded-circle" height="50px" width="50px" alt=""> </a>
 
 
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
+                                <a href="./Student/myprofile.php" class="dropdown-item" type="button">View Profile</a>
                                 <hr class="dropdown-divider" />
                                 <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
 
                         </li>
                     <?php endif; ?>
-
-
-
-
-
-
-
-
-
-
                 </ul>
             </div>
         </div>
     </nav>
-
-
-
-
 
 
     <div class="container mt-2">

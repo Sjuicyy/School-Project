@@ -124,30 +124,24 @@ $rows = mysqli_num_rows($result);
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
-
-
                     <li class="nav-item">
                         <?php if ($rows == 0): ?>
-                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="./Teacher/requests2.php">Requests</a>
                         <?php else: ?>
-                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/requests.php">Requests</a>
                         <?php endif; ?>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
-
-
-
                     <li class="nav-item pt-1">
-
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
+                            aria-expanded="false"><img src="./img/Students/<?php echo $data['Photo'] ?>"
                                 class="rounded-circle" height="50px" width="50px" alt=""> </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
+                            <a href="./Student/myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
-                            <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
+                            <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
 
@@ -155,9 +149,6 @@ $rows = mysqli_num_rows($result);
             </div>
         </div>
     </nav>
-
-
-
     <div class="container">
         <div class="main-body">
 
@@ -165,13 +156,7 @@ $rows = mysqli_num_rows($result);
                 <?php
                 $id = $_GET['id'];
                 require_once "CONNECTION.php";
-                // $sql = "SELECT * FROM students WHERE Contact= '$id' ";
-                
-                // $sql = "SELECT * FROM (SELECT Name,Contact,Photo FROM teachers UNION SELECT Name,Contact,Photo FROM students)";
-                
                 $sql = "SELECT * FROM (SELECT  Name, Address, Contact, Email,'null' as Fdate, 'null' as Tdate,  Profession,Batch, Fname, Photo, Facebook, About FROM students UNION SELECT  Name, Address, Contact, Email,Fdate,Tdate, 'null' as Profession,'null' as Batch,'null' as Fname, Photo, Facebook, About FROM teachers) as p where p.Contact=$id";
-
-
                 $result = $conn->query($sql);
                 $data = mysqli_fetch_array($result);
                 ?>
@@ -179,7 +164,7 @@ $rows = mysqli_num_rows($result);
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="img/Students/<?php echo $data['Photo'] ?>" alt="Admin" class="" width="150">
+                                <img src="./img/Students/<?php echo $data['Photo'] ?>" alt="<?php echo $data['Photo'] ?>" class="" width="150">
                                 <div class="mt-3">
                                     <h4>
                                         <?php echo $data['Name'] ?>

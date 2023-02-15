@@ -163,7 +163,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="../img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
+                                <img src="../../img/Students/<?php echo $data['Photo'] ?>" alt="Admin"
                                     class="" width="150">
                                 <div class="mt-3">
                                     <h4><?php echo $data['Name'] ?></h4>
