@@ -9,7 +9,7 @@ $image = $_FILES["photo"]["name"];
 $target2 = "SMC/" . basename($image);
 
 
-$sql = "INSERT INTO `Smc` (`Id`, `Name`, `Post`, `Since`, `Image`) VALUES (NULL, '$name', '$post', '$date', '$image')";
+$sql = "INSERT INTO `Smc` (`Id`, `Name`, `Post`, `Since`, `Image`) VALUES (NULL, '$name', '$date', '$post', '$image')";
 mysqli_query($conn, $sql);
 
 

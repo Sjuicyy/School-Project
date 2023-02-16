@@ -17,7 +17,7 @@ if ($result == 1) {
 } else {
     session_start();
     $_SESSION['error']="Please enter valid Email or Password";
-    header('Location:login.php');
+    header('Location:Login.php');
     // echo "login unsuccessful";
 }
 ?>

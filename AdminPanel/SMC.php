@@ -26,47 +26,41 @@
 </head>
 
 <body>
-    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <img src="../img/Banner.png" width="200px" alt="">
-
-            <button class="navbar-toggler" type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <a href="index1.php">
+                <img src="../img/Banner.png" width="200px" alt="">
+            </a>
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" aria-current="page" href="index1.php">Home</a>
+                        <a class="nav-link px-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="teachers.php">Teachers</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="allstudent.php">Students</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link px-3 px-lg-2" href="request.php">Requests</a>
+                        <a class="nav-link px-3 px-lg-2 " href="request.php">Requests</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link px-3 px-lg-2" href="notice.php">Notices</a>
                     </li>
-
-
-
                     <li class="nav-item pt-1">
-
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-
-                            <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
+                            <a href="SMC.php" class="dropdown-item" type="button">Add Members</a>
+                            <a href="PMC.php" class="dropdown-item" type="button">Add Parent Members</a>
+                            <a href="testimony.php" class="dropdown-item" type="button">Add Testimonial</a>
+                            <a href="Photos.php" class="dropdown-item" type="button">Add Photos</a>
+                            <a href="../LOGOUT.php" class="dropdown-item fw-bold" type="button">Log Out</a>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -93,7 +87,7 @@
                                                     <div class="form-group files"><label class="Photo">Upload Photo
                                                         </label>
                                                         <input id="file" type="file" name="photo"
-                                                            class="form-control" />
+                                                            class="form-control" required  />
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,7 +96,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group"><label for="Name">Name</label><input
                                                             type="text" name="name" class="form-control" id="Name"
-                                                            placeholder=""></div>
+                                                            placeholder="" required></div>
                                                 </div>
 
                                             </div>
@@ -110,7 +104,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group"><label for="Name">Post</label><input
                                                             type="text" name="date" class="form-control" id="Name"
-                                                            placeholder=""></div>
+                                                            placeholder="" required></div>
                                                 </div>
 
                                             </div>
@@ -118,7 +112,7 @@
                                                 <div class="col-lg-12">
                                                     <div class="form-group"><label for="Name">Since</label><input
                                                             type="date" name="post" class="form-control" id="Name"
-                                                            placeholder=""></div>
+                                                            placeholder="" required></div>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-end mb-1">
@@ -142,7 +136,7 @@
                                             <div class="notification-ui_dd-content mb-4 px-2">
                                                 <div class="notification-list_content d-flex mt-3">
                                                     <div class="notification-list_img mx-auto">
-                                                        <img src="https://i.imgur.com/zYxDCQT.jpg" width="100" alt="user">
+                                                        <img src="SMC/<?php echo $data['Image'] ?>" width="100" alt="user">
                                                     </div>
                                                     <div class="notification-list_detail mx-auto">
                                                         <div class="text-muted d-flex font-weight-bold">

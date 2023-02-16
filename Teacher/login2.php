@@ -45,8 +45,8 @@ session_start()
 <body style="background-color:#99e6e335 ;">
     <!-- heading start -->
     <div class=" container-fluid text-center">
-        <div class="container mt-5 w-50 bg-white rounded-3"
-            style="height:730px;max-width:650px;border:2px solid rgb(26,231,17)">
+        <div class="container mt-5  bg-white rounded-3"
+            style="height:650px;max-width:500px;border:2px solid rgb(26,231,17)">
             <form method="POST" action="LOGIN-T.php" class="card border-0 w-100">
                 <img class="mt-5 border border-2 " src="../img/Banner.png" width="100%">
                 <div class="card-body mt-5">
@@ -69,12 +69,6 @@ session_start()
                 <input type="submit" value="Log In"
                     class="btn1  bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-3"
                     style="letter-spacing: 2px;">
-
-                <div class="row mt-5">
-                    <div class="col  text-center">
-                        Need an account? <a class="color text-decoration-none mx-auto" href="./signup.php"> SIGN UP</a>
-                    </div>
-                </div>
             </form>
         </div>
     </div>

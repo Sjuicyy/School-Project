@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -27,8 +28,9 @@
         .btn1 {
             color: #ffffff;
         }
-        .col1{
-            color: rgb(26,231,17);
+
+        .col1 {
+            color: rgb(26, 231, 17);
         }
     </style>
     <title>Little Angle School</title>
@@ -40,31 +42,31 @@
     <!-- heading end -->
     <!-- login body  -->
     <div class="container mt-5  rounded-3 p-3 "
-        style="height:780px;background-color:white; max-width:650px;border:2px solid rgb(26,231,17)">
-        <img class="mt-5 border border-2 "
-            src="./img/Banner.png"
-            width="100%">
+        style="height:650px;background-color:white; max-width:500px;border:2px solid rgb(26,231,17)">
+        <img class="mt-5 border border-2 " src="./img/Banner.png" width="100%">
         <br><br>
         <div class="row  mt-5">
-            <p class="color h1">LOG IN AS</p>
+            <p class="color h3">LOG IN AS</p>
         </div>
-      
+
         <div class=" container mt-5">
             <a href="Student/login.php">
-                <button class="w-100 bcolor btn1 rounded-3 mt-4 h4 p-2 border-0" style="letter-spacing: 2px;" >Student </button>
+                <button class="w-100 bcolor btn1 rounded-3 mt-4 h5 p-2 border-0" style="letter-spacing: 2px;">Student
+                </button>
             </a>
             <a href="./Teacher/login2.php">
-            <button class="w-100 bcolor btn1 rounded-3 mt-5 h4 p-2 border-0" style="letter-spacing: 2px;" >Teacher</button>
+                <button class="w-100 bcolor btn1 rounded-3 mt-5 h5 p-2 border-0"
+                    style="letter-spacing: 2px;">Teacher</button>
             </a>
         </div>
 
         <center>
             <div class="mt-3">
-            <a  href="AdminPanel/Login.php">
-                <div class="btn btn-secondary mt-5"  >
-                    Admin
-                </div>
-                </a> 
+                <a href="AdminPanel/Login.php">
+                    <div class="btn btn-secondary mt-5">
+                        Admin
+                    </div>
+                </a>
             </div>
         </center>
     </div>

@@ -3,7 +3,7 @@ session_start();
 require_once "CONNECTION.php";
 $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
-    header('Location:Login.php');
+    header('Location:../Loghome.php');
 }
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
@@ -96,7 +96,7 @@ $rows = mysqli_num_rows($result);
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="index1.php">Home</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="../index1.php">Home</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>

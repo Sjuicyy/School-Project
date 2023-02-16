@@ -3,7 +3,7 @@ session_start();
 require_once "CONNECTION.php";
 $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
-    header('Location:Login.php');
+    header('Location:Loghome.php');
 }
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);

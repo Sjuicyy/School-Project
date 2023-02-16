@@ -39,8 +39,8 @@
 <body style="background-color:#99e6e335 ;">
     <!-- heading start -->
     <div class=" container-fluid text-center">
-        <div class="container mt-5 w-50 bg-white rounded-3"
-            style="height:650px;max-width:650px;border:2px solid rgb(26,231,17)">
+        <div class="container mt-5 bg-white rounded-3"
+            style="height:650px;max-width:500px;border:2px solid rgb(26,231,17)">
             <form method="POST" action="LOGIN-A.php" class="card  border-0 w-100">
                 <img class="mt-5 border border-2 "
                     src="../img/Banner.png"

@@ -1,4 +1,3 @@
-\
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,67 +31,68 @@
     <div class="back-to-top"></div>
 
     <header>
-        <div class="top-bar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <div class="d-inline-block">
-                            <span class="mai-mail fg-primary"></span> <a
-                                href="mailto:contact@mail.com">contact@mail.com</a>
-                        </div>
-                        <div class="d-inline-block ml-2">
-                            <span class="mai-call fg-primary"></span> <a href="tel:+0011223495">+0011223495</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-right d-none d-md-block">
-                        <div class="social-mini-button">
-                            <a href="#"><span class="mai-logo-facebook-f"></span></a>
-                            <a href="#"><span class="mai-logo-twitter"></span></a>
-                            <a href="#"><span class="mai-logo-youtube"></span></a>
-                            <a href="#"><span class="mai-logo-linkedin"></span></a>
-                        </div>
-                    </div>
-                </div>
+    <div class="top-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <div class="d-inline-block">
+              <span class="mai-mail fg-primary"></span> <a href="mailto:contact@mail.com">contact@mail.com</a>
             </div>
-            <!-- .container -->
+            <div class="d-inline-block ml-2">
+              <span class="mai-call fg-primary"></span> <a href="tel:+0011223495">+0011223495</a>
+            </div>
+          </div>
+
+          <div class="col-4  text-right d-flex justify-content-end">
+            <div class="social-mini-button d-none d-md-block">
+              <a href="#"><span class="mai-logo-facebook-f"></span></a>
+              <a href="#"><span class="mai-logo-twitter"></span></a>
+              <a href="#"><span class="mai-logo-youtube"></span></a>
+              <a href="#"><span class="mai-logo-linkedin"></span></a>
+            </div>
+            <a href="../../loghome.php"><span class="mai-logo">Log In</span></a>
+          </div>
         </div>
-        <!-- .top-bar -->
+      </div> <!-- .container -->
+    </div> <!-- .top-bar -->
 
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container">
-                <a href="index.html" class="navbar-brand">Reve<span class="text-primary">Tive.</span></a>
+      <div class="container">
+        <a href="index.html" class="navbar-brand"><img src="../assets/img/Banner.png"
+            style="max-width: 250px;"></span></a>
 
-                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <div class="navbar-collapse collapse" id="navbarContent">
-                    <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a href="about.html" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="services.html" class="nav-link">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="portfolio.html" class="nav-link">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog.html" class="nav-link">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contact.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- .container -->
-        </nav>
-        <!-- .navbar -->
+        <div class="navbar-collapse collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
+            <li class="nav-item ">
+              <a href="index.php" class="nav-link">गृहपृष्ठ</a>
+            </li>
+            <li class="nav-item active">
+              <a href="about.php" class="nav-link">हाम्रो बारेमा </a>
+            </li>
+            <li class="nav-item">
+              <a href="society.php" class="nav-link">समुदायहरु</a>
+            </li>
+            <li class="nav-item">
+              <a href="notices.php" class="nav-link">सूचनाहरु</a>
+            </li>
+            <li class="nav-item">
+              <a href="photos.php" class="nav-link">फोटोहरू</a>
+            </li>
+            <!--            <li class="nav-item">-->
+            <!--              <a href="blog.html" class="nav-link">News</a>-->
+            <!--            </li>-->
+            <li class="nav-item">
+              <a href="contact.php" class="nav-link">सम्पर्क</a>
+            </li>
+          </ul>
+        </div>
+      </div> <!-- .container -->
+    </nav> <!-- .navbar -->
 
         <div class="page-banner bg-img bg-img-parallax overlay-dark"
             style="background-image: url(../assets/img/bg_image_3.jpg);">
@@ -101,11 +101,11 @@
                     <div class="col-lg-8">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
-                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">About</li>
+                                <li class="breadcrumb-item"><a href="index.php">गृहपृष्ठ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">हाम्रो बारेमा </li>
                             </ol>
                         </nav>
-                        <h1 class="fg-white text-center">About</h1>
+                        <h1 class="fg-white text-center">हाम्रो बारेमा</h1>
                     </div>
                 </div>
             </div>
@@ -138,9 +138,6 @@
                     </div>
                 </div>
             </div>
-            <!-- .container -->
-        </div>
-        <div class="page-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 py-3">
@@ -164,7 +161,6 @@
 
                 </div>
             </div>
-            <!-- .container -->
         </div>
         <!-- .page-section -->
 
@@ -176,88 +172,70 @@
                 </div>
 
                 <div class="owl-carousel team-carousel mt-5">
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_1.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>विजय कुमार दाहाल </h5>
-                            <div class="text-sm fg-grey">अध्यक्ष</div>
-
-                        </div>
-                    </div>
-
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_2.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>Sarah Johanson</h5>
-                            <div class="text-sm fg-grey">Chief Technology Officer</div>
-
-                        </div>
-                    </div>
-
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_3.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>Anna Anderson</h5>
-                            <div class="text-sm fg-grey">Product Manager</div>
-                        </div>
-                    </div>
-
+                    <?php
+                    require_once 'CONNECTION.php';
+                    $sql = "SELECT * FROM Smc";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($data = mysqli_fetch_array($result)) {
+                            ?>
+                            <div class="team-wrap">
+                                <div class="team-profile">
+                                    <img src="../../AdminPanel/SMC/<?php echo $data['Image'] ?>" height="335px" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h5>
+                                        <?php echo $data['Name'] ?>
+                                    </h5>
+                                    <div class="text-sm fg-grey">
+                                        <?php echo $data['Post'] ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
             <!-- .container -->
-        </div>
-        <div class="page-section">
-            <div class="container">
+
+
+            <div class="container mt-5">
                 <div class="text-center">
-                    <div class="subhead">हाम्रो समितिहरु </div>
-                    <h2 class="title-section"> शिक्षक अभिभावक समिति</h2>
+                    <h2 class="title-section"> विद्यालय अभिभावक समिति</h2>
                 </div>
 
                 <div class="owl-carousel team-carousel mt-5">
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_1.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>विजय कुमार दाहाल </h5>
-                            <div class="text-sm fg-grey">अध्यक्ष</div>
-
-                        </div>
-                    </div>
-
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_2.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>Sarah Johanson</h5>
-                            <div class="text-sm fg-grey">Chief Technology Officer</div>
-
-                        </div>
-                    </div>
-
-                    <div class="team-wrap">
-                        <div class="team-profile">
-                            <img src="../assets/img/teams/team_3.jpg" alt="">
-                        </div>
-                        <div class="team-content">
-                            <h5>Anna Anderson</h5>
-                            <div class="text-sm fg-grey">Product Manager</div>
-                        </div>
-                    </div>
-
+                    <?php
+                    require_once 'CONNECTION.php';
+                    $sql = "SELECT * FROM Pmc";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($data = mysqli_fetch_array($result)) {
+                            ?>
+                            <div class="team-wrap">
+                                <div class="team-profile">
+                                    <img src="../../AdminPanel/PMC/<?php echo $data['Image'] ?>" height="335px" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h5>
+                                        <?php echo $data['Name'] ?>
+                                    </h5>
+                                    <div class="text-sm fg-grey">
+                                        <?php echo $data['Post'] ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
-            <!-- .container -->
         </div>
+        <!-- .page-section -->
     </main>
-
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -286,9 +264,7 @@
                     </form>
                 </div>
             </div>
-
             <hr>
-
             <div class="row mt-4">
                 <div class="col-md-6">
                     <p>Copyright 2020. This template designed by <a href="https://macodeid.com">MACode ID</a></p>

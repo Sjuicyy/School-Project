@@ -15,6 +15,6 @@ if ($data == 1) {
 } else {
     $sql = "INSERT INTO `students` (`Name`, `Address`, `Contact`, `Email`, `Profession`, `Fname`, `Batch`, `Photo`, `Facebook`, `Pwd`, `Status`, `About`) VALUES (NULL, NULL,  '$email' , '$email', NULL, NULL, NULL, NULL, NULL, '$password', NULL, NULL)";
     $result = mysqli_query($conn, $sql);
-    header('location:login.php');
+    header('Location:Loghome.php');
 }
 ?>

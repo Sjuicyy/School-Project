@@ -37,7 +37,7 @@
     <!-- heading start -->
     <div class=" container-fluid text-center">
         <div class="container mt-5 w-50 bg-white rounded-3"
-            style="height:730px;max-width:650px;border:2px solid rgb(26,231,17)">
+            style="height:650px;max-width:500px;border:2px solid rgb(26,231,17)">
             <form method="POST" action="SIGN-UP.php" class="card border-0 w-100">
                 <img class="mt-5 border border-2 " src="../img/Banner.png" width="100%">
 
@@ -47,9 +47,9 @@
                 <div class="card-body mt-5">
 
                 </div>
-                <input class="form-control-lg  w-75 mx-auto p-2 mt-3" type="email" name="email"
+                <input class="form-control-lg  w-75 mx-auto  mt-3" type="email" name="email"
                     placeholder="Email Address" style="border:2px solid rgb(26,231,17)" required>
-                <input class="form-control-lg  w-75 mx-auto p-2 mt-5" type="password" name="password"
+                <input class="form-control-lg  w-75 mx-auto  mt-5" type="password" name="password"
                     placeholder="Password" style="border:2px solid rgb(26,231,17)" required>
                 
 

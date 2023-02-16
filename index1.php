@@ -3,7 +3,7 @@ session_start();
 require_once "CONNECTION.php";
 $email_id = $_SESSION['User'];
 if (!($_SESSION['status'] == 'logedin')) {
-    header('Location:Login.php');
+    header('Location:Loghome.php');
 }
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
@@ -95,18 +95,15 @@ $rows = mysqli_num_rows($result);
                             <a class="nav-link px-3 mx-3 px-lg-2" href="./Teacher/requests2.php">Requests</a>
                         <?php else: ?>
                             <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/requests.php">Requests</a>
+                            <li class="nav-item">
+                        <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/batchmates.php">Batchmates</a>
+                    </li>
+
                         <?php endif; ?>
                     </li>
 
 
 
-
-
-                    <?php if (!($rows == 0)): ?>
-                        <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
-                    </li>
-                        <?php endif; ?>
 
 
                  
@@ -129,7 +126,7 @@ $rows = mysqli_num_rows($result);
                         ?>
                         <li class="nav-item pt-1">
                             <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="../img/Student/<?php echo $data['Photo'] ?>"
+                                aria-expanded="false"><img src="img/Teachers/<?php echo $data['Photo'] ?>"
                                     class="rounded-circle" height="50px" width="50px" alt=""> </a>
 
 
@@ -148,7 +145,7 @@ $rows = mysqli_num_rows($result);
                         <li class="nav-item pt-1">
 
                             <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"><img src="../img/Students/<?php echo $data['Photo'] ?>"
+                                aria-expanded="false"><img src="img/Students/<?php echo $data['Photo'] ?>"
                                     class="rounded-circle" height="50px" width="50px" alt=""> </a>
 
 
