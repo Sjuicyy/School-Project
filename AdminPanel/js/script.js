@@ -8,18 +8,14 @@ var currentScrollPos = window.pageYOffset;
     document.getElementById("navbar").style.top = "-80px"; /* width horizontal navbar */
   }
   prevScrollpos = currentScrollPos;
-
 }
-
 const mainNavigation = document.querySelector(".main-navigation");
 const overlay = mainNavigation.querySelector(".overlay");
 const toggler = mainNavigation.querySelector(".navbar-toggler");
-
 const openSideNav = () => mainNavigation.classList.add("active");
 const closeSideNav = () => mainNavigation.classList.remove("active");
 toggler.addEventListener("click", openSideNav);
 overlay.addEventListener("click", closeSideNav); 
-
 // Scroll to top
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function () {

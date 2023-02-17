@@ -8,13 +8,10 @@ if (!($_SESSION['status'] == 'logedin')) {
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
-
 $rows = mysqli_num_rows($result);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,11 +19,6 @@ $rows = mysqli_num_rows($result);
     <title>Request</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="rform.css">
-
-
-
-
-
     <link rel="icon" href="img/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
@@ -34,19 +26,8 @@ $rows = mysqli_num_rows($result);
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
-
-
-
-
-
 </head>
-
 <body>
-
-
-
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
@@ -57,38 +38,22 @@ $rows = mysqli_num_rows($result);
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
-
                     <?php if ($data['Status'] == 2): ?>
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="../index1.php">Home</a>
                         </li>
-
-
                         <li class="nav-item">
-
                                 <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                         </li>
-
-
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                         </li>
-
-
                     <?php endif; ?>
-
-
-
-
                     <?php if ($data['Photo'] == Null): ?>
-
                         <a href="../LOGOUT.php">
                             <p class="text-light text-decoration-none">Log Out</p>
                         </a>
-
                     <?php else: ?>
-
-
                         <li class="nav-item pt-1">
                             <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false"><img src="../img/Students/<?php echo $data['Photo'] ?>"
@@ -99,16 +64,11 @@ $rows = mysqli_num_rows($result);
                                 <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                             </div>
                         </li>
-
                     <?php endif; ?>
-
-
-
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container justify-content-center ">
         <div class="card-body px-sm-4 px-0">
             <div class="row justify-content-center mx-auto">
@@ -118,7 +78,6 @@ $rows = mysqli_num_rows($result);
                 </div>
             </div>
             <div class="row justify-content-center round">
-
                 <?php if ($data['Emsg'] == !NULL): ?>
                     <div class="alert  alert-danger mt-3 w-75" role="alert">
                         <?php echo $data['Emsg']; ?>
@@ -169,7 +128,6 @@ $rows = mysqli_num_rows($result);
                                                     value="<?php echo $data['Facebook']; ?>" class="form-control"
                                                     id="Mobile-Number" placeholder="">
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
@@ -205,27 +163,17 @@ $rows = mysqli_num_rows($result);
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $(".files").attr('data-before', "Drag file here or click the above button");
             $('input[type="file"]').change(function (e) {
                 var fileName = e.target.files[0].name;
                 $(".files").attr('data-before', fileName);
-
             });
         });
     </script>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
-
-
 </body>
-
 </html>

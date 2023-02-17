@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -16,29 +15,25 @@
         .bcolor {
             background-color: rgb(47, 137, 252);
         }
-
         .color {
             color: rgb(47, 137, 252);
         }
-
         .btn1:hover {
             opacity: 0.8;
         }
-
         .btn1 {
             color: #ffffff;
         }
-
         .col1 {
             color: rgb(26, 231, 17);
         }
     </style>
     <title>Little Angle School</title>
 </head>
-
 <body class="" style="background-color:#99e6e335; height: 900px;">
-    <!-- heading start -->
+<a class="h4 m-4 text-decoration-none" href="index.php">Home</a>
 
+    <!-- heading start -->
     <!-- heading end -->
     <!-- login body  -->
     <div class="container mt-5  rounded-3 p-3 "
@@ -48,7 +43,6 @@
         <div class="row  mt-5">
             <p class="color h3">LOG IN AS</p>
         </div>
-
         <div class=" container mt-5">
             <a href="Student/login.php">
                 <button class="w-100 bcolor btn1 rounded-3 mt-4 h5 p-2 border-0" style="letter-spacing: 2px;">Student
@@ -59,7 +53,6 @@
                     style="letter-spacing: 2px;">Teacher</button>
             </a>
         </div>
-
         <center>
             <div class="mt-3">
                 <a href="AdminPanel/Login.php">
@@ -70,11 +63,8 @@
             </div>
         </center>
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

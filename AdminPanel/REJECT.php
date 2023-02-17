@@ -7,5 +7,4 @@ $msg = $_POST['msg'];
 $sql = "UPDATE `students` SET `Status` = NULL , `Emsg`='$msg' WHERE `students`.`Email` = '$Rid' ";
 mysqli_query($conn, $sql);
 header('location:allstudent.php');
-
 ?>

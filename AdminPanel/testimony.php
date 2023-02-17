@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,13 +17,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
         body {
             font-family: "Roboto", sans-serif;
         }
     </style>
 </head>
-
 <body>
 <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
@@ -65,11 +62,9 @@
             </div>
         </div>
     </nav>
-
     <main>
         <section class="blog">
             <div class="container">
-
                 <div class="container justify-content-center ">
                     <div class="card-body px-sm-4 px-0">
                         <div class="row justify-content-center">
@@ -153,7 +148,6 @@
                                                             </p>
                                                         </div>
                                                     </div>
-
                                                     <div class="mx-auto">
                                                         <form action="DELETE-TESTIMONY.php" method="post">
                                                             <button class="bg-none btn btn-danger" type="submit">
@@ -171,23 +165,18 @@
                                         }
                                     }
                                     ?>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             </div>
         </section>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
@@ -199,9 +188,7 @@
             $('input[type="file"]').change(function (e) {
                 var fileName = e.target.files[0].name;
                 $(".files").attr('data-before', fileName);
-
             });
         });</script>
 </body>
-
 </html>

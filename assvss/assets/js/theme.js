@@ -46,7 +46,6 @@ $(function() {
   }
   
 });
-
 $('document').ready(function() {
   var nav_height = 70;
   
@@ -61,7 +60,6 @@ $('document').ready(function() {
     return false;
   });
 });
-
 $('document').ready(function() {
   // Back to top
   var backTop = $(".back-to-top");
@@ -82,8 +80,6 @@ $('document').ready(function() {
     return false;
   });
 });
-
-
 $('document').ready(function() {
   
   // Loader
@@ -100,7 +96,6 @@ $('document').ready(function() {
   // Page scroll animate
   new WOW().init();
 });
-
 $("document").ready(function() {
   $(".hero-carousel").owlCarousel({
     items: 1,
@@ -110,7 +105,6 @@ $("document").ready(function() {
     autoplay: true,
     autoplayTimeout: 5000,
   });
-
   $(".team-carousel").owlCarousel({
     margin: 16,
     responsive: {
@@ -125,7 +119,6 @@ $("document").ready(function() {
       }
     }
   })
-
   $(".testimonial-carousel").owlCarousel({
     responsive: {
       0: {
@@ -143,18 +136,14 @@ $("document").ready(function() {
     }
   });
 });
-
-
 var $grid = $('.grid');
 $grid.isotope({
   // options
   itemSelector: '.grid-item',
   layoutMode: 'fitRows'
 });
-
 $('.filterable-btn').on( 'click', 'button', function() {
   var filterValue = $(this).attr('data-filter');
   $(this).toggleClass('active').siblings().removeClass('active');
   $grid.isotope({ filter: filterValue });
 });
-

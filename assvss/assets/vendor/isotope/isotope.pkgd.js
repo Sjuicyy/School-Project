@@ -7,15 +7,12 @@
  * https://isotope.metafizzy.co
  * Copyright 2010-2018 Metafizzy
  */
-
 /**
  * Bridget makes jQuery widgets
  * v2.0.1
  * MIT license
  */
-
 /* jshint browser: true, strict: true, undef: true, unused: true */
-
 ( function( window, factory ) {
   // universal module definition
   /*jshint strict: false */ /* globals define, module, require */
@@ -37,14 +34,10 @@
       window.jQuery
     );
   }
-
 }( window, function factory( window, jQuery ) {
 'use strict';
-
 // ----- utils ----- //
-
 var arraySlice = Array.prototype.slice;
-
 // helper function for logging errors
 // $.error breaks jQuery chaining
 var console = window.console;
@@ -52,15 +45,12 @@ var logError = typeof console == 'undefined' ? function() {} :
   function( message ) {
     console.error( message );
   };
-
 // ----- jQueryBridget ----- //
-
 function jQueryBridget( namespace, PluginClass, $ ) {
   $ = $ || jQuery || window.jQuery;
   if ( !$ ) {
     return;
   }
-
   // add option method -> $().plugin('option', {...})
   if ( !PluginClass.prototype.option ) {
     // option setter
@@ -72,7 +62,6 @@ function jQueryBridget( namespace, PluginClass, $ ) {
       this.options = $.extend( true, this.options, opts );
     };
   }
-
   // make jQuery plugin
   $.fn[ namespace ] = function( arg0 /*, arg1 */ ) {
     if ( typeof arg0 == 'string' ) {
@@ -85,12 +74,10 @@ function jQueryBridget( namespace, PluginClass, $ ) {
     plainCall( this, arg0 );
     return this;
   };
-
   // $().plugin('methodName')
   function methodCall( $elems, methodName, args ) {
     var returnValue;
     var pluginMethodStr = '$().' + namespace + '("' + methodName + '")';
-
     $elems.each( function( i, elem ) {
       // get instance
       var instance = $.data( elem, namespace );
@@ -99,22 +86,18 @@ function jQueryBridget( namespace, PluginClass, $ ) {
           pluginMethodStr );
         return;
       }
-
       var method = instance[ methodName ];
       if ( !method || methodName.charAt(0) == '_' ) {
         logError( pluginMethodStr + ' is not a valid method' );
         return;
       }
-
       // apply method, get return value
       var value = method.apply( instance, args );
       // set return value if value is returned, use only first value
       returnValue = returnValue === undefined ? value : returnValue;
     });
-
     return returnValue !== undefined ? returnValue : $elems;
   }
-
   function plainCall( $elems, options ) {
     $elems.each( function( i, elem ) {
       var instance = $.data( elem, namespace );
@@ -129,13 +112,9 @@ function jQueryBridget( namespace, PluginClass, $ ) {
       }
     });
   }
-
   updateJQuery( $ );
-
 }
-
 // ----- updateJQuery ----- //
-
 // set $.bridget for v1 backwards compatibility
 function updateJQuery( $ ) {
   if ( !$ || ( $ && $.bridget ) ) {
@@ -143,23 +122,16 @@ function updateJQuery( $ ) {
   }
   $.bridget = jQueryBridget;
 }
-
 updateJQuery( jQuery || window.jQuery );
-
 // -----  ----- //
-
 return jQueryBridget;
-
 }));
-
 /**
  * EvEmitter v1.1.0
  * Lil' event emitter
  * MIT License
  */
-
 /* jshint unused: true, undef: true, strict: true */
-
 ( function( global, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module, window */
@@ -173,15 +145,9 @@ return jQueryBridget;
     // Browser globals
     global.EvEmitter = factory();
   }
-
 }( typeof window != 'undefined' ? window : this, function() {
-
-
-
 function EvEmitter() {}
-
 var proto = EvEmitter.prototype;
-
 proto.on = function( eventName, listener ) {
   if ( !eventName || !listener ) {
     return;
@@ -194,10 +160,8 @@ proto.on = function( eventName, listener ) {
   if ( listeners.indexOf( listener ) == -1 ) {
     listeners.push( listener );
   }
-
   return this;
 };
-
 proto.once = function( eventName, listener ) {
   if ( !eventName || !listener ) {
     return;
@@ -211,10 +175,8 @@ proto.once = function( eventName, listener ) {
   var onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
   // set flag
   onceListeners[ listener ] = true;
-
   return this;
 };
-
 proto.off = function( eventName, listener ) {
   var listeners = this._events && this._events[ eventName ];
   if ( !listeners || !listeners.length ) {
@@ -224,10 +186,8 @@ proto.off = function( eventName, listener ) {
   if ( index != -1 ) {
     listeners.splice( index, 1 );
   }
-
   return this;
 };
-
 proto.emitEvent = function( eventName, args ) {
   var listeners = this._events && this._events[ eventName ];
   if ( !listeners || !listeners.length ) {
@@ -238,7 +198,6 @@ proto.emitEvent = function( eventName, args ) {
   args = args || [];
   // once stuff
   var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
-
   for ( var i=0; i < listeners.length; i++ ) {
     var listener = listeners[i]
     var isOnce = onceListeners && onceListeners[ listener ];
@@ -252,28 +211,21 @@ proto.emitEvent = function( eventName, args ) {
     // trigger listener
     listener.apply( this, args );
   }
-
   return this;
 };
-
 proto.allOff = function() {
   delete this._events;
   delete this._onceEvents;
 };
-
 return EvEmitter;
-
 }));
-
 /*!
  * getSize v2.0.3
  * measure size of elements
  * MIT license
  */
-
 /* jshint browser: true, strict: true, undef: true, unused: true */
 /* globals console: false */
-
 ( function( window, factory ) {
   /* jshint strict: false */ /* globals define, module */
   if ( typeof define == 'function' && define.amd ) {
@@ -286,12 +238,9 @@ return EvEmitter;
     // browser global
     window.getSize = factory();
   }
-
 })( window, function factory() {
 'use strict';
-
 // -------------------------- helpers -------------------------- //
-
 // get a number from a string, not a percentage
 function getStyleSize( value ) {
   var num = parseFloat( value );
@@ -299,16 +248,12 @@ function getStyleSize( value ) {
   var isValid = value.indexOf('%') == -1 && !isNaN( num );
   return isValid && num;
 }
-
 function noop() {}
-
 var logError = typeof console == 'undefined' ? noop :
   function( message ) {
     console.error( message );
   };
-
 // -------------------------- measurements -------------------------- //
-
 var measurements = [
   'paddingLeft',
   'paddingRight',
@@ -323,9 +268,7 @@ var measurements = [
   'borderTopWidth',
   'borderBottomWidth'
 ];
-
 var measurementsLength = measurements.length;
-
 function getZeroSize() {
   var size = {
     width: 0,
@@ -341,9 +284,7 @@ function getZeroSize() {
   }
   return size;
 }
-
 // -------------------------- getStyle -------------------------- //
-
 /**
  * getStyle, get style of element, check for Firefox bug
  * https://bugzilla.mozilla.org/show_bug.cgi?id=548397
@@ -357,13 +298,9 @@ function getStyle( elem ) {
   }
   return style;
 }
-
 // -------------------------- setup -------------------------- //
-
 var isSetup = false;
-
 var isBoxSizeOuter;
-
 /**
  * setup
  * check isBoxSizerOuter
@@ -375,9 +312,7 @@ function setup() {
     return;
   }
   isSetup = true;
-
   // -------------------------- box sizing -------------------------- //
-
   /**
    * Chrome & Safari measure the outer-width on style.width on border-box elems
    * IE11 & Firefox<29 measures the inner-width
@@ -388,45 +323,34 @@ function setup() {
   div.style.borderStyle = 'solid';
   div.style.borderWidth = '1px 2px 3px 4px';
   div.style.boxSizing = 'border-box';
-
   var body = document.body || document.documentElement;
   body.appendChild( div );
   var style = getStyle( div );
   // round value for browser zoom. desandro/masonry#928
   isBoxSizeOuter = Math.round( getStyleSize( style.width ) ) == 200;
   getSize.isBoxSizeOuter = isBoxSizeOuter;
-
   body.removeChild( div );
 }
-
 // -------------------------- getSize -------------------------- //
-
 function getSize( elem ) {
   setup();
-
   // use querySeletor if elem is string
   if ( typeof elem == 'string' ) {
     elem = document.querySelector( elem );
   }
-
   // do not proceed on non-objects
   if ( !elem || typeof elem != 'object' || !elem.nodeType ) {
     return;
   }
-
   var style = getStyle( elem );
-
   // if hidden, everything is 0
   if ( style.display == 'none' ) {
     return getZeroSize();
   }
-
   var size = {};
   size.width = elem.offsetWidth;
   size.height = elem.offsetHeight;
-
   var isBorderBox = size.isBorderBox = style.boxSizing == 'border-box';
-
   // get all measurements
   for ( var i=0; i < measurementsLength; i++ ) {
     var measurement = measurements[i];
@@ -435,16 +359,13 @@ function getSize( elem ) {
     // any 'auto', 'medium' value will be 0
     size[ measurement ] = !isNaN( num ) ? num : 0;
   }
-
   var paddingWidth = size.paddingLeft + size.paddingRight;
   var paddingHeight = size.paddingTop + size.paddingBottom;
   var marginWidth = size.marginLeft + size.marginRight;
   var marginHeight = size.marginTop + size.marginBottom;
   var borderWidth = size.borderLeftWidth + size.borderRightWidth;
   var borderHeight = size.borderTopWidth + size.borderBottomWidth;
-
   var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;
-
   // overwrite width and height if we can get it from style
   var styleWidth = getStyleSize( style.width );
   if ( styleWidth !== false ) {
@@ -452,35 +373,26 @@ function getSize( elem ) {
       // add padding and border unless it's already including it
       ( isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth );
   }
-
   var styleHeight = getStyleSize( style.height );
   if ( styleHeight !== false ) {
     size.height = styleHeight +
       // add padding and border unless it's already including it
       ( isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight );
   }
-
   size.innerWidth = size.width - ( paddingWidth + borderWidth );
   size.innerHeight = size.height - ( paddingHeight + borderHeight );
-
   size.outerWidth = size.width + marginWidth;
   size.outerHeight = size.height + marginHeight;
-
   return size;
 }
-
 return getSize;
-
 });
-
 /**
  * matchesSelector v2.0.2
  * matchesSelector( element, '.selector' )
  * MIT license
  */
-
 /*jshint browser: true, strict: true, undef: true, unused: true */
-
 ( function( window, factory ) {
   /*global define: false, module: false */
   'use strict';
@@ -495,10 +407,8 @@ return getSize;
     // browser global
     window.matchesSelector = factory();
   }
-
 }( window, function factory() {
   'use strict';
-
   var matchesMethod = ( function() {
     var ElemProto = window.Element.prototype;
     // check for the standard method name first
@@ -511,7 +421,6 @@ return getSize;
     }
     // check vendor prefixes
     var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];
-
     for ( var i=0; i < prefixes.length; i++ ) {
       var prefix = prefixes[i];
       var method = prefix + 'MatchesSelector';
@@ -520,24 +429,18 @@ return getSize;
       }
     }
   })();
-
   return function matchesSelector( elem, selector ) {
     return elem[ matchesMethod ]( selector );
   };
-
 }));
-
 /**
  * Fizzy UI utils v2.0.7
  * MIT license
  */
-
 /*jshint browser: true, undef: true, unused: true, strict: true */
-
 ( function( window, factory ) {
   // universal module definition
   /*jshint strict: false */ /*globals define, module, require */
-
   if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( 'fizzy-ui-utils/utils',[
@@ -558,15 +461,9 @@ return getSize;
       window.matchesSelector
     );
   }
-
 }( window, function factory( window, matchesSelector ) {
-
-
-
 var utils = {};
-
 // ----- extend ----- //
-
 // extends objects
 utils.extend = function( a, b ) {
   for ( var prop in b ) {
@@ -574,17 +471,12 @@ utils.extend = function( a, b ) {
   }
   return a;
 };
-
 // ----- modulo ----- //
-
 utils.modulo = function( num, div ) {
   return ( ( num % div ) + div ) % div;
 };
-
 // ----- makeArray ----- //
-
 var arraySlice = Array.prototype.slice;
-
 // turn element or nodeList into an array
 utils.makeArray = function( obj ) {
   if ( Array.isArray( obj ) ) {
@@ -595,28 +487,22 @@ utils.makeArray = function( obj ) {
   if ( obj === null || obj === undefined ) {
     return [];
   }
-
   var isArrayLike = typeof obj == 'object' && typeof obj.length == 'number';
   if ( isArrayLike ) {
     // convert nodeList to array
     return arraySlice.call( obj );
   }
-
   // array of single index
   return [ obj ];
 };
-
 // ----- removeFrom ----- //
-
 utils.removeFrom = function( ary, obj ) {
   var index = ary.indexOf( obj );
   if ( index != -1 ) {
     ary.splice( index, 1 );
   }
 };
-
 // ----- getParent ----- //
-
 utils.getParent = function( elem, selector ) {
   while ( elem.parentNode && elem != document.body ) {
     elem = elem.parentNode;
@@ -625,9 +511,7 @@ utils.getParent = function( elem, selector ) {
     }
   }
 };
-
 // ----- getQueryElement ----- //
-
 // use element as selector string
 utils.getQueryElement = function( elem ) {
   if ( typeof elem == 'string' ) {
@@ -635,9 +519,7 @@ utils.getQueryElement = function( elem ) {
   }
   return elem;
 };
-
 // ----- handleEvent ----- //
-
 // enable .ontype to trigger from .addEventListener( elem, 'type' )
 utils.handleEvent = function( event ) {
   var method = 'on' + event.type;
@@ -645,14 +527,11 @@ utils.handleEvent = function( event ) {
     this[ method ]( event );
   }
 };
-
 // ----- filterFindElements ----- //
-
 utils.filterFindElements = function( elems, selector ) {
   // make array of elems
   elems = utils.makeArray( elems );
   var ffElems = [];
-
   elems.forEach( function( elem ) {
     // check that elem is an actual element
     if ( !( elem instanceof HTMLElement ) ) {
@@ -675,22 +554,17 @@ utils.filterFindElements = function( elems, selector ) {
       ffElems.push( childElems[i] );
     }
   });
-
   return ffElems;
 };
-
 // ----- debounceMethod ----- //
-
 utils.debounceMethod = function( _class, methodName, threshold ) {
   threshold = threshold || 100;
   // original method
   var method = _class.prototype[ methodName ];
   var timeoutName = methodName + 'Timeout';
-
   _class.prototype[ methodName ] = function() {
     var timeout = this[ timeoutName ];
     clearTimeout( timeout );
-
     var args = arguments;
     var _this = this;
     this[ timeoutName ] = setTimeout( function() {
@@ -699,9 +573,7 @@ utils.debounceMethod = function( _class, methodName, threshold ) {
     }, threshold );
   };
 };
-
 // ----- docReady ----- //
-
 utils.docReady = function( callback ) {
   var readyState = document.readyState;
   if ( readyState == 'complete' || readyState == 'interactive' ) {
@@ -711,16 +583,13 @@ utils.docReady = function( callback ) {
     document.addEventListener( 'DOMContentLoaded', callback );
   }
 };
-
 // ----- htmlInit ----- //
-
 // http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
 utils.toDashed = function( str ) {
   return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
     return $1 + '-' + $2;
   }).toLowerCase();
 };
-
 var console = window.console;
 /**
  * allow user to initialize classes via [data-namespace] or .js-namespace class
@@ -737,7 +606,6 @@ utils.htmlInit = function( WidgetClass, namespace ) {
       .concat( utils.makeArray( jsDashElems ) );
     var dataOptionsAttr = dataAttr + '-options';
     var jQuery = window.jQuery;
-
     elems.forEach( function( elem ) {
       var attr = elem.getAttribute( dataAttr ) ||
         elem.getAttribute( dataOptionsAttr );
@@ -759,20 +627,14 @@ utils.htmlInit = function( WidgetClass, namespace ) {
         jQuery.data( elem, namespace, instance );
       }
     });
-
   });
 };
-
 // -----  ----- //
-
 return utils;
-
 }));
-
 /**
  * Outlayer Item
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /* globals define, module, require */
@@ -798,12 +660,9 @@ return utils;
       window.getSize
     );
   }
-
 }( window, function factory( EvEmitter, getSize ) {
 'use strict';
-
 // ----- helpers ----- //
-
 function isEmptyObj( obj ) {
   for ( var prop in obj ) {
     return false;
@@ -811,22 +670,16 @@ function isEmptyObj( obj ) {
   prop = null;
   return true;
 }
-
 // -------------------------- CSS3 support -------------------------- //
-
-
 var docElemStyle = document.documentElement.style;
-
 var transitionProperty = typeof docElemStyle.transition == 'string' ?
   'transition' : 'WebkitTransition';
 var transformProperty = typeof docElemStyle.transform == 'string' ?
   'transform' : 'WebkitTransform';
-
 var transitionEndEvent = {
   WebkitTransition: 'webkitTransitionEnd',
   transition: 'transitionend'
 }[ transitionProperty ];
-
 // cache all vendor properties that could have vendor prefix
 var vendorProperties = {
   transform: transformProperty,
@@ -835,14 +688,11 @@ var vendorProperties = {
   transitionProperty: transitionProperty + 'Property',
   transitionDelay: transitionProperty + 'Delay'
 };
-
 // -------------------------- Item -------------------------- //
-
 function Item( element, layout ) {
   if ( !element ) {
     return;
   }
-
   this.element = element;
   // parent layout class, i.e. Masonry, Isotope, or Packery
   this.layout = layout;
@@ -850,14 +700,11 @@ function Item( element, layout ) {
     x: 0,
     y: 0
   };
-
   this._create();
 }
-
 // inherit EvEmitter
 var proto = Item.prototype = Object.create( EvEmitter.prototype );
 proto.constructor = Item;
-
 proto._create = function() {
   // transition objects
   this._transn = {
@@ -865,12 +712,10 @@ proto._create = function() {
     clean: {},
     onEnd: {}
   };
-
   this.css({
     position: 'absolute'
   });
 };
-
 // trigger specified handler for event type
 proto.handleEvent = function( event ) {
   var method = 'on' + event.type;
@@ -878,25 +723,21 @@ proto.handleEvent = function( event ) {
     this[ method ]( event );
   }
 };
-
 proto.getSize = function() {
   this.size = getSize( this.element );
 };
-
 /**
  * apply CSS styles to element
  * @param {Object} style
  */
 proto.css = function( style ) {
   var elemStyle = this.element.style;
-
   for ( var prop in style ) {
     // use vendor property if available
     var supportedProp = vendorProperties[ prop ] || prop;
     elemStyle[ supportedProp ] = style[ prop ];
   }
 };
-
  // measure position, and sets it
 proto.getPosition = function() {
   var style = getComputedStyle( this.element );
@@ -920,78 +761,63 @@ proto.getPosition = function() {
   // remove padding from measurement
   x -= isOriginLeft ? layoutSize.paddingLeft : layoutSize.paddingRight;
   y -= isOriginTop ? layoutSize.paddingTop : layoutSize.paddingBottom;
-
   this.position.x = x;
   this.position.y = y;
 };
-
 // set settled position, apply padding
 proto.layoutPosition = function() {
   var layoutSize = this.layout.size;
   var style = {};
   var isOriginLeft = this.layout._getOption('originLeft');
   var isOriginTop = this.layout._getOption('originTop');
-
   // x
   var xPadding = isOriginLeft ? 'paddingLeft' : 'paddingRight';
   var xProperty = isOriginLeft ? 'left' : 'right';
   var xResetProperty = isOriginLeft ? 'right' : 'left';
-
   var x = this.position.x + layoutSize[ xPadding ];
   // set in percentage or pixels
   style[ xProperty ] = this.getXValue( x );
   // reset other property
   style[ xResetProperty ] = '';
-
   // y
   var yPadding = isOriginTop ? 'paddingTop' : 'paddingBottom';
   var yProperty = isOriginTop ? 'top' : 'bottom';
   var yResetProperty = isOriginTop ? 'bottom' : 'top';
-
   var y = this.position.y + layoutSize[ yPadding ];
   // set in percentage or pixels
   style[ yProperty ] = this.getYValue( y );
   // reset other property
   style[ yResetProperty ] = '';
-
   this.css( style );
   this.emitEvent( 'layout', [ this ] );
 };
-
 proto.getXValue = function( x ) {
   var isHorizontal = this.layout._getOption('horizontal');
   return this.layout.options.percentPosition && !isHorizontal ?
     ( ( x / this.layout.size.width ) * 100 ) + '%' : x + 'px';
 };
-
 proto.getYValue = function( y ) {
   var isHorizontal = this.layout._getOption('horizontal');
   return this.layout.options.percentPosition && isHorizontal ?
     ( ( y / this.layout.size.height ) * 100 ) + '%' : y + 'px';
 };
-
 proto._transitionTo = function( x, y ) {
   this.getPosition();
   // get current x & y from top/left
   var curX = this.position.x;
   var curY = this.position.y;
-
   var didNotMove = x == this.position.x && y == this.position.y;
-
   // save end position
   this.setPosition( x, y );
-
   // if did not move and not transitioning, just go to layout
   if ( didNotMove && !this.isTransitioning ) {
     this.layoutPosition();
     return;
   }
-
   var transX = x - curX;
   var transY = y - curY;
   var transitionStyle = {};
   transitionStyle.transform = this.getTranslate( transX, transY );
-
   this.transition({
     to: transitionStyle,
     onTransitionEnd: {
@@ -1000,7 +826,6 @@ proto._transitionTo = function( x, y ) {
     isCleaning: true
   });
 };
-
 proto.getTranslate = function( x, y ) {
   // flip cooridinates if origin on right or bottom
   var isOriginLeft = this.layout._getOption('originLeft');
@@ -1009,27 +834,21 @@ proto.getTranslate = function( x, y ) {
   y = isOriginTop ? y : -y;
   return 'translate3d(' + x + 'px, ' + y + 'px, 0)';
 };
-
 // non transition + transform support
 proto.goTo = function( x, y ) {
   this.setPosition( x, y );
   this.layoutPosition();
 };
-
 proto.moveTo = proto._transitionTo;
-
 proto.setPosition = function( x, y ) {
   this.position.x = parseFloat( x );
   this.position.y = parseFloat( y );
 };
-
 // ----- transition ----- //
-
 /**
  * @param {Object} style - CSS
  * @param {Function} onTransitionEnd
  */
-
 // non transition, just trigger callback
 proto._nonTransition = function( args ) {
   this.css( args.to );
@@ -1040,7 +859,6 @@ proto._nonTransition = function( args ) {
     args.onTransitionEnd[ prop ].call( this );
   }
 };
-
 /**
  * proper transition
  * @param {Object} args - arguments
@@ -1055,7 +873,6 @@ proto.transition = function( args ) {
     this._nonTransition( args );
     return;
   }
-
   var _transition = this._transn;
   // keep track of onTransitionEnd callback by css property
   for ( var prop in args.onTransitionEnd ) {
@@ -1069,7 +886,6 @@ proto.transition = function( args ) {
       _transition.clean[ prop ] = true;
     }
   }
-
   // set from styles
   if ( args.from ) {
     this.css( args.from );
@@ -1082,11 +898,8 @@ proto.transition = function( args ) {
   this.enableTransition( args.to );
   // set styles that are transitioning
   this.css( args.to );
-
   this.isTransitioning = true;
-
 };
-
 // dash before all cap letters, including first for
 // WebkitTransform => -webkit-transform
 function toDashedAll( str ) {
@@ -1094,16 +907,13 @@ function toDashedAll( str ) {
     return '-' + $1.toLowerCase();
   });
 }
-
 var transitionProps = 'opacity,' + toDashedAll( transformProperty );
-
 proto.enableTransition = function(/* style */) {
   // HACK changing transitionProperty during a transition
   // will cause transition to jump
   if ( this.isTransitioning ) {
     return;
   }
-
   // make `transition: foo, bar, baz` from style object
   // HACK un-comment this when enableTransition can work
   // while a transition is happening
@@ -1125,22 +935,17 @@ proto.enableTransition = function(/* style */) {
   // listen for transition end event
   this.element.addEventListener( transitionEndEvent, this, false );
 };
-
 // ----- events ----- //
-
 proto.onwebkitTransitionEnd = function( event ) {
   this.ontransitionend( event );
 };
-
 proto.onotransitionend = function( event ) {
   this.ontransitionend( event );
 };
-
 // properties that I munge to make my life easier
 var dashedVendorProperties = {
   '-webkit-transform': 'transform'
 };
-
 proto.ontransitionend = function( event ) {
   // disregard bubbled events from children
   if ( event.target !== this.element ) {
@@ -1149,7 +954,6 @@ proto.ontransitionend = function( event ) {
   var _transition = this._transn;
   // get property name of transitioned property, convert to prefix-free
   var propertyName = dashedVendorProperties[ event.propertyName ] || event.propertyName;
-
   // remove property that has completed transitioning
   delete _transition.ingProperties[ propertyName ];
   // check if any properties are still transitioning
@@ -1169,16 +973,13 @@ proto.ontransitionend = function( event ) {
     onTransitionEnd.call( this );
     delete _transition.onEnd[ propertyName ];
   }
-
   this.emitEvent( 'transitionEnd', [ this ] );
 };
-
 proto.disableTransition = function() {
   this.removeTransitionStyles();
   this.element.removeEventListener( transitionEndEvent, this, false );
   this.isTransitioning = false;
 };
-
 /**
  * removes style property from element
  * @param {Object} style
@@ -1191,27 +992,21 @@ proto._removeStyles = function( style ) {
   }
   this.css( cleanStyle );
 };
-
 var cleanTransitionStyle = {
   transitionProperty: '',
   transitionDuration: '',
   transitionDelay: ''
 };
-
 proto.removeTransitionStyles = function() {
   // remove transition
   this.css( cleanTransitionStyle );
 };
-
 // ----- stagger ----- //
-
 proto.stagger = function( delay ) {
   delay = isNaN( delay ) ? 0 : delay;
   this.staggerDelay = delay + 'ms';
 };
-
 // ----- show/hide/remove ----- //
-
 // remove element from DOM
 proto.removeElem = function() {
   this.element.parentNode.removeChild( this.element );
@@ -1219,32 +1014,26 @@ proto.removeElem = function() {
   this.css({ display: '' });
   this.emitEvent( 'remove', [ this ] );
 };
-
 proto.remove = function() {
   // just remove element if no transition support or no transition
   if ( !transitionProperty || !parseFloat( this.layout.options.transitionDuration ) ) {
     this.removeElem();
     return;
   }
-
   // start transition
   this.once( 'transitionEnd', function() {
     this.removeElem();
   });
   this.hide();
 };
-
 proto.reveal = function() {
   delete this.isHidden;
   // remove display: none
   this.css({ display: '' });
-
   var options = this.layout.options;
-
   var onTransitionEnd = {};
   var transitionEndProperty = this.getHideRevealTransitionEndProperty('visibleStyle');
   onTransitionEnd[ transitionEndProperty ] = this.onRevealTransitionEnd;
-
   this.transition({
     from: options.hiddenStyle,
     to: options.visibleStyle,
@@ -1252,7 +1041,6 @@ proto.reveal = function() {
     onTransitionEnd: onTransitionEnd
   });
 };
-
 proto.onRevealTransitionEnd = function() {
   // check if still visible
   // during transition, item may have been hidden
@@ -1260,7 +1048,6 @@ proto.onRevealTransitionEnd = function() {
     this.emitEvent('reveal');
   }
 };
-
 /**
  * get style property use for hide/reveal transition end
  * @param {String} styleProperty - hiddenStyle/visibleStyle
@@ -1277,19 +1064,15 @@ proto.getHideRevealTransitionEndProperty = function( styleProperty ) {
     return prop;
   }
 };
-
 proto.hide = function() {
   // set flag
   this.isHidden = true;
   // remove display: none
   this.css({ display: '' });
-
   var options = this.layout.options;
-
   var onTransitionEnd = {};
   var transitionEndProperty = this.getHideRevealTransitionEndProperty('hiddenStyle');
   onTransitionEnd[ transitionEndProperty ] = this.onHideTransitionEnd;
-
   this.transition({
     from: options.visibleStyle,
     to: options.hiddenStyle,
@@ -1298,7 +1081,6 @@ proto.hide = function() {
     onTransitionEnd: onTransitionEnd
   });
 };
-
 proto.onHideTransitionEnd = function() {
   // check if still hidden
   // during transition, item may have been un-hidden
@@ -1307,7 +1089,6 @@ proto.onHideTransitionEnd = function() {
     this.emitEvent('hide');
   }
 };
-
 proto.destroy = function() {
   this.css({
     position: '',
@@ -1319,17 +1100,13 @@ proto.destroy = function() {
     transform: ''
   });
 };
-
 return Item;
-
 }));
-
 /*!
  * Outlayer v2.1.1
  * the brains and guts of a layout library
  * MIT license
  */
-
 ( function( window, factory ) {
   'use strict';
   // universal module definition
@@ -1365,24 +1142,17 @@ return Item;
       window.Outlayer.Item
     );
   }
-
 }( window, function factory( window, EvEmitter, getSize, utils, Item ) {
 'use strict';
-
 // ----- vars ----- //
-
 var console = window.console;
 var jQuery = window.jQuery;
 var noop = function() {};
-
 // -------------------------- Outlayer -------------------------- //
-
 // globally unique identifiers
 var GUID = 0;
 // internal store of all Outlayer intances
 var instances = {};
-
-
 /**
  * @param {Element, String} element
  * @param {Object} options
@@ -1402,29 +1172,23 @@ function Outlayer( element, options ) {
   if ( jQuery ) {
     this.$element = jQuery( this.element );
   }
-
   // options
   this.options = utils.extend( {}, this.constructor.defaults );
   this.option( options );
-
   // add id for Outlayer.getFromElement
   var id = ++GUID;
   this.element.outlayerGUID = id; // expando
   instances[ id ] = this; // associate via id
-
   // kick it off
   this._create();
-
   var isInitLayout = this._getOption('initLayout');
   if ( isInitLayout ) {
     this.layout();
   }
 }
-
 // settings are for internal use only
 Outlayer.namespace = 'outlayer';
 Outlayer.Item = Item;
-
 // default options
 Outlayer.defaults = {
   containerStyle: {
@@ -1446,11 +1210,9 @@ Outlayer.defaults = {
     transform: 'scale(1)'
   }
 };
-
 var proto = Outlayer.prototype;
 // inherit EvEmitter
 utils.extend( proto, EvEmitter.prototype );
-
 /**
  * set options
  * @param {Object} opts
@@ -1458,7 +1220,6 @@ utils.extend( proto, EvEmitter.prototype );
 proto.option = function( opts ) {
   utils.extend( this.options, opts );
 };
-
 /**
  * get backwards compatible option value, check old name
  */
@@ -1467,7 +1228,6 @@ proto._getOption = function( option ) {
   return oldOption && this.options[ oldOption ] !== undefined ?
     this.options[ oldOption ] : this.options[ option ];
 };
-
 Outlayer.compatOptions = {
   // currentName: oldName
   initLayout: 'isInitLayout',
@@ -1478,7 +1238,6 @@ Outlayer.compatOptions = {
   resize: 'isResizeBound',
   resizeContainer: 'isResizingContainer'
 };
-
 proto._create = function() {
   // get items from children
   this.reloadItems();
@@ -1487,31 +1246,25 @@ proto._create = function() {
   this.stamp( this.options.stamp );
   // set container style
   utils.extend( this.element.style, this.options.containerStyle );
-
   // bind resize method
   var canBindResize = this._getOption('resize');
   if ( canBindResize ) {
     this.bindResize();
   }
 };
-
 // goes through all children again and gets bricks in proper order
 proto.reloadItems = function() {
   // collection of item elements
   this.items = this._itemize( this.element.children );
 };
-
-
 /**
  * turn elements into Outlayer.Items to be used in layout
  * @param {Array or NodeList or HTMLElement} elems
  * @returns {Array} items - collection of new Outlayer Items
  */
 proto._itemize = function( elems ) {
-
   var itemElems = this._filterFindItemElements( elems );
   var Item = this.constructor.Item;
-
   // create new Outlayer Items for collection
   var items = [];
   for ( var i=0; i < itemElems.length; i++ ) {
@@ -1519,10 +1272,8 @@ proto._itemize = function( elems ) {
     var item = new Item( elem, this );
     items.push( item );
   }
-
   return items;
 };
-
 /**
  * get item elements to be used in layout
  * @param {Array or NodeList or HTMLElement} elems
@@ -1531,7 +1282,6 @@ proto._itemize = function( elems ) {
 proto._filterFindItemElements = function( elems ) {
   return utils.filterFindElements( elems, this.options.itemSelector );
 };
-
 /**
  * getter method for getting item elements
  * @returns {Array} elems - collection of item elements
@@ -1541,41 +1291,32 @@ proto.getItemElements = function() {
     return item.element;
   });
 };
-
 // ----- init & layout ----- //
-
 /**
  * lays out all items
  */
 proto.layout = function() {
   this._resetLayout();
   this._manageStamps();
-
   // don't animate first layout
   var layoutInstant = this._getOption('layoutInstant');
   var isInstant = layoutInstant !== undefined ?
     layoutInstant : !this._isLayoutInited;
   this.layoutItems( this.items, isInstant );
-
   // flag for initalized
   this._isLayoutInited = true;
 };
-
 // _init is alias for layout
 proto._init = proto.layout;
-
 /**
  * logic before any new layout
  */
 proto._resetLayout = function() {
   this.getSize();
 };
-
-
 proto.getSize = function() {
   this.size = getSize( this.element );
 };
-
 /**
  * get measurement from option, for columnWidth, rowHeight, gutter
  * if option is String -> get element from selector string, & get size of element
@@ -1603,19 +1344,15 @@ proto._getMeasurement = function( measurement, size ) {
     this[ measurement ] = elem ? getSize( elem )[ size ] : option;
   }
 };
-
 /**
  * layout a collection of item elements
  * @api public
  */
 proto.layoutItems = function( items, isInstant ) {
   items = this._getItemsForLayout( items );
-
   this._layoutItems( items, isInstant );
-
   this._postLayout();
 };
-
 /**
  * get the items to be laid out
  * you may want to skip over some items
@@ -1627,7 +1364,6 @@ proto._getItemsForLayout = function( items ) {
     return !item.isIgnored;
   });
 };
-
 /**
  * layout items
  * @param {Array} items
@@ -1635,14 +1371,11 @@ proto._getItemsForLayout = function( items ) {
  */
 proto._layoutItems = function( items, isInstant ) {
   this._emitCompleteOnItems( 'layout', items );
-
   if ( !items || !items.length ) {
     // no items, emit event with empty array
     return;
   }
-
   var queue = [];
-
   items.forEach( function( item ) {
     // get x/y object from method
     var position = this._getItemLayoutPosition( item );
@@ -1651,10 +1384,8 @@ proto._layoutItems = function( items, isInstant ) {
     position.isInstant = isInstant || item.isLayoutInstant;
     queue.push( position );
   }, this );
-
   this._processLayoutQueue( queue );
 };
-
 /**
  * get item layout position
  * @param {Outlayer.Item} item
@@ -1666,7 +1397,6 @@ proto._getItemLayoutPosition = function( /* item */ ) {
     y: 0
   };
 };
-
 /**
  * iterate over array and position each item
  * Reason being - separating this logic prevents 'layout invalidation'
@@ -1679,7 +1409,6 @@ proto._processLayoutQueue = function( queue ) {
     this._positionItem( obj.item, obj.x, obj.y, obj.isInstant, i );
   }, this );
 };
-
 // set stagger from option in milliseconds number
 proto.updateStagger = function() {
   var stagger = this.options.stagger;
@@ -1690,7 +1419,6 @@ proto.updateStagger = function() {
   this.stagger = getMilliseconds( stagger );
   return this.stagger;
 };
-
 /**
  * Sets position of item in DOM
  * @param {Outlayer.Item} item
@@ -1707,7 +1435,6 @@ proto._positionItem = function( item, x, y, isInstant, i ) {
     item.moveTo( x, y );
   }
 };
-
 /**
  * Any logic you want to do after each layout,
  * i.e. size the container
@@ -1715,7 +1442,6 @@ proto._positionItem = function( item, x, y, isInstant, i ) {
 proto._postLayout = function() {
   this.resizeContainer();
 };
-
 proto.resizeContainer = function() {
   var isResizingContainer = this._getOption('resizeContainer');
   if ( !isResizingContainer ) {
@@ -1727,7 +1453,6 @@ proto.resizeContainer = function() {
     this._setContainerMeasure( size.height, false );
   }
 };
-
 /**
  * Sets width or height of container if returned
  * @returns {Object} size
@@ -1735,7 +1460,6 @@ proto.resizeContainer = function() {
  *   @param {Number} height
  */
 proto._getContainerSize = noop;
-
 /**
  * @param {Number} measure - size of width or height
  * @param {Boolean} isWidth
@@ -1744,7 +1468,6 @@ proto._setContainerMeasure = function( measure, isWidth ) {
   if ( measure === undefined ) {
     return;
   }
-
   var elemSize = this.size;
   // add padding and border width if border box
   if ( elemSize.isBorderBox ) {
@@ -1753,11 +1476,9 @@ proto._setContainerMeasure = function( measure, isWidth ) {
       elemSize.paddingBottom + elemSize.paddingTop +
       elemSize.borderTopWidth + elemSize.borderBottomWidth;
   }
-
   measure = Math.max( measure, 0 );
   this.element.style[ isWidth ? 'width' : 'height' ] = measure + 'px';
 };
-
 /**
  * emit eventComplete on a collection of items events
  * @param {String} eventName
@@ -1768,13 +1489,11 @@ proto._emitCompleteOnItems = function( eventName, items ) {
   function onComplete() {
     _this.dispatchEvent( eventName + 'Complete', null, [ items ] );
   }
-
   var count = items.length;
   if ( !items || !count ) {
     onComplete();
     return;
   }
-
   var doneCount = 0;
   function tick() {
     doneCount++;
@@ -1782,13 +1501,11 @@ proto._emitCompleteOnItems = function( eventName, items ) {
       onComplete();
     }
   }
-
   // bind callback
   items.forEach( function( item ) {
     item.once( eventName, tick );
   });
 };
-
 /**
  * emits events via EvEmitter and jQuery events
  * @param {String} type - name of event
@@ -1799,7 +1516,6 @@ proto.dispatchEvent = function( type, event, args ) {
   // add original event to arguments
   var emitArgs = event ? [ event ].concat( args ) : args;
   this.emitEvent( type, emitArgs );
-
   if ( jQuery ) {
     // set this.$element
     this.$element = this.$element || jQuery( this.element );
@@ -1814,10 +1530,7 @@ proto.dispatchEvent = function( type, event, args ) {
     }
   }
 };
-
 // -------------------------- ignore & stamps -------------------------- //
-
-
 /**
  * keep item in collection, but do not lay it out
  * ignored items do not get skipped in layout
@@ -1829,7 +1542,6 @@ proto.ignore = function( elem ) {
     item.isIgnored = true;
   }
 };
-
 /**
  * return item to layout collection
  * @param {Element} elem
@@ -1840,7 +1552,6 @@ proto.unignore = function( elem ) {
     delete item.isIgnored;
   }
 };
-
 /**
  * adds elements to stamps
  * @param {NodeList, Array, Element, or String} elems
@@ -1850,12 +1561,10 @@ proto.stamp = function( elems ) {
   if ( !elems ) {
     return;
   }
-
   this.stamps = this.stamps.concat( elems );
   // ignore
   elems.forEach( this.ignore, this );
 };
-
 /**
  * removes elements to stamps
  * @param {NodeList, Array, or Element} elems
@@ -1865,14 +1574,12 @@ proto.unstamp = function( elems ) {
   if ( !elems ){
     return;
   }
-
   elems.forEach( function( elem ) {
     // filter out removed stamp elements
     utils.removeFrom( this.stamps, elem );
     this.unignore( elem );
   }, this );
 };
-
 /**
  * finds child elements
  * @param {NodeList, Array, Element, or String} elems
@@ -1889,17 +1596,13 @@ proto._find = function( elems ) {
   elems = utils.makeArray( elems );
   return elems;
 };
-
 proto._manageStamps = function() {
   if ( !this.stamps || !this.stamps.length ) {
     return;
   }
-
   this._getBoundingRect();
-
   this.stamps.forEach( this._manageStamp, this );
 };
-
 // update boundingLeft / Top
 proto._getBoundingRect = function() {
   // get bounding rect for container element
@@ -1912,12 +1615,10 @@ proto._getBoundingRect = function() {
     bottom: boundingRect.bottom - ( size.paddingBottom + size.borderBottomWidth )
   };
 };
-
 /**
  * @param {Element} stamp
 **/
 proto._manageStamp = noop;
-
 /**
  * get x/y position of element relative to container element
  * @param {Element} elem
@@ -1935,13 +1636,10 @@ proto._getElementOffset = function( elem ) {
   };
   return offset;
 };
-
 // -------------------------- resize -------------------------- //
-
 // enable event handlers for listeners
 // i.e. resize -> onresize
 proto.handleEvent = utils.handleEvent;
-
 /**
  * Bind layout to window resizing
  */
@@ -1949,7 +1647,6 @@ proto.bindResize = function() {
   window.addEventListener( 'resize', this );
   this.isResizeBound = true;
 };
-
 /**
  * Unbind layout to window resizing
  */
@@ -1957,23 +1654,18 @@ proto.unbindResize = function() {
   window.removeEventListener( 'resize', this );
   this.isResizeBound = false;
 };
-
 proto.onresize = function() {
   this.resize();
 };
-
 utils.debounceMethod( Outlayer, 'onresize', 100 );
-
 proto.resize = function() {
   // don't trigger if size did not change
   // or if resize was unbound. See #9
   if ( !this.isResizeBound || !this.needsResizeLayout() ) {
     return;
   }
-
   this.layout();
 };
-
 /**
  * check if layout is needed post layout
  * @returns Boolean
@@ -1985,9 +1677,7 @@ proto.needsResizeLayout = function() {
   var hasSizes = this.size && size;
   return hasSizes && size.innerWidth !== this.size.innerWidth;
 };
-
 // -------------------------- methods -------------------------- //
-
 /**
  * add items to Outlayer instance
  * @param {Array or NodeList or Element} elems
@@ -2001,7 +1691,6 @@ proto.addItems = function( elems ) {
   }
   return items;
 };
-
 /**
  * Layout newly-appended item elements
  * @param {Array or NodeList or Element} elems
@@ -2015,7 +1704,6 @@ proto.appended = function( elems ) {
   this.layoutItems( items, true );
   this.reveal( items );
 };
-
 /**
  * Layout prepended elements
  * @param {Array or NodeList or Element} elems
@@ -2037,7 +1725,6 @@ proto.prepended = function( elems ) {
   // layout previous items
   this.layoutItems( previousItems );
 };
-
 /**
  * reveal a collection of items
  * @param {Array of Outlayer.Items} items
@@ -2053,7 +1740,6 @@ proto.reveal = function( items ) {
     item.reveal();
   });
 };
-
 /**
  * hide a collection of items
  * @param {Array of Outlayer.Items} items
@@ -2069,7 +1755,6 @@ proto.hide = function( items ) {
     item.hide();
   });
 };
-
 /**
  * reveal item elements
  * @param {Array}, {Element}, {NodeList} items
@@ -2078,7 +1763,6 @@ proto.revealItemElements = function( elems ) {
   var items = this.getItems( elems );
   this.reveal( items );
 };
-
 /**
  * hide item elements
  * @param {Array}, {Element}, {NodeList} items
@@ -2087,7 +1771,6 @@ proto.hideItemElements = function( elems ) {
   var items = this.getItems( elems );
   this.hide( items );
 };
-
 /**
  * get Outlayer.Item, given an Element
  * @param {Element} elem
@@ -2104,7 +1787,6 @@ proto.getItem = function( elem ) {
     }
   }
 };
-
 /**
  * get collection of Outlayer.Items, given Elements
  * @param {Array} elems
@@ -2119,33 +1801,26 @@ proto.getItems = function( elems ) {
       items.push( item );
     }
   }, this );
-
   return items;
 };
-
 /**
  * remove element(s) from instance and DOM
  * @param {Array or NodeList or Element} elems
  */
 proto.remove = function( elems ) {
   var removeItems = this.getItems( elems );
-
   this._emitCompleteOnItems( 'remove', removeItems );
-
   // bail if no items to remove
   if ( !removeItems || !removeItems.length ) {
     return;
   }
-
   removeItems.forEach( function( item ) {
     item.remove();
     // remove item from collection
     utils.removeFrom( this.items, item );
   }, this );
 };
-
 // ----- destroy ----- //
-
 // remove and disable Outlayer instance
 proto.destroy = function() {
   // clean up dynamic styles
@@ -2157,9 +1832,7 @@ proto.destroy = function() {
   this.items.forEach( function( item ) {
     item.destroy();
   });
-
   this.unbindResize();
-
   var id = this.element.outlayerGUID;
   delete instances[ id ]; // remove reference to instance by id
   delete this.element.outlayerGUID;
@@ -2167,11 +1840,8 @@ proto.destroy = function() {
   if ( jQuery ) {
     jQuery.removeData( this.element, this.constructor.namespace );
   }
-
 };
-
 // -------------------------- data -------------------------- //
-
 /**
  * get Outlayer instance from element
  * @param {Element} elem
@@ -2182,10 +1852,7 @@ Outlayer.data = function( elem ) {
   var id = elem && elem.outlayerGUID;
   return id && instances[ id ];
 };
-
-
 // -------------------------- create Outlayer class -------------------------- //
-
 /**
  * create a layout class
  * @param {String} namespace
@@ -2197,47 +1864,33 @@ Outlayer.create = function( namespace, options ) {
   Layout.defaults = utils.extend( {}, Outlayer.defaults );
   utils.extend( Layout.defaults, options );
   Layout.compatOptions = utils.extend( {}, Outlayer.compatOptions  );
-
   Layout.namespace = namespace;
-
   Layout.data = Outlayer.data;
-
   // sub-class Item
   Layout.Item = subclass( Item );
-
   // -------------------------- declarative -------------------------- //
-
   utils.htmlInit( Layout, namespace );
-
   // -------------------------- jQuery bridge -------------------------- //
-
   // make into jQuery plugin
   if ( jQuery && jQuery.bridget ) {
     jQuery.bridget( namespace, Layout );
   }
-
   return Layout;
 };
-
 function subclass( Parent ) {
   function SubClass() {
     Parent.apply( this, arguments );
   }
-
   SubClass.prototype = Object.create( Parent.prototype );
   SubClass.prototype.constructor = SubClass;
-
   return SubClass;
 }
-
 // ----- helpers ----- //
-
 // how many milliseconds are in each unit
 var msUnits = {
   ms: 1,
   s: 1000
 };
-
 // munge time-like parameter into millisecond number
 // '0.4s' -> 40
 function getMilliseconds( time ) {
@@ -2254,20 +1907,14 @@ function getMilliseconds( time ) {
   var mult = msUnits[ unit ] || 1;
   return num * mult;
 }
-
 // ----- fin ----- //
-
 // back in global
 Outlayer.Item = Item;
-
 return Outlayer;
-
 }));
-
 /**
  * Isotope Item
 **/
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2289,19 +1936,14 @@ return Outlayer;
       window.Outlayer
     );
   }
-
 }( window, function factory( Outlayer ) {
 'use strict';
-
 // -------------------------- Item -------------------------- //
-
 // sub-class Outlayer Item
 function Item() {
   Outlayer.Item.apply( this, arguments );
 }
-
 var proto = Item.prototype = Object.create( Outlayer.Item.prototype );
-
 var _create = proto._create;
 proto._create = function() {
   // assign id, used for original-order sorting
@@ -2309,7 +1951,6 @@ proto._create = function() {
   _create.call( this );
   this.sortData = {};
 };
-
 proto.updateSortData = function() {
   if ( this.isIgnored ) {
     return;
@@ -2327,7 +1968,6 @@ proto.updateSortData = function() {
     this.sortData[ key ] = sorter( this.element, this );
   }
 };
-
 var _destroy = proto.destroy;
 proto.destroy = function() {
   // call super
@@ -2337,15 +1977,11 @@ proto.destroy = function() {
     display: ''
   });
 };
-
 return Item;
-
 }));
-
 /**
  * Isotope LayoutMode
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2370,10 +2006,8 @@ return Item;
       window.Outlayer
     );
   }
-
 }( window, function factory( getSize, Outlayer ) {
   'use strict';
-
   // layout mode class
   function LayoutMode( isotope ) {
     this.isotope = isotope;
@@ -2385,9 +2019,7 @@ return Item;
       this.size = isotope.size;
     }
   }
-
   var proto = LayoutMode.prototype;
-
   /**
    * some methods should just defer to default Outlayer method
    * and reference the Isotope instance as `this`
@@ -2401,15 +2033,12 @@ return Item;
     'needsResizeLayout',
     '_getOption'
   ];
-
   facadeMethods.forEach( function( methodName ) {
     proto[ methodName ] = function() {
       return Outlayer.prototype[ methodName ].apply( this.isotope, arguments );
     };
   });
-
   // -----  ----- //
-
   // for horizontal layout modes, check vertical size
   proto.needsVerticalResizeLayout = function() {
     // don't trigger if size did not change
@@ -2419,21 +2048,16 @@ return Item;
     var hasSizes = this.isotope.size && size;
     return hasSizes && size.innerHeight != this.isotope.size.innerHeight;
   };
-
   // ----- measurements ----- //
-
   proto._getMeasurement = function() {
     this.isotope._getMeasurement.apply( this, arguments );
   };
-
   proto.getColumnWidth = function() {
     this.getSegmentSize( 'column', 'Width' );
   };
-
   proto.getRowHeight = function() {
     this.getSegmentSize( 'row', 'Height' );
   };
-
   /**
    * get columnWidth or rowHeight
    * segment: 'column' or 'row'
@@ -2454,52 +2078,37 @@ return Item;
       // or size of container
       this.isotope.size[ 'inner' + size ];
   };
-
   proto.getFirstItemSize = function() {
     var firstItem = this.isotope.filteredItems[0];
     return firstItem && firstItem.element && getSize( firstItem.element );
   };
-
   // ----- methods that should reference isotope ----- //
-
   proto.layout = function() {
     this.isotope.layout.apply( this.isotope, arguments );
   };
-
   proto.getSize = function() {
     this.isotope.getSize();
     this.size = this.isotope.size;
   };
-
   // -------------------------- create -------------------------- //
-
   LayoutMode.modes = {};
-
   LayoutMode.create = function( namespace, options ) {
-
     function Mode() {
       LayoutMode.apply( this, arguments );
     }
-
     Mode.prototype = Object.create( proto );
     Mode.prototype.constructor = Mode;
-
     // default options
     if ( options ) {
       Mode.options = options;
     }
-
     Mode.prototype.namespace = namespace;
     // register in Isotope
     LayoutMode.modes[ namespace ] = Mode;
-
     return Mode;
   };
-
   return LayoutMode;
-
 }));
-
 /*!
  * Masonry v4.2.1
  * Cascading grid layout library
@@ -2507,7 +2116,6 @@ return Item;
  * MIT License
  * by David DeSandro
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2531,36 +2139,26 @@ return Item;
       window.getSize
     );
   }
-
 }( window, function factory( Outlayer, getSize ) {
-
-
-
 // -------------------------- masonryDefinition -------------------------- //
-
   // create an Outlayer layout class
   var Masonry = Outlayer.create('masonry');
   // isFitWidth -> fitWidth
   Masonry.compatOptions.fitWidth = 'isFitWidth';
-
   var proto = Masonry.prototype;
-
   proto._resetLayout = function() {
     this.getSize();
     this._getMeasurement( 'columnWidth', 'outerWidth' );
     this._getMeasurement( 'gutter', 'outerWidth' );
     this.measureColumns();
-
     // reset column Y
     this.colYs = [];
     for ( var i=0; i < this.cols; i++ ) {
       this.colYs.push( 0 );
     }
-
     this.maxY = 0;
     this.horizontalColIndex = 0;
   };
-
   proto.measureColumns = function() {
     this.getContainerWidth();
     // if columnWidth is 0, default to outerWidth of first item
@@ -2572,9 +2170,7 @@ return Item;
         // if first elem has no width, default to size of container
         this.containerWidth;
     }
-
     var columnWidth = this.columnWidth += this.gutter;
-
     // calculate columns
     var containerWidth = this.containerWidth + this.gutter;
     var cols = containerWidth / columnWidth;
@@ -2585,7 +2181,6 @@ return Item;
     cols = Math[ mathMethod ]( cols );
     this.cols = Math.max( cols, 1 );
   };
-
   proto.getContainerWidth = function() {
     // container is parent if fit width
     var isFitWidth = this._getOption('fitWidth');
@@ -2595,7 +2190,6 @@ return Item;
     var size = getSize( container );
     this.containerWidth = size && size.innerWidth;
   };
-
   proto._getItemLayoutPosition = function( item ) {
     item.getSize();
     // how many columns does this brick span
@@ -2619,21 +2213,17 @@ return Item;
     for ( var i = colPosition.col; i < setMax; i++ ) {
       this.colYs[i] = setHeight;
     }
-
     return position;
   };
-
   proto._getTopColPosition = function( colSpan ) {
     var colGroup = this._getTopColGroup( colSpan );
     // get the minimum Y value from the columns
     var minimumY = Math.min.apply( Math, colGroup );
-
     return {
       col: colGroup.indexOf( minimumY ),
       y: minimumY,
     };
   };
-
   /**
    * @param {Number} colSpan - number of columns the element spans
    * @returns {Array} colGroup
@@ -2643,7 +2233,6 @@ return Item;
       // if brick spans only one column, use all the column Ys
       return this.colYs;
     }
-
     var colGroup = [];
     // how many different places could this brick fit horizontally
     var groupCount = this.cols + 1 - colSpan;
@@ -2653,7 +2242,6 @@ return Item;
     }
     return colGroup;
   };
-
   proto._getColGroupY = function( col, colSpan ) {
     if ( colSpan < 2 ) {
       return this.colYs[ col ];
@@ -2663,7 +2251,6 @@ return Item;
     // and get the max value of the array
     return Math.max.apply( Math, groupColYs );
   };
-
   // get column position based on horizontal index. #873
   proto._getHorizontalColPosition = function( colSpan, item ) {
     var col = this.horizontalColIndex % this.cols;
@@ -2673,13 +2260,11 @@ return Item;
     // don't let zero-size items take up space
     var hasSize = item.size.outerWidth && item.size.outerHeight;
     this.horizontalColIndex = hasSize ? col + colSpan : this.horizontalColIndex;
-
     return {
       col: col,
       y: this._getColGroupY( col, colSpan ),
     };
   };
-
   proto._manageStamp = function( stamp ) {
     var stampSize = getSize( stamp );
     var offset = this._getElementOffset( stamp );
@@ -2694,7 +2279,6 @@ return Item;
     lastCol -= lastX % this.columnWidth ? 0 : 1;
     lastCol = Math.min( this.cols - 1, lastCol );
     // set colYs to bottom of the stamp
-
     var isOriginTop = this._getOption('originTop');
     var stampMaxY = ( isOriginTop ? offset.top : offset.bottom ) +
       stampSize.outerHeight;
@@ -2702,20 +2286,16 @@ return Item;
       this.colYs[i] = Math.max( stampMaxY, this.colYs[i] );
     }
   };
-
   proto._getContainerSize = function() {
     this.maxY = Math.max.apply( Math, this.colYs );
     var size = {
       height: this.maxY
     };
-
     if ( this._getOption('fitWidth') ) {
       size.width = this._getContainerFitWidth();
     }
-
     return size;
   };
-
   proto._getContainerFitWidth = function() {
     var unusedCols = 0;
     // count unused columns
@@ -2729,23 +2309,18 @@ return Item;
     // fit container to columns that have been used
     return ( this.cols - unusedCols ) * this.columnWidth - this.gutter;
   };
-
   proto.needsResizeLayout = function() {
     var previousWidth = this.containerWidth;
     this.getContainerWidth();
     return previousWidth != this.containerWidth;
   };
-
   return Masonry;
-
 }));
-
 /*!
  * Masonry layout mode
  * sub-classes Masonry
  * https://masonry.desandro.com
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2769,23 +2344,17 @@ return Item;
       window.Masonry
     );
   }
-
 }( window, function factory( LayoutMode, Masonry ) {
 'use strict';
-
 // -------------------------- masonryDefinition -------------------------- //
-
   // create an Outlayer layout class
   var MasonryMode = LayoutMode.create('masonry');
-
   var proto = MasonryMode.prototype;
-
   var keepModeMethods = {
     _getElementOffset: true,
     layout: true,
     _getMeasurement: true
   };
-
   // inherit Masonry prototype
   for ( var method in Masonry.prototype ) {
     // do not inherit mode methods
@@ -2793,14 +2362,12 @@ return Item;
       proto[ method ] = Masonry.prototype[ method ];
     }
   }
-
   var measureColumns = proto.measureColumns;
   proto.measureColumns = function() {
     // set items, used if measuring first item
     this.items = this.isotope.filteredItems;
     measureColumns.call( this );
   };
-
   // point to mode options for fitWidth
   var _getOption = proto._getOption;
   proto._getOption = function( option ) {
@@ -2810,15 +2377,11 @@ return Item;
     }
     return _getOption.apply( this.isotope, arguments );
   };
-
   return MasonryMode;
-
 }));
-
 /**
  * fitRows layout mode
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2839,24 +2402,18 @@ return Item;
       window.Isotope.LayoutMode
     );
   }
-
 }( window, function factory( LayoutMode ) {
 'use strict';
-
 var FitRows = LayoutMode.create('fitRows');
-
 var proto = FitRows.prototype;
-
 proto._resetLayout = function() {
   this.x = 0;
   this.y = 0;
   this.maxY = 0;
   this._getMeasurement( 'gutter', 'outerWidth' );
 };
-
 proto._getItemLayoutPosition = function( item ) {
   item.getSize();
-
   var itemWidth = item.size.outerWidth + this.gutter;
   // if this element cannot fit in the current row
   var containerWidth = this.isotope.size.innerWidth + this.gutter;
@@ -2864,30 +2421,22 @@ proto._getItemLayoutPosition = function( item ) {
     this.x = 0;
     this.y = this.maxY;
   }
-
   var position = {
     x: this.x,
     y: this.y
   };
-
   this.maxY = Math.max( this.maxY, this.y + item.size.outerHeight );
   this.x += itemWidth;
-
   return position;
 };
-
 proto._getContainerSize = function() {
   return { height: this.maxY };
 };
-
 return FitRows;
-
 }));
-
 /**
  * vertical layout mode
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2908,20 +2457,15 @@ return FitRows;
       window.Isotope.LayoutMode
     );
   }
-
 }( window, function factory( LayoutMode ) {
 'use strict';
-
 var Vertical = LayoutMode.create( 'vertical', {
   horizontalAlignment: 0
 });
-
 var proto = Vertical.prototype;
-
 proto._resetLayout = function() {
   this.y = 0;
 };
-
 proto._getItemLayoutPosition = function( item ) {
   item.getSize();
   var x = ( this.isotope.size.innerWidth - item.size.outerWidth ) *
@@ -2930,15 +2474,11 @@ proto._getItemLayoutPosition = function( item ) {
   this.y += item.size.outerHeight;
   return { x: x, y: y };
 };
-
 proto._getContainerSize = function() {
   return { height: this.y };
 };
-
 return Vertical;
-
 }));
-
 /*!
  * Isotope v3.0.6
  *
@@ -2948,7 +2488,6 @@ return Vertical;
  * https://isotope.metafizzy.co
  * Copyright 2010-2018 Metafizzy
  */
-
 ( function( window, factory ) {
   // universal module definition
   /* jshint strict: false */ /*globals define, module, require */
@@ -2996,18 +2535,11 @@ return Vertical;
       window.Isotope.LayoutMode
     );
   }
-
 }( window, function factory( window, Outlayer, getSize, matchesSelector, utils,
   Item, LayoutMode ) {
-
-
-
 // -------------------------- vars -------------------------- //
-
 var jQuery = window.jQuery;
-
 // -------------------------- helpers -------------------------- //
-
 var trim = String.prototype.trim ?
   function( str ) {
     return str.trim();
@@ -3015,21 +2547,16 @@ var trim = String.prototype.trim ?
   function( str ) {
     return str.replace( /^\s+|\s+$/g, '' );
   };
-
 // -------------------------- isotopeDefinition -------------------------- //
-
   // create an Outlayer layout class
   var Isotope = Outlayer.create( 'isotope', {
     layoutMode: 'masonry',
     isJQueryFiltering: true,
     sortAscending: true
   });
-
   Isotope.Item = Item;
   Isotope.LayoutMode = LayoutMode;
-
   var proto = Isotope.prototype;
-
   proto._create = function() {
     this.itemGUID = 0;
     // functions that sort items
@@ -3037,7 +2564,6 @@ var trim = String.prototype.trim ?
     this._getSorters();
     // call super
     Outlayer.prototype._create.call( this );
-
     // create layout modes
     this.modes = {};
     // start filteredItems with all items
@@ -3049,14 +2575,12 @@ var trim = String.prototype.trim ?
       this._initLayoutMode( name );
     }
   };
-
   proto.reloadItems = function() {
     // reset item ID counter
     this.itemGUID = 0;
     // call super
     Outlayer.prototype.reloadItems.call( this );
   };
-
   proto._itemize = function() {
     var items = Outlayer.prototype._itemize.apply( this, arguments );
     // assign ID for original-order
@@ -3067,10 +2591,7 @@ var trim = String.prototype.trim ?
     this._updateItemsSortData( items );
     return items;
   };
-
-
   // -------------------------- layout -------------------------- //
-
   proto._initLayoutMode = function( name ) {
     var Mode = LayoutMode.modes[ name ];
     // set mode options
@@ -3081,8 +2602,6 @@ var trim = String.prototype.trim ?
     // init layout mode instance
     this.modes[ name ] = new Mode( this );
   };
-
-
   proto.layout = function() {
     // if first time doing layout, do all magic
     if ( !this._isLayoutInited && this._getOption('initLayout') ) {
@@ -3091,7 +2610,6 @@ var trim = String.prototype.trim ?
     }
     this._layout();
   };
-
   // private method to be used in layout() & magic()
   proto._layout = function() {
     // don't animate first layout
@@ -3100,41 +2618,33 @@ var trim = String.prototype.trim ?
     this._resetLayout();
     this._manageStamps();
     this.layoutItems( this.filteredItems, isInstant );
-
     // flag for initalized
     this._isLayoutInited = true;
   };
-
   // filter + sort + layout
   proto.arrange = function( opts ) {
     // set any options pass
     this.option( opts );
     this._getIsInstant();
     // filter, sort, and layout
-
     // filter
     var filtered = this._filter( this.items );
     this.filteredItems = filtered.matches;
-
     this._bindArrangeComplete();
-
     if ( this._isInstant ) {
       this._noTransition( this._hideReveal, [ filtered ] );
     } else {
       this._hideReveal( filtered );
     }
-
     this._sort();
     this._layout();
   };
   // alias to _init for main plugin method
   proto._init = proto.arrange;
-
   proto._hideReveal = function( filtered ) {
     this.reveal( filtered.needReveal );
     this.hide( filtered.needHide );
   };
-
   // HACK
   // Don't animate/transition first layout
   // Or don't animate/transition other layouts
@@ -3145,7 +2655,6 @@ var trim = String.prototype.trim ?
     this._isInstant = isInstant;
     return isInstant;
   };
-
   // listen for layoutComplete, hideComplete and revealComplete
   // to trigger arrangeComplete
   proto._bindArrangeComplete = function() {
@@ -3170,18 +2679,14 @@ var trim = String.prototype.trim ?
       arrangeParallelCallback();
     });
   };
-
   // -------------------------- filter -------------------------- //
-
   proto._filter = function( items ) {
     var filter = this.options.filter;
     filter = filter || '*';
     var matches = [];
     var hiddenMatched = [];
     var visibleUnmatched = [];
-
     var test = this._getFilterTest( filter );
-
     // test each item
     for ( var i=0; i < items.length; i++ ) {
       var item = items[i];
@@ -3202,7 +2707,6 @@ var trim = String.prototype.trim ?
         visibleUnmatched.push( item );
       }
     }
-
     // return collections of items to be manipulated
     return {
       matches: matches,
@@ -3210,7 +2714,6 @@ var trim = String.prototype.trim ?
       needHide: visibleUnmatched
     };
   };
-
   // get a jQuery, function, or a matchesSelector test given the filter
   proto._getFilterTest = function( filter ) {
     if ( jQuery && this.options.isJQueryFiltering ) {
@@ -3230,9 +2733,7 @@ var trim = String.prototype.trim ?
       return matchesSelector( item.element, filter );
     };
   };
-
   // -------------------------- sorting -------------------------- //
-
   /**
    * @params {Array} elems
    * @public
@@ -3247,11 +2748,9 @@ var trim = String.prototype.trim ?
       // update all items if no elems provided
       items = this.items;
     }
-
     this._getSorters();
     this._updateItemsSortData( items );
   };
-
   proto._getSorters = function() {
     var getSortData = this.options.getSortData;
     for ( var key in getSortData ) {
@@ -3259,7 +2758,6 @@ var trim = String.prototype.trim ?
       this._sorters[ key ] = mungeSorter( sorter );
     }
   };
-
   /**
    * @params {Array} items - of Isotope.Items
    * @private
@@ -3267,15 +2765,12 @@ var trim = String.prototype.trim ?
   proto._updateItemsSortData = function( items ) {
     // do not update if no items
     var len = items && items.length;
-
     for ( var i=0; len && i < len; i++ ) {
       var item = items[i];
       item.updateSortData();
     }
   };
-
   // ----- munge sorter ----- //
-
   // encapsulate this, as we just need mungeSorter
   // other functions in here are just for munging
   var mungeSorter = ( function() {
@@ -3306,10 +2801,8 @@ var trim = String.prototype.trim ?
       function( elem ) {
         return elem && getValue( elem );
       };
-
       return sorter;
     }
-
     // get an attribute getter, or get text of the querySelector
     function getValueGetter( attr, query ) {
       // if query looks like [foo-bar], get attribute
@@ -3318,17 +2811,14 @@ var trim = String.prototype.trim ?
           return elem.getAttribute( attr );
         };
       }
-
       // otherwise, assume its a querySelector, and get its text
       return function getChildText( elem ) {
         var child = elem.querySelector( query );
         return child && child.textContent;
       };
     }
-
     return mungeSorter;
   })();
-
   // parsers used in getSortData shortcut strings
   Isotope.sortDataParsers = {
     'parseInt': function( val ) {
@@ -3338,9 +2828,7 @@ var trim = String.prototype.trim ?
       return parseFloat( val );
     }
   };
-
   // ----- sort method ----- //
-
   // sort filteredItem order
   proto._sort = function() {
     if ( !this.options.sortBy ) {
@@ -3356,7 +2844,6 @@ var trim = String.prototype.trim ?
     var itemSorter = getItemSorter( this.sortHistory, this.options.sortAscending );
     this.filteredItems.sort( itemSorter );
   };
-
   // check if sortBys is same as start of sortHistory
   proto._getIsSameSortBy = function( sortBys ) {
     for ( var i=0; i < sortBys.length; i++ ) {
@@ -3366,7 +2853,6 @@ var trim = String.prototype.trim ?
     }
     return true;
   };
-
   // returns a function used for sorting
   function getItemSorter( sortBys, sortAsc ) {
     return function sorter( itemA, itemB ) {
@@ -3385,9 +2871,7 @@ var trim = String.prototype.trim ?
       return 0;
     };
   }
-
   // -------------------------- methods -------------------------- //
-
   // get layout mode
   proto._mode = function() {
     var layoutMode = this.options.layoutMode;
@@ -3401,31 +2885,24 @@ var trim = String.prototype.trim ?
     mode.options = this.options[ layoutMode ];
     return mode;
   };
-
   proto._resetLayout = function() {
     // trigger original reset layout
     Outlayer.prototype._resetLayout.call( this );
     this._mode()._resetLayout();
   };
-
   proto._getItemLayoutPosition = function( item  ) {
     return this._mode()._getItemLayoutPosition( item );
   };
-
   proto._manageStamp = function( stamp ) {
     this._mode()._manageStamp( stamp );
   };
-
   proto._getContainerSize = function() {
     return this._mode()._getContainerSize();
   };
-
   proto.needsResizeLayout = function() {
     return this._mode().needsResizeLayout();
   };
-
   // -------------------------- adding & removing -------------------------- //
-
   // HEADS UP overwrites default Outlayer appended
   proto.appended = function( elems ) {
     var items = this.addItems( elems );
@@ -3437,7 +2914,6 @@ var trim = String.prototype.trim ?
     // add to filteredItems
     this.filteredItems = this.filteredItems.concat( filteredItems );
   };
-
   // HEADS UP overwrites default Outlayer prepended
   proto.prepended = function( elems ) {
     var items = this._itemize( elems );
@@ -3455,7 +2931,6 @@ var trim = String.prototype.trim ?
     this.filteredItems = filteredItems.concat( this.filteredItems );
     this.items = items.concat( this.items );
   };
-
   proto._filterRevealAdded = function( items ) {
     var filtered = this._filter( items );
     this.hide( filtered.needHide );
@@ -3465,7 +2940,6 @@ var trim = String.prototype.trim ?
     this.layoutItems( filtered.matches, true );
     return filtered.matches;
   };
-
   /**
    * Filter, sort, and layout newly-appended item elements
    * @param {Array or NodeList or Element} elems
@@ -3495,7 +2969,6 @@ var trim = String.prototype.trim ?
     }
     this.reveal( filteredInsertItems );
   };
-
   var _remove = proto.remove;
   proto.remove = function( elems ) {
     elems = utils.makeArray( elems );
@@ -3511,7 +2984,6 @@ var trim = String.prototype.trim ?
       utils.removeFrom( this.filteredItems, item );
     }
   };
-
   proto.shuffle = function() {
     // update random sortData
     for ( var i=0; i < this.items.length; i++ ) {
@@ -3522,7 +2994,6 @@ var trim = String.prototype.trim ?
     this._sort();
     this._layout();
   };
-
   /**
    * trigger fn without transition
    * kind of hacky to have this in the first place
@@ -3542,9 +3013,7 @@ var trim = String.prototype.trim ?
     this.options.transitionDuration = transitionDuration;
     return returnValue;
   };
-
   // ----- helper methods ----- //
-
   /**
    * getter method for getting filtered item elements
    * @returns {Array} elems - collection of item elements
@@ -3554,10 +3023,6 @@ var trim = String.prototype.trim ?
       return item.element;
     });
   };
-
   // -----  ----- //
-
   return Isotope;
-
 }));
-

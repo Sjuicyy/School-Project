@@ -12,7 +12,6 @@ $rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,15 +32,12 @@ $rows = mysqli_num_rows($result);
             color: #1a202c;
             text-align: left;
         }
-
         .main-body {
             padding: 15px;
         }
-
         .card {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
         }
-
         .card {
             position: relative;
             display: flex;
@@ -53,58 +49,46 @@ $rows = mysqli_num_rows($result);
             border: 0 solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
         }
-
         .card-body {
             flex: 1 1 auto;
             min-height: 1px;
             padding: 1rem;
         }
-
         .btn.btn-twitter {
             background: #69b6f0;
             border-color: #69b6f0;
             color: #fff;
         }
-
         .btn.btn-twitter:hover {
             background: #519cd6;
         }
-
         .btn.btn-facebook {
             background: #4f69a2;
             border-color: #4f69a2;
             color: #fff;
         }
-
         .btn.btn-facebook:hover {
             background: #1a3f96;
         }
-
         .btn.btn-instagram {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             border-color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             color: #fff;
         }
-
         .btn.btn-instagram:hover {
             background: radial-gradient(circle at 30% 107%, #cac04d 0%, #ccc143 5%, #c4382b 45%, #94176c 60%, #1a3ca1 90%);
         }
-
         .btn.btn-linkedin {
             background: #2884ba;
             border-color: #2884ba;
             color: #fff;
         }
-
         .btn.btn-linkedin:hover {
             background: #10557e;
         }
     </style>
 </head>
-
 <body>
-
-
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
@@ -115,25 +99,17 @@ $rows = mysqli_num_rows($result);
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
-
-
-
                     <?php if ($data['Status'] == 2): ?>
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="index1.php">Home</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                     </li>
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                         </li>
-
-
-
                     <?php endif; ?>
-
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><img src="../img/Students/<?php echo $data['Photo'] ?>"
@@ -144,12 +120,10 @@ $rows = mysqli_num_rows($result);
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container mt-5">
         <div class="main-body">
             <?php
@@ -185,17 +159,14 @@ $rows = mysqli_num_rows($result);
                                     class="btn btn-facebook text-left w-100 social"><i class="bi bi-facebook"></i>
                                     Facebook</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
                                         class="bi bi-twitter"></i> Twitter</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
                                         class="bi bi-instagram"></i> Instagram</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
                                         class="bi bi-linkedin"></i> Linkedin</a>
@@ -286,5 +257,4 @@ $rows = mysqli_num_rows($result);
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

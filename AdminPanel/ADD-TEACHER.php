@@ -2,9 +2,6 @@
 require_once "CONNECTION.php";
 session_start();
 $email_id = $_SESSION['User'];
-
-
-
 $name = ucwords($_POST['name']);
 $email = $_POST['email'];
 $contact = $_POST['phone'];
@@ -23,7 +20,6 @@ $target2 = "Teachers/" . basename($image);
     $sql = "INSERT INTO `teachers` (`Name`, `Address`, `Subject`, `Contact`, `Email`, `Education`, `Fdate`, `Tdate`, `Photo`, `Facebook`, `Twitter`, `Instagram`, `Linkedin`, `About`) 
     VALUES ('$name', '$address', '$subject', '$contact', '$email', '$education', '$sdate', '$edate', '$image', '$facebook', '$twitter', '$instagram', '$linkedin', '$about')";
     mysqli_query($conn, $sql);
-
     if (move_uploaded_file($_FILES['photo']['tmp_name'], $target2)) {
         echo "<script>alert('Successfully Submitted !');</script>";
         header('location:teachers.php');

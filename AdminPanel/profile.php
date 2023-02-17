@@ -1,12 +1,8 @@
 <?php
 require_once "CONNECTION.php";
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,29 +14,23 @@ require_once "CONNECTION.php";
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
         body {
             font-family: "Roboto", sans-serif;
             color: #1a202c;
             text-align: left;
         }
-
         .main-body {
             padding: 15px;
         }
-
         .card {
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
         }
-
         .card {
             position: relative;
             display: flex;
@@ -52,55 +42,45 @@ require_once "CONNECTION.php";
             border: 0 solid rgba(0, 0, 0, .125);
             border-radius: .25rem;
         }
-
         .card-body {
             flex: 1 1 auto;
             min-height: 1px;
             padding: 1rem;
         }
-
         .btn.btn-twitter {
             background: #69b6f0;
             border-color: #69b6f0;
             color: #fff;
         }
-
         .btn.btn-twitter:hover {
             background: #519cd6;
         }
-
         .btn.btn-facebook {
             background: #4f69a2;
             border-color: #4f69a2;
             color: #fff;
         }
-
         .btn.btn-facebook:hover {
             background: #1a3f96;
         }
-
         .btn.btn-instagram {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             border-color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
             color: #fff;
         }
-
         .btn.btn-instagram:hover {
             background: radial-gradient(circle at 30% 107%, #cac04d 0%, #ccc143 5%, #c4382b 45%, #94176c 60%, #1a3ca1 90%);
         }
-
         .btn.btn-linkedin {
             background: #2884ba;
             border-color: #2884ba;
             color: #fff;
         }
-
         .btn.btn-linkedin:hover {
             background: #10557e;
         }
     </style>
 </head>
-
 <body>
 <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
@@ -143,7 +123,6 @@ require_once "CONNECTION.php";
     </nav>
     <div class="container">
         <div class="main-body">
-
             <div class="row gutters-sm">
                 <?php
                 $id = $_GET['id'];
@@ -156,22 +135,13 @@ require_once "CONNECTION.php";
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-
-
-
                                 <?php if ($data['Fname'] == 'null'): ?>
-
-
                                     <img src="../img/Teachers/<?php echo $data['Photo'] ?>"
                                         alt="<?php echo $data['Photo'] ?>" class="" width="150">
-
                                 <?php else: ?>
-
                                     <img src="../img/Students/<?php echo $data['Photo'] ?>"
                                         alt="<?php echo $data['Photo'] ?>" class="" width="150">
                                 <?php endif; ?>
-
-
                                 <div class="mt-3">
                                     <h4>
                                         <?php echo $data['Name'] ?>
@@ -195,17 +165,14 @@ require_once "CONNECTION.php";
                                     class="btn btn-facebook text-left w-100 social"><i class="bi bi-facebook"></i>
                                     Facebook</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-twitter text-left w-100 "><i
                                         class="bi bi-twitter"></i> Twitter</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-instagram text-left w-100 "><i
                                         class="bi bi-instagram"></i> Instagram</a>
                             </li>
-
                             <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                 <a href="" type="button" class="btn mb-m-0 btn-linkedin text-left w-100 "><i
                                         class="bi bi-linkedin"></i> Linkedin</a>
@@ -252,10 +219,7 @@ require_once "CONNECTION.php";
                                 </div>
                             </div>
                             <hr>
-
                             <?php if ($data['Fname'] == 'null'): ?>
-
-
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">From:</h6>
@@ -273,9 +237,7 @@ require_once "CONNECTION.php";
                                         <?php echo $data['Tdate'] ?>
                                     </div>
                                 </div>
-
                             <?php else: ?>
-
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Father's Name</h6>
@@ -293,14 +255,7 @@ require_once "CONNECTION.php";
                                         <?php echo $data['Batch'] ?>
                                     </div>
                                 </div>
-
-
                             <?php endif; ?>
-
-
-
-
-
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
@@ -311,19 +266,13 @@ require_once "CONNECTION.php";
                                 </div>
                             </div>
                             <hr>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
@@ -332,5 +281,4 @@ require_once "CONNECTION.php";
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

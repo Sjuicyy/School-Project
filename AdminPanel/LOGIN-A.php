@@ -2,7 +2,6 @@
 require_once "CONNECTION.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
-
 if ($email=='111@1.1' && $password=111) {
     // session_start();
     // $_SESSION['batch'] = $data1['Batch'];
@@ -15,5 +14,3 @@ if ($email=='111@1.1' && $password=111) {
     echo "login unsuccessful";
 }
 ?>
-
-

@@ -9,10 +9,8 @@ $sql = "SELECT * from teachers WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +25,6 @@ $data = mysqli_fetch_array($result);
     <link rel="stylesheet" href="rform.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
@@ -42,13 +39,10 @@ $data = mysqli_fetch_array($result);
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="../index1.php">Home</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="requests2.php">Requests</a>
                     </li>
-
                     <li class="nav-item pt-1">
-
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><img src="../img/Teachers/<?php echo $data['Photo'] ?>"
                                 class="rounded-circle" height="50px" width="50px" alt=""> </a>
@@ -59,16 +53,13 @@ $data = mysqli_fetch_array($result);
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-
     <main>
         <section class="blog">
             <div class="container">
-
                 <div class="container justify-content-center ">
                     <div class="card-body px-sm-4 px-0">
                         <div class="row justify-content-center">
@@ -112,11 +103,9 @@ $data = mysqli_fetch_array($result);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

@@ -3,31 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
-
-  <title>Revetive - Free Business Corporate Template By MACode ID</title>
-
+  <title>Contact</title>
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
   
   <link rel="stylesheet" href="../assets/css/maicons.css">
-
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
-
   <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
-
   <link rel="stylesheet" href="../assets/vendor/fancybox/css/jquery.fancybox.css">
-
   <link rel="stylesheet" href="../assets/css/theme.css">
-
 </head>
 <body>
-
   <!-- Back to top button -->
   <div class="back-to-top"></div>
-
   <header>
   <div class="top-bar">
       <div class="container">
@@ -40,7 +29,6 @@
               <span class="mai-call fg-primary"></span> <a href="tel:+0011223495">+0011223495</a>
             </div>
           </div>
-
           <div class="col-4  text-right d-flex justify-content-end">
             <div class="social-mini-button d-none d-md-block">
               <a href="#"><span class="mai-logo-facebook-f"></span></a>
@@ -53,17 +41,14 @@
         </div>
       </div> <!-- .container -->
     </div> <!-- .top-bar -->
-
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a href="index.php" class="navbar-brand"><img src="../assets/img/Banner.png"
             style="max-width: 250px;"></span></a>
-
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
             <li class="nav-item">
@@ -91,7 +76,6 @@
         </div>
       </div> <!-- .container -->
     </nav> <!-- .navbar -->
-
     <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(../assets/img/bg_image_3.jpg);">
       <div class="container h-100">
         <div class="row justify-content-center align-items-center h-100">
@@ -108,7 +92,6 @@
       </div>
     </div> <!-- .page-banner -->
   </header>
-
   <main>
     <div class="page-section">
       <div class="container">
@@ -145,13 +128,10 @@
         </div>
       </div> <!-- .container -->
     </div> <!-- .page-section -->
-
     <div class="maps-container">
       <div id="google-maps"></div>
     </div>
   </main>
-
-
   <footer class="page-footer">
     <div class="container">
       <div class="row">
@@ -180,9 +160,7 @@
           </form>
         </div>
       </div>
-
       <hr>
-
       <div class="row mt-4">
         <div class="col-md-6">
           <p>Copyright 2020. This template designed by <a href="https://macodeid.com">MACode ID</a></p>
@@ -198,25 +176,15 @@
       </div>
     </div>
   </footer>
-
   
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
-
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
-
 <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
 <script src="../assets/vendor/wow/wow.min.js"></script>
-
 <script src="../assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
-
 <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script>
-
 <script src="../assets/js/google-maps.js"></script>
-
 <script src="../assets/js/theme.js"></script>
-
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
-
 </body>
 </html>

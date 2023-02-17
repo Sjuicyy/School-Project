@@ -2,7 +2,6 @@ html,
 body {
   overflow-x: hidd /* Prevent scroll on narrow devices */
 }
-
 /* navbar hide on scroll down */
 .nav-up {
     top: -80px;
@@ -53,12 +52,10 @@ body {
   }
   
 }
-
 /* .main-heading {
   position: relative;
   z-index: 100;
 } */
-
 @media (max-width: 991.98px) {
 	  .navbar-nav {
 	  padding-top: 5rem;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,14 +13,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
-
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
     body {
         font-family: "Roboto", sans-serif;
     }
-
     .stats {
         padding: 18px 23px;
         -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -31,54 +27,44 @@
         min-height: 170px;
         margin-bottom: 30px;
     }
-
     .stats-content {
-
         display: flex;
         margin-top: auto;
         align-items: flex-end;
     }
-
     .stats-title {
         font-size: 26px;
         font-weight: 600;
         letter-spacing: .04em;
     }
-
     .stats-icon {
         display: flex;
         align-items: flex-end;
         font-size: 40px;
     }
-
     .stats-data {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         margin-left: auto;
     }
-
     .stats-number {
         font-size: 33px;
         line-height: 33px;
         font-weight: 600;
         letter-spacing: .04em;
     }
-
     .stats-timeframe {
         opacity: .5;
     }
-
     .stats-primary {
         color: #fff;
         background: #2f89fc;
     }
-
     .heading-line {
         position: relative;
         padding-bottom: 5px;
     }
-
     .heading-line:after {
         content: "";
         height: 4px;
@@ -89,7 +75,6 @@
         left: 14px;
     }
 </style>
-
 <body>
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
@@ -130,7 +115,6 @@
             </div>
         </div>
     </nav>
-
     <main class="dash-content">
         <div class="container-fluid mt-0">
             <div class="row dash-row mx-auto mt-5">
@@ -221,17 +205,12 @@
             </div>
         </div>
     </main>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

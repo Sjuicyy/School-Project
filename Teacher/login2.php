@@ -1,11 +1,8 @@
 <?php
 session_start()
 ?>
-
-
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,31 +15,27 @@ session_start()
         body {
             height: 1000px;
         }
-
         .bcolor {
             background-color: rgb(47, 137, 252);
         }
-
         .color {
             color: rgb(47, 137, 252);
         }
-
         .btn1 {
             color: white;
         }
-
         .btn1:hover {
             color: rgba(0, 0, 0, 0);
         }
-
         .col1 {
             color: rgb(26, 231, 17);
         }
     </style>
     <title>Little Angle School</title>
 </head>
-
 <body style="background-color:#99e6e335 ;">
+<a class="h4 m-4 text-decoration-none" href="../index.php">Home</a>
+
     <!-- heading start -->
     <div class=" container-fluid text-center">
         <div class="container mt-5  bg-white rounded-3"
@@ -50,22 +43,16 @@ session_start()
             <form method="POST" action="LOGIN-T.php" class="card border-0 w-100">
                 <img class="mt-5 border border-2 " src="../img/Banner.png" width="100%">
                 <div class="card-body mt-5">
-
                 </div>
                 <input class="form-control-lg  w-75  mx-auto p-2 mt-3" type="email" name="email"
                     placeholder="Email Address" style="border:2px solid rgb(26,231,17)">
-
                 <input class="form-control-lg  w-75 mx-auto p-2 mt-5" type="password" name="password"
                     placeholder="Password" style="border:2px solid rgb(26,231,17)">
-
-
                 <?php if ($_SESSION['error']): ?>
                     <p class="mt-2 text-danger">
                         <?php echo $_SESSION['error'] ?>
                     </p>
                 <?php endif; ?>
-
-
                 <input type="submit" value="Log In"
                     class="btn1  bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-3"
                     style="letter-spacing: 2px;">
@@ -75,7 +62,5 @@ session_start()
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
 </body>
-
 </html>

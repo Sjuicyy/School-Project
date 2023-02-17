@@ -13,7 +13,6 @@ $rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,16 +27,13 @@ $rows = mysqli_num_rows($result);
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
-
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
     body {
         font-family: "Roboto", sans-serif;
         background: #EFF1F3;
@@ -45,7 +41,6 @@ $rows = mysqli_num_rows($result);
         position: relative;
     }
 </style>
-
 <body>
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
@@ -63,12 +58,10 @@ $rows = mysqli_num_rows($result);
                     <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="../Student/requests.php">Requests</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
                     </li>
                     <li class="nav-item pt-1">
-
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><img src="../img/Students/<?php echo $data['Photo'] ?>"
                                 class="rounded-circle" height="50px" width="50px" alt=""> </a>
@@ -78,22 +71,18 @@ $rows = mysqli_num_rows($result);
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>
     </nav>
-
     <div class="container mt-4">
         <div class="row gv">
             <div class="col-md-12">
                 <div class="table-wrapper">
                     <div class="table-title">
-
                         <div class="d-flex justify-content-between">
                             <h3 class="heading-line">Students</h3>
                         </div>
-
                     </div>
                     <table id="example" class="table table-striped text-center" style="width:100%">
                         <thead style="background-color: #2f89fc; color: white;">
@@ -115,7 +104,6 @@ $rows = mysqli_num_rows($result);
                                 while ($data = mysqli_fetch_array($result)) {
                                     ?>
                                     <tr>
-
                                         <td style="text-align: left;">
                                             <img src="../img/Students/<?php echo $data['Photo'] ?>" width="50px"
                                                 class="avatar me-2 bold" alt="Avatar">
@@ -139,12 +127,10 @@ $rows = mysqli_num_rows($result);
                                                 data-toggle="tooltip"><i class="bi bi-eye"></i></a></td>
                                     </tr>
                                 <?php
-
                                 }
                             }
                             ?>
                         </tbody>
-
                     </table>
                 </div>
             </div>
@@ -153,18 +139,13 @@ $rows = mysqli_num_rows($result);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <script type='text/javascript'
         src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
-
-
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
@@ -180,32 +161,22 @@ $rows = mysqli_num_rows($result);
             });
         });
     </script>
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
     <script type='text/javascript'
         src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

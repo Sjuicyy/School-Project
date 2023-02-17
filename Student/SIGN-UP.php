@@ -5,11 +5,6 @@ $password = $_POST['password'];
 $sql0 = "SELECT * from students where Email='$email' ";
 $result = mysqli_query($conn, $sql0);
 $data = mysqli_num_rows($result);
-
-
-
-
-
 if ($data == 1) {
     echo 'Sorry email already used. Please use another email to login!!';
 } else {

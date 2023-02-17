@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,64 +10,49 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.7/css/responsive.bootstrap4.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
         body {
             background: #f5f5f5;
             font-family: 'roboto', sans-serif;
-
         }
-
-
-
-
         .gv {
             overflow-x: scroll;
         }
-
         .avatar {
             height: 48px;
             width: 48px;
             border-radius: 50px;
         }
-
         table.table tr th,
         table.table tr td {
             border-color: #e9e9e9;
             padding: 12px 15px;
             vertical-align: middle;
         }
-
         table.table tr th:last-child {
             width: 100px;
         }
-
         table.table-striped tbody tr:nth-of-type(odd) {
             background-color: #f5f2f2;
         }
-
         table.table-striped tbody tr:hover {
             background: #d6d0d0;
             cursor: pointer;
         }
-
         .table td {
             font-size: 15px;
         }
-
         table.table td a {
             font-weight: bold;
             color: #566787;
             display: inline-block;
             text-decoration: none;
         }
-
         .table-wrapper {
             min-width: 725px;
             background: #fff;
@@ -76,7 +60,6 @@
             border-radius: 3px;
             box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
         }
-
         .table-title {
             padding-bottom: 15px;
             background: #2f89fc;
@@ -85,17 +68,14 @@
             margin: -20px -25px 10px;
             border-radius: 3px 3px 0 0;
         }
-
         table.table td i {
             font-size: 20px;
         }
-
         td .eye:hover {
             transform: scale(1.5);
         }
     </style>
 </head>
-
 <body>
 <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
@@ -141,13 +121,11 @@
             <div class="col-md-12">
                 <div class="table-wrapper">
                     <div class="table-title">
-
                         <div class="d-flex justify-content-between">
                             <h3 class="heading-line">Students</h3>
                             <a href="" class="btn btn-primary" style="outline: 1px solid white;"><i
                                     class='bx bxs-group bx-sm' style='color:#ffffff'></i> Student Requests</a>
                         </div>
-
                     </div>
                     <table id="example" class="table table-striped text-center" style="width:100%">
                         <thead style="background-color: #2f89fc; color: white;">
@@ -188,7 +166,6 @@
                                                     class="bi bi-eye"></i></a></td>
                                     </tr>
                                     <?php
-
                                 }
                             }
                             ?>
@@ -208,9 +185,6 @@
             </div>
         </div>
     </div>
-
-
-
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" src=" https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
@@ -226,14 +200,9 @@
             });
         });
     </script>
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>

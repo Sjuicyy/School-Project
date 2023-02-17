@@ -2,11 +2,9 @@
 .bg-black {
   background-color: $black !important;
 }
-
 .bg-white {
   background-color: $white !important;
 }
-
 @each $key, $value in $theme-colors {
   .bg-#{$key} {
     background-color: $value !important;
@@ -15,15 +13,12 @@
     background-color: darken($value, 5%) !important;
   }
 }
-
 .fg-black {
   color: $black !important;
 }
-
 .fg-white {
   color: $white !important;
 }
-
 @each $key, $value in $theme-colors {
   .fg-#{$key} {
     color: $value !important;
@@ -32,13 +27,11 @@
     color: darken($value, 5%) !important;
   }
 }
-
 @each $key, $value in $theme-colors {
   .border-#{$key} {
     border-color: $value !important;
   }
 }
-
 /* Social Media Colors */
 @each $key, $value in $social-colors {
   .bg-#{$key} {

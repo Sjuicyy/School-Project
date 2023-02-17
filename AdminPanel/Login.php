@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,19 +12,15 @@
         body {
             height: 1000px;
         }
-
         .bcolor {
             background-color: rgb(47, 137, 252);
         }
-
         .color {
             color: rgb(47, 137, 252);
         }
-
         .btn1 {
             color: white;
         }
-
         .btn1:hover {
             color: rgba(0, 0, 0, 0);
         }
@@ -35,8 +30,9 @@
     </style>
     <title>Little Angle School</title>
 </head>
-
 <body style="background-color:#99e6e335 ;">
+<a class="h4 m-4 text-decoration-none" href="../index.php">Home</a>
+
     <!-- heading start -->
     <div class=" container-fluid text-center">
         <div class="container mt-5 bg-white rounded-3"
@@ -61,7 +57,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
 </body>
-
 </html>
