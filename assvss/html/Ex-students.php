@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
-  <title>Photos</title>
+  <title>Society</title>
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
   
   <link rel="stylesheet" href="../assets/css/maicons.css">
@@ -34,17 +34,17 @@
             <li class="nav-item">
               <a href="about.php" class="nav-link">हाम्रो बारेमा </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a href="society.php" class="nav-link">समुदायहरु</a>
             </li>
-
-            <li class="nav-item ">
+            <li class="nav-item active">
               <a href="Ex-students.php" class="nav-link">पूर्व विद्यार्थी</a>
             </li>
+         
             <li class="nav-item">
               <a href="notices.php" class="nav-link">सूचनाहरु</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a href="photos.php" class="nav-link">फोटोहरू</a>
             </li>
             <!--            <li class="nav-item">-->
@@ -64,10 +64,10 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
                 <li class="breadcrumb-item"><a href="index.php">गृहपृष्ठ</a></li>
-                <li class="breadcrumb-item active" aria-current="page">फोटोहरू</li>
+                <li class="breadcrumb-item active" aria-current="page">पूर्व विद्यार्थी</li>
               </ol>
             </nav>
-            <h1 class="fg-white text-center">फोटोहरू</h1>
+            <h1 class="fg-white text-center">पूर्व विद्यार्थी</h1>
           </div>
         </div>
       </div>
@@ -148,51 +148,45 @@
         </div>
       </div> <!-- .container
     </div> .page-section -->
- 
-    <div class="container-flui1d mx-2 mt-5">
-          <div class="row d-flex justify-content-between mt-3">
-            <?php
-            require_once 'CONNECTION.php';
-            $sql = "SELECT * FROM Photos";
-            $result = $conn->query($sql);
-            while ($data = mysqli_fetch_array($result)) {
-              ?>
-              <div class="col-lg-auto col-md-6 py-auto">
-                <div class="portfolio1 mt-2">
-                  <a href="../../AdminPanel/Photos/<?php echo $data['Photos'] ?>" data-fancybox="portfolio1">
-                    <img src="../../AdminPanel/Photos/<?php echo $data['Photos'] ?>" height="280px"
-                      alt="<?php echo $data['Photos'] ?>">
-                  </a>
+    <div class="page-section">
+            <div class="container">
+                <div class="text-center">
+                    <div class="subhead">हाम्रो समितिहरु </div>
+                    <h2 class="title-section"> विद्यार्थी समिति</h2>
                 </div>
-              </div>
-              <?php
-            }
-            ?>
-          </div>
-        </div> <!-- .container -->
-    <!-- <div class="page-section">
-      <div class="container-fluid">
-        <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/airbnb.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/google.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/mailchimp.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/paypal.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/stripe.png" alt="">
-          </div>
+                <div class="owl-carousel team-carousel mt-5">
+                    <?php
+                    require_once 'CONNECTION.php';
+                    $sql = "SELECT * FROM Smc";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($data = mysqli_fetch_array($result)) {
+                            ?>
+                            <div class="team-wrap">
+                                <div class="team-profile">
+                                    <img src="../../AdminPanel/SMC/<?php echo $data['Image'] ?>" height="335px" alt="">
+                                </div>
+                                <div class="team-content">
+                                    <h5>
+                                        <?php echo $data['Name'] ?>
+                                    </h5>
+                                    <div class="text-sm fg-grey">
+                                        <?php echo $data['Post'] ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <!-- .container -->
+            
         </div>
-      </div> <!-- .container-fluid -->
-    </div> <!-- .page-section -->
+        
   </main>
-  <footer class="page-footer mt-5">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 py-3">

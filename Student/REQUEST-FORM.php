@@ -11,7 +11,7 @@ $profession = $_POST['profession'];
 $facebook = $_POST['facebook'];
 $about = $_POST['about'];
 $image = $_FILES["photo"]["name"];
-$target2 = "img/Students/" . basename($image);
+$target2 = "../img/Students/" . basename($image);
 if ($image == NULL) {
     $sql = "UPDATE `students` SET `Name` = '$name', `Address` = '$address', `Contact` = '$contact', `Profession` = '$profession', `Fname` = '$fname', `Batch` = '$batch', `Facebook` = '$facebook',`Status`='1', `About` = '$about', `Emsg`=NULL WHERE `students`.`Email` = '$email_id' ";
     mysqli_query($conn, $sql);

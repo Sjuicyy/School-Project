@@ -12,6 +12,7 @@ $rows = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@ $rows = mysqli_num_rows($result);
     <link rel="stylesheet" href="css/style.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
@@ -43,7 +45,7 @@ $rows = mysqli_num_rows($result);
                             <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="../index1.php">Home</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="requests.php">Requests</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
@@ -89,16 +91,16 @@ $rows = mysqli_num_rows($result);
                             <div class="card-body inner-card">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
-                                        <div class="form-group"> <label for="Mobile-Number">Full Name</label> <input
+                                        <div class="form-group"> <label for="Mobile-Number">Full Name</label> <input required
                                                 type="text" name="name" value="<?php echo $data['Name']; ?>"
                                                 class="form-control" id="Mobile-Number" placeholder=""> </div>
-                                        <div class="form-group"> <label for="Mobile-Number">Mobile Number</label> <input
+                                        <div class="form-group"> <label for="Mobile-Number">Mobile Number</label> <input required
                                                 type="number" name="phone" value="<?php echo $data['Contact']; ?>"
                                                 class="form-control" id="Mobile-Number" placeholder=""> </div>
-                                        <div class="form-group"> <label for="Fname">Father's Name</label> <input
+                                        <div class="form-group"> <label for="Fname">Father's Name</label> <input required
                                                 type="text" name="fathername" value="<?php echo $data['Fname']; ?>"
                                                 class="form-control" id="Fname" placeholder=""> </div>
-                                        <div class="form-group"> <label for="Address">Address</label><input type="text"
+                                        <div class="form-group"> <label for="Address">Address</label><input required type="text"
                                                 name="address" value="<?php echo $data['Address']; ?>"
                                                 class="form-control" id="Address" placeholder=""> </div>
                                     </div>
@@ -116,15 +118,15 @@ $rows = mysqli_num_rows($result);
                                             </div>
                                         </div>
                                         <div class="col-lg-5 col-md-6 col-sm-12">
-                                            <div class="form-group"> <label for="profession">Profession</label> <input
+                                            <div class="form-group"> <label for="profession">Profession</label> <input required
                                                     name="profession" value="<?php echo $data['Profession']; ?>"
                                                     class="form-control">
-                                                </input>
+                                                </input required>
                                             </div>
                                         </div>
                                         <div class="col-lg-10">
                                             <div class="form-group"> <label for="Mobile-Number">Facebook(URL:)</label>
-                                                <input type="text" name="facebook"
+                                                <input  type="text" name="facebook"
                                                     value="<?php echo $data['Facebook']; ?>" class="form-control"
                                                     id="Mobile-Number" placeholder="">
                                             </div>
@@ -140,7 +142,7 @@ $rows = mysqli_num_rows($result);
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-md-12 col-lg-10 col-12">
-                                            <div class="form-group"> <label for="About">About</label> <input
+                                            <div class="form-group"> <label for="About">About</label> <input required
                                                     style="min-height: 100px;" name="about"
                                                     value="<?php echo $data['About']; ?>" class="form-control rounded-0"
                                                     id="About" rows="5">
@@ -166,7 +168,7 @@ $rows = mysqli_num_rows($result);
     <script>
         $(document).ready(function () {
             $(".files").attr('data-before', "Drag file here or click the above button");
-            $('input[type="file"]').change(function (e) {
+            $('input required[type="file"]').change(function (e) {
                 var fileName = e.target.files[0].name;
                 $(".files").attr('data-before', fileName);
             });
@@ -176,4 +178,5 @@ $rows = mysqli_num_rows($result);
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

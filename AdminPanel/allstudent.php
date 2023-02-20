@@ -132,7 +132,7 @@
                             <a href="SMC.php" class="dropdown-item" type="button">Add Members</a>
                             <a href="PMC.php" class="dropdown-item" type="button">Add Parent Members</a>
                             <a href="testimony.php" class="dropdown-item" type="button">Add Testimonial</a>
-                            <a href="Photos.php" class="dropdown-item" type="button">Add Photos</a>
+                            <a href="Photos.php" class="dropdown-item " type="button">Add Photos</a>
                             <a href="../LOGOUT.php" class="dropdown-item fw-bold" type="button">Log Out</a>
                         </div>
                     </li>
@@ -159,7 +159,7 @@
                                 <tr>
                                     <a href="requestaccept.php?id=<?php echo $data['Email'] ?>" class="dropdown-item" type="button">
                                         <div class="d-flex">
-                                            <img src="../../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                            <img src="../img/Students/<?php echo $data['Photo'] ?>" class="avatar"
                                                 alt="Avatar">
                                             <p class="pb-0 mb-0 pt-2"><b><?php echo $data['Name'] ?></b> requested to join.</p>
                                         </div>
@@ -199,7 +199,7 @@
                                     ?>
                                     <tr>
                                         <td style="text-align: left;"><a href="#"><img
-                                                    src="../../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                                    src="§../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
                                                     alt="Avatar"> <?php echo $data['Name'] ?></a></td>
                                         <td>
                                             <?php echo $data['Email'] ?>

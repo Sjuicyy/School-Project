@@ -16,29 +16,7 @@
   <!-- Back to top button -->
   <div class="back-to-top"></div>
   <header>
-    <div class="top-bar">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-8">
-            <div class="d-inline-block">
-              <span class="mai-mail fg-primary"></span> <a href="mailto:contact@mail.com">contact@mail.com</a>
-            </div>
-            <div class="d-inline-block ml-2">
-              <span class="mai-call fg-primary"></span> <a href="tel:+0011223495">+0011223495</a>
-            </div>
-          </div>
-          <div class="col-4  text-right d-flex justify-content-end">
-            <div class="social-mini-button d-none d-md-block">
-              <a href="#"><span class="mai-logo-facebook-f"></span></a>
-              <a href="#"><span class="mai-logo-twitter"></span></a>
-              <a href="#"><span class="mai-logo-youtube"></span></a>
-              <a href="#"><span class="mai-logo-linkedin"></span></a>
-            </div>
-            <a href="../../loghome.php"><span class="mai-logo">Log In</span></a>
-          </div>
-        </div>
-      </div> <!-- .container -->
-    </div> <!-- .top-bar -->
+    
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a href="index.php" class="navbar-brand"><img src="../assets/img/Banner.png"
@@ -57,6 +35,9 @@
             </li>
             <li class="nav-item">
               <a href="society.php" class="nav-link">समुदायहरु</a>
+            </li>
+            <li class="nav-item">
+              <a href="Ex-students.php" class="nav-link">पूर्व विद्यार्थी</a>
             </li>
             <li class="nav-item">
               <a href="notices.php" class="nav-link">सूचनाहरु</a>
@@ -476,6 +457,7 @@
             <li><a href="#">Career</a></li>
             <li><a href="#">Resources</a></li>
             <li><a href="#">News & Feed</a></li>
+            <li><a href="../../AdminPanel/Login.php">Admin Panel</a></li>
           </ul>
         </div>
         <div class="col-lg-3 py-3">
