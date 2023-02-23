@@ -9,9 +9,25 @@ $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
 $data = mysqli_fetch_array($result);
 $rows = mysqli_num_rows($result);
+$admin = $data['IsAdmin'];
+$number = $data['Contact'];
 ?>
+
+
+
+
+
+<?php
+$sql = "SELECT * from Membership WHERE S_id='$number' ";
+$result1 = mysqli_query($conn, $sql);
+$dataMember = mysqli_fetch_array($result1);
+$rowMember = mysqli_num_rows($result1);
+$status = $dataMember['Status'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,19 +41,34 @@ $rows = mysqli_num_rows($result);
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+
+
 </head>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-    body {
-        font-family: "Roboto", sans-serif;
-        background: #EFF1F3;
-        min-height: 100vh;
-        position: relative;
-    }
+
+
+
+
+    <?php if (!($rows == 0) && (($rowMember == 0) or ($status == 'pending'))): ?>
+        body {
+            height: 100vh;
+            overflow-y: hidden;
+            padding-right: 15px;
+            /* Avoid width reflow */
+        }
+
+    <?php endif; ?>
+
+
     .heading-line {
         position: relative;
         padding-bottom: 5px;
     }
+
+
     .heading-line:after {
         content: "";
         height: 4px;
@@ -47,17 +78,125 @@ $rows = mysqli_num_rows($result);
         bottom: 0;
         left: 0;
     }
+
     .color {
         color: rgb(47, 137, 252);
     }
+
     .bcolor {
         background-color: rgb(47, 137, 252);
     }
+
     .m:hover {
         background-color: rgb(111, 86, 237);
     }
+
+
+    /* The Modal1 (background) */
+    .modal1 {
+        display: none1;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+
+    }
+
+    /* Modal1 Content */
+    .modal1-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
 </style>
+
 <body>
+    <?php if (!($rows == 0) && ($rowMember == 0)): ?>
+        <div id="myModal1" class="modal1">
+            <!-- Modal1 content -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <div class="modal1-content ">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form action="./Student/MEMBERREQUEST.php" method="POST">
+                                    <select class="form-select form-select-lg mb-3" name='type'
+                                        aria-label=".form-select-lg example" required>
+                                        <option value="basic">साधारण सदस्य (रु ५००)</option>
+                                        <option value="lifetime">आजीवन सदस्य (रु ३०००)</option>
+                                    </select>
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <img src="img/qr-generator.png" alt="">
+                                        </div>
+                                        <div class="col-auto" style="max-width: 400px;">
+                                            <h5>Steps</h5>
+                                            <p> 1) Save qr code to gallery</p>
+                                            <p> 2) Pay the amount using qr code via Esewa or khalti</p>
+                                            <p> 3) Copy the transaction code below </p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">Transaction Id:</label>
+                                        <input type="text" name="code" class="form-control" id="recipient-name" required>
+                                    </div>
+                                    <input type="hidden" name='contact' value="<?php echo $number ?> ">
+                                    <input type="submit" value='Proceed' class="btn w-25 float-end btn-primary">
+                                </form>
+                                <a href="./LOGOUT.php">
+                                    <button class="btn float-enad btn-danger">Log out</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+
+    <?php if (!($rows == 0) && ($status == 'pending')): ?>
+        <div id="myModal1" class="modal1">
+            <!-- Modal1 content -->
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 col-md-6 col-sm-10">
+                    <div class="modal1-content ">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h4>Your request is pending... We will notify soon !!!</h4>
+                                <a href="./LOGOUT.php">
+                                    <button class="btn float-end btn-sm btn-primary">Log out</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
+
+
+
+
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
@@ -76,12 +215,12 @@ $rows = mysqli_num_rows($result);
                             <a class="nav-link px-3 mx-3 px-lg-2" href="./Teacher/requests2.php">Requests</a>
                         <?php else: ?>
                             <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/requests.php">Requests</a>
-                            <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/batchmates.php">Batchmates</a>
+                        <li class="nav-item">
+                            <a class="nav-link px-3 mx-3 px-lg-2" href="./Student/batchmates.php">Batchmates</a>
+                        </li>
+                    <?php endif; ?>
                     </li>
-                        <?php endif; ?>
-                    </li>
-                 
+
                     <?php if ($rows == 0): ?>
                         <?php
                         $sql = "SELECT * from teachers WHERE Email='$email_id' ";
@@ -93,7 +232,7 @@ $rows = mysqli_num_rows($result);
                                 aria-expanded="false"><img src="img/Teachers/<?php echo $data['Photo'] ?>"
                                     class="rounded-circle" height="50px" width="50px" alt=""> </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a href="./Student/myprofile.php" class="dropdown-item" type="button">View Profile</a>
+                                <a href="./Teacher/myprofile.php" class="dropdown-item" type="button">View Profile</a>
                                 <hr class="dropdown-divider" />
                                 <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                             </div>
@@ -106,6 +245,10 @@ $rows = mysqli_num_rows($result);
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a href="./Student/myprofile.php" class="dropdown-item" type="button">View Profile</a>
                                 <hr class="dropdown-divider" />
+                                <?php if ($data['IsAdmin'] == '1'): ?>
+                                    <a href="./Student/allmembers.php" class="dropdown-item" type="button">Member Requests</a>
+                                    <hr class="dropdown-divider" />
+                                <?php endif; ?>
                                 <a href="LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </li>
                     <?php endif; ?>
@@ -143,16 +286,23 @@ $rows = mysqli_num_rows($result);
                                         <?php echo $data['Date'] ?>
                                     </p>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="d-grid d-md-flex justify-content-end mt-4">
-                                <button type="button"
-                                    class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3 m">
-                                    <span class="material-symbols-outlined mx-2">
-                                        visibility
-                                    </span>View</button>
+                                <a class="text-decoration-none" href="noticedetail.php?id=<?php echo $data['Id'] ?>">
+                                    <button type="button"
+                                        class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3">
+                                        <span class="material-symbols-outlined mx-2">
+                                            visibility
+                                        </span>View</button>
+                                </a>
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -160,6 +310,13 @@ $rows = mysqli_num_rows($result);
             }
         }
         ?>
+
+
+
+
+
+
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
@@ -174,5 +331,7 @@ $rows = mysqli_num_rows($result);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
+
 </body>
+
 </html>

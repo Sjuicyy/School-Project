@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,9 +16,11 @@
 </head>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+
     body {
         font-family: "Roboto", sans-serif;
     }
+
     .stats {
         padding: 18px 23px;
         -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -27,44 +30,53 @@
         min-height: 170px;
         margin-bottom: 30px;
     }
+
     .stats-content {
         display: flex;
         margin-top: auto;
         align-items: flex-end;
     }
+
     .stats-title {
         font-size: 26px;
         font-weight: 600;
         letter-spacing: .04em;
     }
+
     .stats-icon {
         display: flex;
         align-items: flex-end;
         font-size: 40px;
     }
+
     .stats-data {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         margin-left: auto;
     }
+
     .stats-number {
         font-size: 33px;
         line-height: 33px;
         font-weight: 600;
         letter-spacing: .04em;
     }
+
     .stats-timeframe {
         opacity: .5;
     }
+
     .stats-primary {
         color: #fff;
         background: #2f89fc;
     }
+
     .heading-line {
         position: relative;
         padding-bottom: 5px;
     }
+
     .heading-line:after {
         content: "";
         height: 4px;
@@ -75,6 +87,7 @@
         left: 14px;
     }
 </style>
+
 <body>
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation sticky-top" id="navbar"
         style="background-color: #2f89fc;">
@@ -121,7 +134,7 @@
                 <h3 class="mb-4 heading-line">Dashboard</h3>
                 <div class="col-xl-4 col-md-6">
                     <div class="w-75 mx-5">
-                        <a class="text-decoration-none" href="teachers.html">
+                        <a class="text-decoration-none" href="teachers.php">
                             <div class="stats stats-primary" style="height: 350px;">
                                 <h3 class="stats-title"> Teachers </h3>
                                 <div class="stats-content">
@@ -129,7 +142,15 @@
                                         <i class='bx bxs-chalkboard' style='color:#ffffff'></i>
                                     </div>
                                     <div class="stats-data">
-                                        <div class="stats-number">30</div>
+                                        <?php
+                                        require_once 'CONNECTION.php';
+                                        $sql = "SELECT * FROM teachers";
+                                        $result = $conn->query($sql);
+                                        $number = mysqli_num_rows($result);
+                                        ?>
+                                        <div class="stats-number">
+                                            <?php echo $number ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +159,7 @@
                 </div>
                 <div class="col-xl-4 col-md-6">
                     <div class="w-75  mx-5 ">
-                        <a class="text-decoration-none" href="student.html">
+                        <a class="text-decoration-none" href="allstudent.php">
                             <div class="stats stats-primary" style="height: 350px;">
                                 <h3 class="stats-title"> Students </h3>
                                 <div class="stats-content">
@@ -146,7 +167,15 @@
                                         <i class='bx bxs-book-reader' style='color:#ffffff'></i>
                                     </div>
                                     <div class="stats-data">
-                                        <div class="stats-number">100</div>
+                                        <?php
+                                        require_once 'CONNECTION.php';
+                                        $sql = "SELECT * FROM students";
+                                        $result = $conn->query($sql);
+                                        $number = mysqli_num_rows($result);
+                                        ?>
+                                        <div class="stats-number">
+                                            <?php echo $number ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +184,7 @@
                 </div>
                 <div class="col-xl-4 col-md-6">
                     <div class="w-75 mx-5">
-                        <a class="text-decoration-none" href="request.html">
+                        <a class="text-decoration-none" href="request.php">
                             <div class="stats stats-primary" style="height: 350px;">
                                 <h3 class="stats-title"> Requests </h3>
                                 <div class="stats-content">
@@ -163,7 +192,15 @@
                                         <i class='bx bxs-user-pin'></i>
                                     </div>
                                     <div class="stats-data">
-                                        <div class="stats-number">15</div>
+                                        <?php
+                                        require_once 'CONNECTION.php';
+                                        $sql = "SELECT * FROM notices";
+                                        $result = $conn->query($sql);
+                                        $number = mysqli_num_rows($result);
+                                        ?>
+                                        <div class="stats-number">
+                                            <?php echo $number ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +209,7 @@
                 </div>
                 <div class="col-xl-4 col-md-6 ">
                     <div class="w-75 mx-5">
-                        <a class="text-decoration-none" class=" text-decoration-none" href="notice.html">
+                        <a class="text-decoration-none" class=" text-decoration-none" href="notice.php">
                             <div class="stats stats-primary" style="height: 350px;">
                                 <h3 class="stats-title"> Notices </h3>
                                 <div class="stats-content">
@@ -180,7 +217,15 @@
                                         <i class='bx bxs-notification'></i>
                                     </div>
                                     <div class="stats-data">
-                                        <div class="stats-number">5</div>
+                                        <?php
+                                        require_once 'CONNECTION.php';
+                                        $sql = "SELECT * FROM Anotice";
+                                        $result = $conn->query($sql);
+                                        $number = mysqli_num_rows($result);
+                                        ?>
+                                        <div class="stats-number">
+                                            <?php echo $number ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -213,4 +258,5 @@
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

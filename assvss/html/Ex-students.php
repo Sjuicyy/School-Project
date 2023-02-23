@@ -154,6 +154,14 @@
                     <div class="subhead">हाम्रो समितिहरु </div>
                     <h2 class="title-section"> विद्यार्थी समिति</h2>
                 </div>
+
+
+                <a class="h3 text-decoration-none" href="../../Student/Login.php">LogIn</a> <br>
+                <a class="h3 text-decoration-none" href="../../Student/signup.php">SignUp</a>
+
+
+
+
                 <div class="owl-carousel team-carousel mt-5">
                     <?php
                     require_once 'CONNECTION.php';

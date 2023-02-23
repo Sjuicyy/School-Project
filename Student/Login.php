@@ -1,8 +1,9 @@
 <?php
-session_start()
-    ?>
+session_start();
+?>
 <!doctype html>
 <html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,24 +16,30 @@ session_start()
         body {
             height: 1000px;
         }
+
         .bcolor {
             background-color: rgb(47, 137, 252);
         }
+
         .color {
             color: rgb(47, 137, 252);
         }
+
         .btn1 {
             color: white;
         }
+
         .btn1:hover {
             color: rgba(0, 0, 0, 0);
         }
+
         .col1 {
             color: rgb(26, 231, 17);
         }
     </style>
     <title>Little Angle School</title>
 </head>
+
 <body style="background-color:#99e6e335 ;">
     <!-- heading start -->
     <a class="h4 m-4 text-decoration-none" href="../index.php">Home</a>
@@ -43,21 +50,31 @@ session_start()
                 <img class="mt-5 border border-2 " src="../img/Banner.png" width="100%">
                 <div class="card-body mt-5">
                 </div>
-                <input class="form-control-lg  w-75  mx-auto mt-3" type="email" name="email"
-                    placeholder="Email Address" style="border:2px solid rgb(26,231,17)">
-                <input class="form-control-lg  w-75 mx-auto mt-5" type="password" name="password"
-                    placeholder="Password" style="border:2px solid rgb(26,231,17)">
-                <?php if ( $_SESSION['error']): ?>
+                <input class="form-control-lg  w-75  mx-auto mt-3" type="email" name="email" placeholder="Email Address"
+                    style="border:2px solid rgb(26,231,17)">
+                <input class="form-control-lg  w-75 mx-auto mt-5" type="password" name="password" placeholder="Password"
+                    style="border:2px solid rgb(26,231,17)">
+
+
+
+                <?php if ($_SESSION['error']): ?>
                     <p class="mt-2 text-danger">
                         <?php echo $_SESSION['error'] ?>
                     </p>
                 <?php endif; ?>
+
+
+
+
+
                 <input type="submit" value="Log In"
                     class="btn1  bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-2"
                     style="letter-spacing: 2px;">
                 <div class="row mt-5">
                     <div class="col  text-center">
                         Need an account? <a class="color text-decoration-none mx-auto" href="./signup.php"> SIGN UP</a>
+
+
                     </div>
                 </div>
             </form>
@@ -67,4 +84,5 @@ session_start()
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,15 +14,27 @@
   <link rel="stylesheet" href="../assets/vendor/fancybox/css/jquery.fancybox.css">
   <link rel="stylesheet" href="../assets/css/theme.css">
 
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+
+  <style>
+    .bot {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .justify {
+      text-align: justify;
+    }
+  </style>
+
+
 </head>
+
 <body>
   <!-- Back to top button -->
   <div class="back-to-top"></div>
   <header class="mb-3">
-    
-    <nav class="navbar navbar-expand-lg navbar-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
       <div class="container">
         <a href="index.php" class="navbar-brand"><img src="../assets/img/Banner.png"
             style="max-width: 250px;"></span></a>
@@ -34,13 +47,13 @@
             <li class="nav-item ">
               <a href="index.php" class="nav-link">गृहपृष्ठ</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a href="about.php" class="nav-link">हाम्रो बारेमा </a>
             </li>
             <li class="nav-item">
               <a href="society.php" class="nav-link">समुदायहरु</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
               <a href="Ex-students.php" class="nav-link">पूर्व विद्यार्थी</a>
             </li>
             <li class="nav-item active">
@@ -76,229 +89,61 @@
       </div>
     </div> <!-- .page-banner -->
   </header>
-  <!-- <div class="page-section">
-      <div class="container">
-        <div class="text-center">
-          <div class="subhead">Our Services</div>
-          <h2 class="title-section">See what can we do for your Projects</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/web_development.svg" alt="">
-              </div>
-              <h5>Web Development</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <main role="main" class="container ">
+    <div class="my-3 p-3 bg-white rounded box-shadow">
+      <h4 class="bot pb-2 mb-0">Recent</h4>
+
+      <?php
+      require_once 'CONNECTION.php';
+      $sql = "SELECT * FROM ANotice";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while ($data = mysqli_fetch_array($result)) {
+          ?>
+
+          <a href="noticedetail.php?id=<?php echo $data['Id'] ?>" style="text-decoration: none; ">
+            <div class="media text-muted pt-3">
+              <p class="media-body pb-3 mb-0 mr-3 bot justify"
+                style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                <strong class="d-block" style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                  <?php echo $data['Subject'] ?>
+                </strong>
+                <span>
+                  <?php echo $data['Message'] ?>
+                </span>
+
+              </p>
+              <img src="../../AdminPanel/Notices/<?php echo $data['Photo'] ?>" alt="" class=" rounded" width="40"
+                height="42">
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/graphics_design.svg" alt="">
-              </div>
-              <h5>Graphics Design</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/seo_and_marketing.svg" alt="">
-              </div>
-              <h5>SEO & Marketing</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/customer_services.svg" alt="">
-              </div>
-              <h5>Customer Services</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/app_development.svg" alt="">
-              </div>
-              <h5>App Development</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/ui_ux_design.svg" alt="">
-              </div>
-              <h5>UI/UX Design</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/product_design.svg" alt="">
-              </div>
-              <h5>Product Design</h5>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-            <div class="text-center">
-              <div class="img-fluid mb-4">
-                <img src="../assets/img/icons/data_analyst.svg" alt="">
-              </div>
-              <h5>Data Analyst</h5>
-            </div>
-          </div>
-        </div>
-      </div> <!-- .container
-    </div> .page-section -->
-<div class="table-responsive1">
-  <?php
-  require_once 'CONNECTION.php';
-  $sql = "SELECT * FROM ANotice";
-  $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    while ($data = mysqli_fetch_array($result)) {
+          </a>
+        <?php
+        }
+      }
       ?>
-      <div class=" container border border-primary">
-          <div class="d-flex">
-            <div class="mt-2 mb-2 justify-content-between">
-              <img src="../../AdminPanel/Notices/<?php echo $data['Photo'] ?>" width="100px" class="" alt="...">
-            </div>
-            <div class="overflow-hidden1">
-              <p class="mx-2 h6">
-                <?php echo $data['Subject'] ?>
-              </p>
-              <p class="text-secondary h6 mx-2 overflow-x-hidden">
-                <?php echo $data['Message'] ?> 
-              </p>
-              <p class="text-secondary h6 mx-2 ">Posted :
-                <?php echo $data['Date'] ?>
-              </p>
-            </div>
-            <div class=" mlq-auto ">
-              <button type="button" class=" btn  btn-sm text-primary ">
-                <span class="material-symbols-outlined">
-                  visibility
-                </span></button>
-            </div>
-          </div>
-      </div>
-    <?php
-    }
-  }
-  ?>
-</div>
-  <!-- Testimonials -->
-  <!-- <div class="page-section">
-      <div class="container">
-        <div class="owl-carousel testimonial-carousel">
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_1.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">Sam Watson</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_2.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">Edinson Alfa</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_3.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">May Halloway</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_1.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">Sam Watson</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_2.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">Edinson Alfa</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-          <div class="card-testimonial">
-            <div class="content">
-              The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-            </div>
-            <div class="author">
-              <div class="avatar">
-                <img src="../assets/img/person/person_3.jpg" alt="">
-              </div>
-              <div class="d-inline-block ml-2">
-                <div class="author-name">May Halloway</div>
-                <div class="author-info">CEO - Mosh Elite Ltd.</div>
-              </div>
-            </div>
-          </div>
-        </div> <!-- .row -->
-  </div> <!-- .container --
-    </div> .page-section -->
-  <!-- <div class="page-section">
-      <div class="container-fluid">
-        <div class="row row-cols-md-3 row-cols-lg-5 justify-content-center text-center">
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/airbnb.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/google.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/mailchimp.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/paypal.png" alt="">
-          </div>
-          <div class="py-3 px-5">
-            <img src="../assets/img/clients/stripe.png" alt="">
-          </div>
-        </div>
-      </div> <!-- .container-fluid -->
-  </div> <!-- .page-section -->
+    </div>
+  </main>
+
+
+
+  </div>
+  </main>
   <footer class="page-footer mt-5">
     <div class="container mt-5">
       <div class="row">
@@ -353,4 +198,5 @@
   <script src="../assets/js/google-maps.js"></script>
   <script src="../assets/js/theme.js"></script>
 </body>
+
 </html>

@@ -148,7 +148,7 @@
                                     ?>
                                     <tr>
                                         <td style="text-align: left;"><a href="#"><img
-                                                    src="../../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
+                                                    src="../img/Students/<?php echo $data['Photo'] ?>" class="avatar me-2"
                                                     alt="Avatar"> <?php echo $data['Name'] ?></a></td>
                                         <td>
                                             <?php echo $data['Email'] ?>

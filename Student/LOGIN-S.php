@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $sql = "SELECT * from students WHERE Email='$email' && Pwd='$password'";
 $data = mysqli_query($conn, $sql);
 $result = mysqli_num_rows($data);
-$data1=mysqli_fetch_array($data);
+$data1 = mysqli_fetch_array($data);
 if ($result == 1) {
     session_start();
     $_SESSION['batch'] = $data1['Batch'];
@@ -16,8 +16,7 @@ if ($result == 1) {
     header('Location:WAITHERE.php');
 } else {
     session_start();
-    $_SESSION['error']="Please enter valid Email or Password";
+    $_SESSION['error'] = "Please enter valid Email or Password";
     header('Location:Login.php');
-    // echo "login unsuccessful";
 }
 ?>

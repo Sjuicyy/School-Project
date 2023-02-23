@@ -45,7 +45,7 @@ $rows = mysqli_num_rows($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-            <img src="img/Banner.png" width="200px" alt="">
+            <img src="../img/Banner.png" width="200px" alt="">
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,13 +53,13 @@ $rows = mysqli_num_rows($result);
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2 active" aria-current="page" href="../index1.php">Home</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2 " aria-current="page" href="../index1.php">Home</a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-link px-3 mx-3 px-lg-2" href="../Student/requests.php">Requests</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-3 mx-3 px-lg-2" href="batchmates.php">Batchmates</a>
+                        <a class="nav-link px-3 mx-3 px-lg-2 active" href="batchmates.php">Batchmates</a>
                     </li>
                     <li class="nav-item pt-1">
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -68,6 +68,10 @@ $rows = mysqli_num_rows($result);
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="myprofile.php" class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
+                            <?php if ($data['IsAdmin'] == '1'): ?>
+                                    <a href="allmembers.php" class="dropdown-item" type="button">Member Requests</a>
+                                    <hr class="dropdown-divider" />
+                                <?php endif; ?>
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>

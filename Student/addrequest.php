@@ -29,7 +29,7 @@ $data = mysqli_fetch_array($result);
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark main-navigation" id="navbar"
         style="background-color: #2f89fc;">
         <div class="container-fluid">
-        <img src="img/Banner.png" width="200px" alt=""> 
+        <img src="../img/Banner.png" width="200px" alt=""> 
             <button class="navbar-toggler" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,6 +53,10 @@ $data = mysqli_fetch_array($result);
                             <a href="myprofile.php
                             " class="dropdown-item" type="button">View Profile</a>
                             <hr class="dropdown-divider" />
+                            <?php if ($data['IsAdmin'] == '1'): ?>
+                                    <a href="allmembers.php" class="dropdown-item" type="button">Member Requests</a>
+                                    <hr class="dropdown-divider" />
+                                <?php endif; ?>
                             <a href="../LOGOUT.php" class="dropdown-item" type="button">Log Out</a>
                         </div>
                     </li>
