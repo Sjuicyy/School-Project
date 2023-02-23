@@ -273,7 +273,7 @@ $status = $dataMember['Status'];
                                             width="100px" class="" alt="...">
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="" style="text-overflow: ellipsis; white-space: nowrap; overflow:hidden;">
                                     <div class="">
                                         <h5 class="mx-2 mt-2">
                                             <?php echo $data['Subject'] ?>
@@ -299,14 +299,10 @@ $status = $dataMember['Status'];
                                         </span>View</button>
                                 </a>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
-                <?php
+            <?php
             }
         }
         ?>
