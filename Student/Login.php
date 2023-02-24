@@ -68,7 +68,7 @@ session_start();
 
 
                 <input type="submit" value="Log In"
-                    class="btn1  bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-2"
+                    class="btn1  bcolor text-light border-0 rounded-3 fs-5 w-75 p-2 mx-auto mt-5"
                     style="letter-spacing: 2px;">
                 <div class="row mt-5">
                     <div class="col  text-center">

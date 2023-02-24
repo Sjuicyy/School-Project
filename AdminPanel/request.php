@@ -89,8 +89,8 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="SMC.php" class="dropdown-item" type="button">Add Members</a>
-                            <a href="PMC.php" class="dropdown-item" type="button">Add Parent Members</a>
+                            <a href="SMC.php" class="dropdown-item" type="button">Add SMC Members</a>
+                            <a href="PMC.php" class="dropdown-item" type="button">Add PTA Members</a>
                             <a href="testimony.php" class="dropdown-item" type="button">Add Testimonial</a>
                             <a href="Photos.php" class="dropdown-item" type="button">Add Photos</a>
                             <a href="../LOGOUT.php" class="dropdown-item fw-bold" type="button">Log Out</a>

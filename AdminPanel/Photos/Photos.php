@@ -66,7 +66,7 @@
                     <div class="card-body px-sm-4 px-0">
                         <div class="row justify-content-center">
                             <div class="col-md-10 mb-3">
-                                <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left">Add Members</h3>
+                                <h3 class="font-weight-bold ml-md-0 mx-auto text-center text-sm-left">Add SMC Members</h3>
                             </div>
                         </div>
                         <div class="row d-flex round">

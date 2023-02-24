@@ -49,8 +49,8 @@
                         <a href="" type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false"><i class='bx bxs-user' style='color:#fffefe;'></i></a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="SMC.php" class="dropdown-item" type="button">Add Members</a>
-                            <a href="PMC.php" class="dropdown-item" type="button">Add Parent Members</a>
+                            <a href="SMC.php" class="dropdown-item" type="button">Add SMC Members</a>
+                            <a href="PMC.php" class="dropdown-item" type="button">Add PTA Members</a>
                             <a href="testimony.php" class="dropdown-item" type="button">Add Testimonial</a>
                             <a href="Photos.php" class="dropdown-item" type="button">Add Photos</a>
                             <a href="../LOGOUT.php" class="dropdown-item fw-bold" type="button">Log Out</a>
@@ -61,7 +61,7 @@
         </div>
     </nav>
     <div>
-        <div class="float-end1" style="margin-lef2t: 80%;">
+        <div class="float-end1" >
             <a href="addnotice.php">
                 <div class="btn btn-primary m-3 float-en"> + Add Notice</div>
             </a>
@@ -79,29 +79,34 @@
                         <div class="col-10">
                             <div class="d-flex">
                                 <div class="">
-                                    <div class="mt-2 mb-2"><img src="Notices/<?php echo $data['Photo'] ?>" width="100px"
+                                    <div class="mt-2 mb-2n"><img src="Notices/<?php echo $data['Photo'] ?>" width="100px"
                                             class="" alt="...">
                                     </div>
                                 </div>
-                                <div class="">
+                                <div class="" style="text-overflow: ellipsis; white-space: nowrap; overflow:hidden;">
                                     <div class="">
-                                        <h5 class="mx-2 mt-2">
+                                        <h5 class="mx-2 ">
                                             <?php echo $data['Subject'] ?>
                                         </h5>
                                     </div>
                                     <p class="text-secondary mx-2 ">
                                         <?php echo $data['Message'] ?>
                                     </p>
+                                    <p class="text-secondary mx-2 ">Posted :
+                                        <?php echo $data['Date'] ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="d-grid d-md-flex justify-content-end mt-4">
+                            <a class="text-decoration-none" href="noticedetail.php?id=<?php echo $data['Id'] ?>">
                                 <button type="button"
                                     class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3 m">
                                     <span class="material-symbols-outlined mx-2">
                                         visibility
                                     </span>View</button>
+                                    </a>
                             </div>
                         </div>
                     </div>

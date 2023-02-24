@@ -264,7 +264,7 @@ $status = $dataMember['Status'];
         if ($result->num_rows > 0) {
             while ($data = mysqli_fetch_array($result)) {
                 ?>
-                <div class="container mt-2">
+                <div class="container">
                     <div class="row border border-start-0 border-end-0 border-primary border-1">
                         <div class="col-10">
                             <div class="d-flex">
@@ -275,7 +275,7 @@ $status = $dataMember['Status'];
                                 </div>
                                 <div class="" style="text-overflow: ellipsis; white-space: nowrap; overflow:hidden;">
                                     <div class="">
-                                        <h5 class="mx-2 mt-2">
+                                        <h5 class="mx-2">
                                             <?php echo $data['Subject'] ?>
                                         </h5>
                                     </div>
@@ -306,10 +306,6 @@ $status = $dataMember['Status'];
             }
         }
         ?>
-
-
-
-
 
 
 
