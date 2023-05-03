@@ -68,6 +68,10 @@
               </ol>
             </nav>
             <h1 class="fg-white text-center">पूर्व विद्यार्थी</h1>
+            <div class="text-center mt-3">
+            <a href="../../Student/Login.php" class="btn btn-outline-light">Login</a>
+            <a href="../../Student/signup.php" class="btn btn-outline-light">SignUp</a>
+            </div>
           </div>
         </div>
       </div>
@@ -148,6 +152,7 @@
         </div>
       </div> <!-- .container
     </div> .page-section -->
+    
     <div class="page-section">
             <div class="container">
                 <div class="text-center">
@@ -155,9 +160,6 @@
                     <h2 class="title-section"> विद्यार्थी समिति</h2>
                 </div>
 
-
-                <a class="h3 text-decoration-none" href="../../Student/Login.php">LogIn</a> <br>
-                <a class="h3 text-decoration-none" href="../../Student/signup.php">SignUp</a>
 
 
 

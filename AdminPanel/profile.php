@@ -88,6 +88,9 @@ require_once "CONNECTION.php";
         <a href="index1.php">
                 <img src="../img/Banner.png" width="200px" alt="">
             </a>
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="overlay d-flex d-lg-none"></div>
             <div class="order-lg-2 d-lg-flex w-100 sidebar pb-3 pb-lg-0" style="background-color: #2f89fc;">
                 <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0" style="font-size: larger;">

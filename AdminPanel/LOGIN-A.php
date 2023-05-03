@@ -2,7 +2,7 @@
 require_once "CONNECTION.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
-if ($email=='111@1.1' && $password=111) {
+if ($email=='admin@gmail.com' && $password='admin') {
     // session_start();
     // $_SESSION['batch'] = $data1['Batch'];
     // $_SESSION['User'] = $_POST['email'];

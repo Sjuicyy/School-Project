@@ -7,22 +7,21 @@ if (!($_SESSION['status'] == 'logedin')) {
 }
 $sql = "SELECT * from students WHERE Email='$email_id' ";
 $result = mysqli_query($conn, $sql);
-$data = mysqli_fetch_array($result);
+echo $data = mysqli_fetch_array($result);
+
 $rows = mysqli_num_rows($result);
 $admin = $data['IsAdmin'];
 $number = $data['Contact'];
-?>
 
 
 
 
-
-<?php
-$sql = "SELECT * from Membership WHERE S_id='$number' ";
+$sql = "SELECT Status from Membership WHERE S_id='$number' ";
 $result1 = mysqli_query($conn, $sql);
 $dataMember = mysqli_fetch_array($result1);
 $rowMember = mysqli_num_rows($result1);
 $status = $dataMember['Status'];
+
 ?>
 
 <!DOCTYPE html>
@@ -48,10 +47,6 @@ $status = $dataMember['Status'];
 </head>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
-
-
-
-
     <?php if (!($rows == 0) && (($rowMember == 0) or ($status == 'pending'))): ?>
         body {
             height: 100vh;
@@ -291,18 +286,72 @@ $status = $dataMember['Status'];
                         </div>
                         <div class="col-2">
                             <div class="d-grid d-md-flex justify-content-end mt-4">
-                                <a class="text-decoration-none" href="noticedetail.php?id=<?php echo $data['Id'] ?>">
-                                    <button type="button"
-                                        class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3">
-                                        <span class="material-symbols-outlined mx-2">
-                                            visibility
-                                        </span>View</button>
-                                </a>
+                                <button type="button" class="d-flex btn btn-primary btn-sm border bcolor text-light rounded-3"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['Id'] ?>">
+                                    <span class="material-symbols-outlined mx-2">
+                                        visibility
+                                    </span>View</button>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+                        <div class="modal fade" id="exampleModal<?php echo $data['Id'] ?>" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+
+                                    <div class="modal-header d-flex justify-content-end">
+                                        <a href="notices.php">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="modal-header">
+                                        <h5 class="modal-title badge text-wrap text-break h5 text-start text-dark w-75"
+                                            id="exampleModalLabel">
+                                            Subject :
+                                            <?php echo $data['Subject'] ?>
+                                        </h5>
+                                        <p class="h5 text-end badge text-wrap text-break text-start text-dark w-25"
+                                            style="width: 10rem;" id="exampleModalLabel">Date
+                                            :
+                                            <?php echo $data['Date'] ?>
+                                            </>
+                                    </div>
+                                    <div class="modal-body mx-auto">
+                                        <center>
+                                            <img src="AdminPanel/Notices/<?php echo $data['Photo'] ?>" width="90%"
+                                                class="img-fluid" alt="" srcset="">
+                                        </center>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <p>
+                                            <?php echo $data['Message'] ?>
+                                        </p>
+                                        <a href="notices.php">
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
                     </div>
                 </div>
-            <?php
+                <?php
             }
         }
         ?>

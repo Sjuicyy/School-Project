@@ -391,23 +391,23 @@
         </div>
         <div class="row justify-content-center mt-5">
           <div class="col-lg-8">
-            <form action="#" class="form-contact">
+            <form action="TOUCH.php"  method="post" class="form-contact">
               <div class="row">
                 <div class="col-sm-6 py-2">
                   <label for="name" class="fg-grey">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter name..">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter name..">
                 </div>
                 <div class="col-sm-6 py-2">
                   <label for="email" class="fg-grey">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="Email address..">
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Email address..">
                 </div>
                 <div class="col-12 py-2">
                   <label for="subject" class="fg-grey">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Subject..">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject..">
                 </div>
                 <div class="col-12 py-2">
                   <label for="message" class="fg-grey">Message</label>
-                  <textarea id="message" rows="8" class="form-control" placeholder="Enter message.."></textarea>
+                  <textarea name="message" type='text' id="message" rows="8" class="form-control" placeholder="Enter message.."></textarea>
                 </div>
                 <div class="col-12 mt-3">
                   <button type="submit" class="btn btn-primary px-5">Submit</button>
